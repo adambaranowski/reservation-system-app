@@ -1,0 +1,16 @@
+<div class="card" style="width: 18rem; margin: 0 auto; /* Added */
+        float: none; /* Added */
+        margin-bottom: 10px; /* Added */">
+  <div *ngIf="user" class="card-body border-0" style="background-color: lightblue; margin: 8px; border-radius: 2px">
+    <h3 class="card-title" style="text-align: center; margin: 5px">{{user.userNick}}</h3>
+    <br>
+    <h6 style="margin: 5px">User email:</h6>
+    <p class="card-text" style="text-align: center; margin: 5px">{{user.email}}</p>
+    <h6 style="margin: 5px">Authorities</h6>
+    <p class="card-text" style="text-align: center; margin: 5px">{{user.authorities}}</p>
+    <h6 style="margin: 5px">Join date:</h6>
+    <p class="card-text" style="text-align: center; margin: 5px">{{user.joinDateTime}}</p>
+    <h6 style="margin: 5px">Last login date:</h6>
+    <p class="card-text" style="text-align: center; margin: 5px">{{user.lastLoginDateTime}}</p>
+  </div>
+</div>

@@ -1,0 +1,68 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container bootstrap snippets bootdeys">
+  <div class="row">
+    <div class="col-xs-12 col-sm-9">
+      <form #registerForm="ngForm" (ngSubmit)="onRegister()" class="form-horizontal">
+        <div class="panel panel-default">
+          <div class="panel-body text-center">
+          <h1>Register your User!</h1>
+          </div>
+        </div>
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">User info</h4>
+          </div>
+          <div class="panel-body">
+            <div class="form-group">
+              <label class="col-sm-2 control-label">User's Nick</label>
+              <div class="col-sm-10">
+                <input [formControl]="userNick" required="required" type="text" class="form-control">
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-sm-2 control-label">E-mail address</label>
+              <div class="col-sm-10">
+                <input [formControl]="email" required="required" type="email" class="form-control">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel panel-default">
+          <div class="panel-heading">
+            <h4 class="panel-title">Security</h4>
+          </div>
+          <div class="panel-body">
+            <div class="form-group">
+              <label class="col-sm-2 control-label">Password</label>
+              <div class="col-sm-10">
+                <input [formControl]="password" required="required" type="password" class="form-control">
+              </div>
+            </div>
+            </div>
+            <div class="panel-heading">
+              <h4 class="panel-title">Roles In System</h4>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-10 col-sm-offset-2">
+                <div class="checkbox">
+                  <input style="margin: 5px" type="checkbox" id="studentCheckBox" [formControl]="isStudent">
+                  <label for="studentCheckBox">Student</label>
+                  <input style="margin: 5px"type="checkbox" id="teacherCheckBox" [formControl]="isTeacher">
+                  <label for="teacherCheckBox">Teacher</label>
+                  <input style="margin: 5px"type="checkbox" id="adminCheckBox" [formControl]="isAdmin">
+                  <label for="adminCheckBox">Admin</label>
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="col-sm-10 col-sm-offset-2">
+                <button type="submit" class="btn btn-primary" style="margin: 5px">Submit</button>
+                <button (click)="backToLogin()" class="btn btn-secondary" style="margin: 5px">Back</button>
+              </div>
+            </div>
+          </div>
+      </form>
+    </div>
+  </div>
+</div>

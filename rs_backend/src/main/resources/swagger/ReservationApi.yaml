@@ -1,0 +1,139 @@
+openapi: 3.0.3
+info:
+  title: Reservation Api
+  description: Reservation Api
+  version: 1.0.0
+
+paths:
+  /reservations:
+    get:
+      summary: Get all reservations for given period for specific room
+      operationId: getReservationsForRoom
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/GetReservationRequestDto"
+      responses:
+        200:
+          description: List of all reservations
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/SingleReservationDto"
+        400:
+          description: Wrong request dto. You probably messed up with dates
+        404:
+          description: Room not found
+        403:
+          description: Youre not allowed to get this information
+    post:
+      summary: Add new reservation (Single event or recurrence event)
+      operationId: addReservation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateReservationRequestDto"
+      responses:
+        201:
+          description: Reservation has been created
+        400:
+          description: Wrong reservation parameters
+        404:
+          description: Content not found
+        403:
+          description: Youre not allowed to create this reservation
+
+  /reservations/{reservationId}:
+    delete:
+      summary: Delete reservation pattern
+      operationId: Delete reservation
+      parameters:
+        - name: reservationId
+          in: path
+          description: "Reservation id"
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: Reservation deleted
+        403:
+          description: You're not allowed to delete this reservation
+        404:
+          description: Reservation id not found
+
+
+
+components:
+  schemas:
+    GetReservationRequestDto:
+      description: Dto for requesting all reservations for room in given period of time
+      properties:
+        roomNumber:
+          description: Number of room for which you want to get reservations
+          example: 25
+          type: integer
+        beginDate:
+          description: Start date of period of time from which you want to get reservations. Must Be before endDate
+          example: 25-11-2021
+          type: string
+        endDate:
+          description: End date of period of time from which you want to get reservations. Must Be after startDate
+          example: 27-11-2021
+          type: string
+
+    SingleReservationDto:
+      properties:
+        reservationId:
+          type: integer
+          description: Id of reservation entity which was base for creation this particular instance. Used for deleting reservations.
+        userNick:
+          type: string
+          description: User who made reservation
+          example: puciak69
+        date:
+          type: string
+          description: Date of day of reservation
+          example: 15-12-2021
+        beginTime:
+          type: string
+          description: Begin time of reservation
+          example: 12:30
+        endTime:
+          type: string
+          description: Begin time of reservation
+          example: 14:30
+
+    CreateReservationRequestDto:
+      properties:
+        roomNumber:
+          type: integer
+          description: Room to be reserved
+          example: 22
+        beginDate:
+          type: string
+          description: Start Date of recurring events period. If Single Event just date of reservation. End date empty then
+          example: 12-11-2021
+        endDate:
+          type: string
+          description: End Date of recurring events period. If Single Event it's the same as begin date.
+          example: 15-11-2021
+        beginTime:
+          type: string
+          description: Start time of reservation slot
+          example: 12:30
+        endTime:
+          type: string
+          description: Start time of reservation slot
+          example: 14:30
+        daysOfWeek:
+          type: array
+          items:
+            type: integer
+          description: Days of reservation. 1 - MON, 2 - THU ...
+          example: [ 1, 3 ]
+

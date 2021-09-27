@@ -1,0 +1,45 @@
+<div style="margin-left: 15%; margin-right: 15%">
+<div class="jumbotron">
+  <div class="text-center align-content-center">
+    <h1 class="display-4">Reservation Portal</h1>
+    <hr class="my-3">
+    <small class="lead" *ngIf="titleAction$ | async as title">{{ title }}</small>
+  </div>
+</div>
+
+<ul class="nav justify-content-center">
+  <li class="nav-item">
+    <a class="nav-link" (click)="changeTitle('Reservations')" data-toggle="tab"
+       routerLink="./reservations">
+      Reservations
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" (click)="changeTitle('Rooms')" data-toggle="tab"
+       routerLink="./rooms">
+      Rooms
+    </a>
+  </li>
+  <li class="nav-item">
+    <a [hidden]="!isAdmin" class="nav-link" (click)="changeTitle('Users')" data-toggle="tab"
+       routerLink="./users">
+      Users
+    </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" (click)="changeTitle('Profile')" data-toggle="tab"
+       routerLink="./profile">
+      Welcome, {{userNick}}
+      <i class="fa fa-user"></i>
+    </a>
+  </li>
+
+  <li class="nav-item">
+    <button class="btn btn-primary" (click)="logout()">Logout</button>
+  </li>
+</ul>
+<div class="container-lg align-content-center" style="alignment: center; margin-top: 10px">
+  <router-outlet></router-outlet>
+</div>
+
+</div>

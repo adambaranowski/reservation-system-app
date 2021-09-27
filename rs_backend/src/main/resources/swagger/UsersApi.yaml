@@ -1,0 +1,217 @@
+openapi: 3.0.3
+info:
+  title: RoomEquipment API
+  description: "This API is used to provide availability to customize rooms and their equipment.
+  <br><br>
+  Only users with given authorities can use it:
+  <br><ul>
+  <li>ADMIN</li>
+  <li>SUPER ADMIN</li>
+  </ul>"
+  version: 1.0.0
+paths:
+  /users:
+    get:
+      summary: Only for super admin. Returns list of all users
+      operationId: getAllUsers
+      responses:
+        200:
+          description: Array of all users
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/UserResponseDto"
+        403:
+          description: You are not permitted to go here. It's allowed only for admins
+    post:
+      summary: User can register himself but must be confirmed by admin
+      operationId: postNewUser
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UserRequestDto"
+      responses:
+        201:
+          description: New user created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserResponseDto"
+        400:
+          description: Wrong user parameters
+
+  /users/{userId}:
+    get:
+      summary: Get User by id
+      operationId: getUserById
+      parameters:
+        - name: userId
+          in: path
+          description: "User id"
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: User of given id
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserResponseDto"
+        404:
+          description: Given User does not exist
+        403:
+          description: You are not allowed to get this information
+    delete:
+      summary: Delete User by id
+      operationId: deleteUserById
+      parameters:
+        - name: userId
+          in: path
+          description: "User id"
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: User of given id was deleted
+        404:
+          description: Given User does not exist
+        403:
+          description: You are not allowed to do this
+    put:
+      summary: Modify user, allows admins adding new authorities
+      operationId: modifyUser
+      parameters:
+        - name: userId
+          in: path
+          description: "User id"
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/UserRequestDto"
+      responses:
+        200:
+          description: Modified user
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/UserResponseDto"
+        404:
+          description: Given User does not exist
+        403:
+          description: You are not allowed to do this
+
+  /users/enable:
+    post:
+      description: Only for Admin. Enable accounts for users of given ids
+      operationId: enableAccounts
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: integer
+                example: [ 4, 1 ]
+                description: Id's of users who accounts are going to be disabled
+      responses:
+        200:
+          description: Succesful operation of accounts activation
+        403:
+          description: You are not allowed to do this. It's only for admins
+        404:
+          description: Users of given id not found
+
+  /users/disable:
+    post:
+      description: Only for Admin. Disable accounts users of given ids
+      operationId: disableAccounts
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: integer
+                example: [ 1, 2 ]
+                description: Id's of users who accounts are going to be disabled
+      responses:
+        200:
+          description: Succesful operation of accounts deactivation
+        403:
+          description: You are not allowed to do this. It's only for admins
+        404:
+          description: Users of given id not found
+
+
+components:
+  schemas:
+    UserRequestDto:
+      type: object
+      description: Contains password to provide user first login
+      properties:
+        userNick:
+          type: string
+          description: User's nick
+          example: puciak69
+        email:
+          type: string
+          description: User's email
+          example: puciak@gmail.com
+        password:
+          type: string
+          description: User's password
+          example: fkR5Y89W
+        authorities:
+          type: array
+          items:
+            type: string
+          description: Authority of the user
+          example: [ TEACHER, ADMIN ]
+
+    UserResponseDto:
+      type: object
+      description: Contains all information about user
+      properties:
+        id:
+          type: integer
+          description: User's id
+          example: 2
+        userNick:
+          type: string
+          description: User's nick
+          example: puciak69
+        email:
+          type: string
+          description: User's email
+          example: puciak@gmail.com
+        authorities:
+          type: array
+          items:
+            type: string
+          description: Authorities of the user
+          example: ADMIN
+        lastLoginDateTime:
+          type: string
+          example: 12.03.2021
+        joinDateTime:
+          type: string
+          example: 10.11.2019
+        accountNonExpired:
+          type: boolean
+          example: true
+        accountNonLocked:
+          type: boolean
+          example: true
+        credentialsNonExpired:
+          description: Credentials are by default expired before first login and must be changed into user's custom ones
+          type: boolean
+          example: true

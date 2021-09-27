@@ -1,0 +1,323 @@
+openapi: 3.0.3
+info:
+  title: RoomEquipment API
+  description: "This API is used to provide availability to customize rooms and their equipment."
+  version: 1.0.0
+paths:
+  /rooms:
+    get:
+      summary: "Returns a list of all rooms in system with their equipment"
+      operationId: "getAllRooms"
+      responses:
+        200:
+          description: "A JSON Array of rooms"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/RoomResponseDto"
+        401:
+          description: "You have to be authorized to access this endpoint"
+    post:
+      summary: "Add new room with equipment items of given id"
+      operationId: "postNewRoom"
+      requestBody:
+        description: "Object with room information"
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RoomRequestDto"
+      responses:
+        201:
+          description: "New room was created"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RoomResponseDto"
+        400:
+          description: "Wrong request dto"
+        409:
+          description: "Room of given id exists in system"
+        403:
+          description: "You are not allowed to create a room. This feature is available only for admin"
+        401:
+          description: "You have to be authorized to access this endpoint"
+    put:
+      summary: "Update room info with equipment items of given id"
+      operationId: "updateRoom"
+      requestBody:
+        description: "Object with room information"
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RoomRequestDto"
+      responses:
+        200:
+          description: "Room was updated"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RoomResponseDto"
+        400:
+          description: "Wrong request dto"
+        404:
+          description: "Room of given id does not exists in system"
+        403:
+          description: "You are not allowed to update a room. This feature is available only for admin"
+        401:
+          description: "You have to be authorized to access this endpoint"
+
+
+  /rooms/{roomNumber}:
+    get:
+      summary: "Returns a room of given number object with its equipment"
+      operationId: "getRoomById"
+      parameters:
+        - name: roomNumber
+          in: path
+          description: "Number of room"
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: "A room response object"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/RoomResponseDto"
+        401:
+          description: "You have to be authorized to access this endpoint"
+        404:
+          description: "Room of given number does not exist"
+    delete:
+      summary: "Delete room of given id"
+      operationId: "deleteRoomById"
+      parameters:
+        - name: roomNumber
+          in: path
+          description: "Number of room to delete"
+          required: true
+          schema:
+            type: integer
+      responses:
+        200:
+          description: "Room was deleted"
+        404:
+          description: "Room of given id does not exist"
+        401:
+          description: "You have to be authorized to access this endpoint"
+        403:
+          description: "You are not allowed to delete a room. This feature is available only for admin"
+
+
+  /equipment:
+    get:
+      operationId: "getAllEquipmentItems"
+      summary: "Return a list of all equipment items in system"
+      responses:
+        200:
+          description: "A JSON Array of items"
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/EquipmentResponseDto"
+        401:
+          description: "You have to be authorized to access this endpoint"
+    post:
+      operationId: "addNewEquipmentItem"
+      summary: "Add new equipment item and return RoomResponseDto with created item"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EquipmentRequestDto"
+      responses:
+        201:
+          description: "New item was created"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EquipmentResponseDto"
+        401:
+          description: "You have to be authorized to access this endpoint"
+        403:
+          description: "This feature is available only for admins"
+        400:
+          description: "Request payload is wrong"
+
+  /equipment/{equipmentId}:
+    get:
+      operationId: "getEquipmentItemById"
+      summary: "Get equipment of given id"
+      parameters:
+        - name: equipmentId
+          in: path
+          required: true
+          description: "Id of equipment to update"
+          schema:
+            type: integer
+      responses:
+        200:
+          description: "Equipment item of given id"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EquipmentResponseDto"
+    put:
+      summary: "Update equipment of given id"
+      operationId: "updateEquipmentItemById"
+      parameters:
+        - name: equipmentId
+          required: true
+          in: path
+          description: "Id of equipment to update"
+          schema:
+            type: integer
+      requestBody:
+        description: "Object of updating equipment"
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/EquipmentRequestDto"
+      responses:
+        200:
+          description: "Equipment item created"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EquipmentResponseDto"
+        404:
+          description: "Wrong id, doesn't exist"
+        401:
+          description: "You have to be authorized to access this endpoint"
+        403:
+          description: "This feature is available only for admins"
+    delete:
+      operationId: "deleteEquipmentItemById"
+      summary: "Delete equipment of given id"
+      parameters:
+        - name: equipmentId
+          required: true
+          in: path
+          description: "Id of equipment to update"
+          schema:
+            type: integer
+      responses:
+        200:
+          description: "Equipment item was deleted"
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/EquipmentResponseDto"
+        404:
+          description: "Wrong id, doesn't exist"
+        401:
+          description: "You have to be authorized to access this endpoint"
+        403:
+          description: "This feature is available only for admins"
+
+
+
+
+components:
+  schemas:
+    EquipmentResponseDto:
+      type: object
+      description: "Contains information about given equipment item"
+      properties:
+        id:
+          type: integer
+          description: "System Id of given item"
+          example: 1
+        name:
+          type: string
+          description: "Equipment name"
+          example: "Yamaha CFX Grand Piano"
+        description:
+          type: string
+          description: "Detailed description of item"
+          example: "Huge concert grand piano for performances"
+        roomNumber:
+          type: integer
+          example: 22
+          description: "Number of room where given item is currently placed"
+
+    EquipmentRequestDto:
+      type: object
+      description: "Contains information about given equipment item"
+      properties:
+        name:
+          type: string
+          description: "Equipment name"
+          example: "Yamaha CFX Grand Piano"
+        description:
+          type: string
+          description: "Detailed description of item"
+          example: "Huge concert grand piano for performances"
+        roomNumber:
+          type: integer
+          example: 22
+          description: "Number of room where given item is currently placed"
+
+    RoomResponseDto:
+      type: object
+      description: "Response object of one room"
+      properties:
+        roomNumber:
+          type: integer
+          description: "Unique number of room"
+          example: 22
+        description:
+          type: string
+          description: "Room description"
+          example: "Small piano room for practicing"
+        roomStatus:
+          type: string
+          enum:
+            - "NORMAL"
+            - "ONLY_TEACHER"
+            - "ONLY_PRINCIPAL"
+        equipmentItems:
+          type: array
+          items:
+            $ref: "#/components/schemas/EquipmentResponseDto"
+
+    RoomDeleteDto:
+      type: object
+      description: "Room id holder for delete"
+      properties:
+        roomNumber:
+          type: integer
+          description: "Number of room to delete"
+          example: 22
+
+
+    RoomRequestDto:
+      type: object
+      description: "Request object for adding oar modifying room"
+      properties:
+        roomNumber:
+          type: integer
+          description: "Unique number of room"
+          example: 22
+        description:
+          type: string
+          description: "Room description"
+          example: "Small piano room for practicing"
+        roomStatus:
+          type: string
+          enum:
+            - "NORMAL"
+            - "ONLY_TEACHER"
+            - "ONLY_PRINCIPAL"
+        equipmentItemsId:
+          type: array
+          items:
+            type: integer
+            example: [ 1, 3 ]

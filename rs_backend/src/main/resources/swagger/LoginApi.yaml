@@ -1,0 +1,63 @@
+openapi: 3.0.3
+info:
+  title: LoginApi
+  description: LoginApi
+  version: 1.0.0
+
+paths:
+  /login:
+    post:
+      summary: Enpoint for logging
+      operationId: login
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/LoginRequestDto"
+      responses:
+        200:
+          description: Succesful login
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/LoginResponseDto"
+        401:
+          description: Login failure
+
+components:
+  schemas:
+    LoginRequestDto:
+      type: object
+      description: Contains login (email) and password
+      properties:
+        email:
+          type: string
+          description: User's email
+          example: puciak@gmail.com
+        password:
+          type: string
+          description: User's password
+          example: kdoein23
+
+    LoginResponseDto:
+      type: object
+      description: Json with token
+      properties:
+        token:
+          type: string
+          description: Generated JWT for user
+        userId:
+          type: integer
+          description: User's id
+        userNick:
+          type: string
+          description: User's nick
+        email:
+          type: string
+          description: User's email
+        authorities:
+          type: array
+          items:
+            type: string
+          example: [ADMIN, STUDENT]
+

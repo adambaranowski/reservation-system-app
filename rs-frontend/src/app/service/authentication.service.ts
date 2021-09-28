@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { environment} from "../../environments/environment";
 import {HttpClient, HttpErrorResponse, HttpResponse} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {Observable, Subscription} from "rxjs";
 import {UserLoginDto} from "../model/UserLoginDto";
 import {User} from "../model/User";
 import {JwtHelperService} from "@auth0/angular-jwt";
@@ -14,7 +14,8 @@ import {NotificationService} from "./notification.service";
 @Injectable({
   providedIn: 'root'
 })
-export class AuthenticationService {
+export class AuthenticationService  {
+  private subscriptions: Subscription[] = [];
 
   public host: string = environment.apiUrl;
 
@@ -46,7 +47,7 @@ export class AuthenticationService {
     this.token = loginResponseDto.token;
     localStorage.setItem('token', loginResponseDto.token);
 
-    this.userService.getUserById(loginResponseDto.userId).subscribe(
+    this.subscriptions.push(this.userService.getUserById(loginResponseDto.userId).subscribe(
       (response: User) => {
         this.user = response;
         localStorage.setItem('user', JSON.stringify(response));
@@ -57,7 +58,7 @@ export class AuthenticationService {
         this.token = undefined;
         this.user = undefined;
       }
-    )
+    ));
 
   }
 

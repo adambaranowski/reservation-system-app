@@ -131,11 +131,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter implements WebM
     private void configureUsersEndpointAccess(HttpSecurity httpSecurity) throws Exception {
         httpSecurity.authorizeRequests()
                 .mvcMatchers(HttpMethod.POST, USERS_ENDPOINT).permitAll()
-                .mvcMatchers(HttpMethod.GET, USERS_ENDPOINT).hasAuthority(ADMIN_AUTHORITY)
-                .mvcMatchers(HttpMethod.GET, USERS_ENDPOINT+"/*").authenticated()
-                .antMatchers(USERS_ENDPOINT).hasAuthority(ADMIN_AUTHORITY)
-                .antMatchers(USERS_ENDPOINT + "/*").hasAuthority(ADMIN_AUTHORITY)
-                .antMatchers(USERS_ENDPOINT + "/**").hasAuthority(ADMIN_AUTHORITY);
-
+                .mvcMatchers(HttpMethod.GET, USERS_ENDPOINT+"/*").hasAnyAuthority(ADMIN_AUTHORITY, TEACHER_AUTHORITY, STUDENT_AUTHORITY)
+                .mvcMatchers(HttpMethod.DELETE, USERS_ENDPOINT+"/*").hasAuthority(ADMIN_AUTHORITY)
+                .mvcMatchers(HttpMethod.POST, USERS_ENDPOINT+"/*").hasAuthority(ADMIN_AUTHORITY);
     }
 }

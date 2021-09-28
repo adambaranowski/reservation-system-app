@@ -533,7 +533,6 @@ public class EquipmentApiTest extends BaseIntegrationTestClass{
                 .getContentAsString();
 
         assertTrue(equipmentRepository.findById(id).isEmpty());
-        //blad
     }
 
     @Test

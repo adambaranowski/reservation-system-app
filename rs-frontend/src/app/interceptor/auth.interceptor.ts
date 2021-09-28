@@ -23,7 +23,7 @@ export class AuthInterceptor implements HttpInterceptor {
     // console.log(request.method);
     // console.log(request.url.includes(`${this.authenticationService.host}/users`));
     // console.log(request.method == 'post');
-    if (request.url.includes(`${this.authenticationService.host}/users`) && request.method === 'POST'){
+    if (request.url.includes(`${this.authenticationService.host}/users`)  && !request.url.endsWith('e') && request.method === 'POST'){
       // console.log('TRRUEE')
       return next.handle(request);
     }

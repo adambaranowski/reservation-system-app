@@ -1,1 +1,33 @@
-<p>user works!</p>
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Id</th>
+    <th scope="col">Nick</th>
+    <th scope="col">Email</th>
+    <th scope="col">Account Status</th>
+    <th scope="col">Actions</th>
+    <th scope="col">Authorities</th>
+    <th scope="col">Join Date</th>
+    <th scope="col">Last Login Date</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let user of users">
+    <th scope="row">{{user.id}}</th>
+    <td>{{user.userNick}}</td>
+    <td>{{user.email}}</td>
+    <td [ngStyle]="{'color' :user.accountNonLocked? 'green' : 'red'}">{{lockedAccountText(user)}}</td>
+    <td>
+      <button  class="btn" style="background-color: lightgreen" (click)="enableUser(user)">Activate</button>
+      <button  class="btn" style="background-color: lightyellow" (click)="disableUser(user)">Lock</button>
+      <button  class="btn btn-danger" (click)="deleteUser(user)">Delete</button>
+      <button  class="btn btn-info" (click)="displayEditForm = !displayEditForm; reloadUsers();">Modify</button>
+      <app-modify-form [userId]="user.id" [display]="displayEditForm"></app-modify-form>
+    </td>
+    <td>{{user.authorities}}</td>
+    <td>{{user.joinDateTime}}</td>
+    <td>{{user.lastLoginDateTime}}</td>
+    </tr>
+  </tbody>
+</table>
+

@@ -15,7 +15,7 @@
     </a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" (click)="changeTitle('Rooms')" data-toggle="tab"
+    <a [hidden]="!isAdmin" class="nav-link" (click)="changeTitle('Rooms')" data-toggle="tab"
        routerLink="./rooms">
       Rooms
     </a>
@@ -24,6 +24,12 @@
     <a [hidden]="!isAdmin" class="nav-link" (click)="changeTitle('Users')" data-toggle="tab"
        routerLink="./users">
       Users
+    </a>
+  </li>
+  <li class="nav-item">
+    <a [hidden]="!isAdmin" class="nav-link" (click)="changeTitle('Users')" data-toggle="tab"
+       routerLink="./equipment">
+      Equipment
     </a>
   </li>
   <li class="nav-item">

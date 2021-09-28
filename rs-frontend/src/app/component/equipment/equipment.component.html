@@ -1,1 +1,32 @@
-<p>equipment works!</p>
+<div style="alignment: center; text-align: center">
+
+<button class="btn btn-primary" style="background-color: lightgreen" (click)="updateRoomNumbers(); displayAddForm = !displayAddForm; reloadEquipments()"> Add New Equipment Item</button>
+        <app-equipment-form [roomNumbersList]="roomNumbers" [option] = "OPTION_ADD" [display]="displayAddForm"></app-equipment-form>
+
+<table class="table">
+  <thead>
+  <tr>
+    <th scope="col">Id</th>
+    <th scope="col">Room Number</th>
+    <th scope="col">Name</th>
+    <th scope="col">Description</th>
+    <th scope="col">Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let eq of equipments">
+    <th scope="row">{{eq.id}}</th>
+    <td>{{eq.roomNumber}}</td>
+    <td>{{eq.name}}</td>
+    <td>{{eq.description}}</td>
+
+    <td>
+      <button  class="btn btn-danger" (click)="deleteEquipment(eq.id)">Delete</button>
+      <button  class="btn btn-info" (click)="displayEditForm = !displayEditForm">Edit</button>
+      <app-equipment-form [roomNumbersList]="roomNumbers" [equipmentEditId] = "eq.id" [option]="OPTION_EDIT"
+                          [display]="displayEditForm"></app-equipment-form>
+    </td>
+  </tr>
+  </tbody>
+</table>
+</div>

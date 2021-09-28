@@ -42,8 +42,8 @@ export class UserService {
     return this.httpClient.post<void>(`${this.host}/${Urls.USERS}/enable`, usersIds);
   }
 
-  public modifyUser(userId: number, requestDto: UserRequestDto): Observable<User | HttpErrorResponse> {
-    return this.httpClient.put<User | HttpErrorResponse>(`${this.host}/${Urls.USERS}/${userId}`, requestDto);
+  public modifyUser(userId: number, requestDto: UserRequestDto): Observable<User> {
+    return this.httpClient.put<User>(`${this.host}/${Urls.USERS}/${userId}`, requestDto);
   }
 
   public deleteUser(userId: number): Observable<any | HttpErrorResponse> {

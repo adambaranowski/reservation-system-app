@@ -1,26 +1,32 @@
-import {Component, OnDestroy, OnInit} from '@angular/core';
+import {Component, Input, OnDestroy, OnInit} from '@angular/core';
+import {FormControl} from "@angular/forms";
 import {Subscription} from "rxjs";
 import {Router} from "@angular/router";
-import {AuthenticationService} from "../../service/authentication.service";
-import {NotificationService} from "../../service/notification.service";
-import {NotificationType} from "../../enum/notification-type";
-import {FormControl} from "@angular/forms";
-import {UserRequestDto} from "../../model/UserRequestDto";
-import {UserService} from "../../service/user.service";
-import {User} from "../../model/User";
+import {AuthenticationService} from "../../../service/authentication.service";
+import {UserService} from "../../../service/user.service";
+import {NotificationService} from "../../../service/notification.service";
+import {UserRequestDto} from "../../../model/UserRequestDto";
+import {User} from "../../../model/User";
+import {NotificationType} from "../../../enum/notification-type";
 import {HttpErrorResponse} from "@angular/common/http";
 
 @Component({
-  selector: 'app-register',
-  templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css']
+  selector: 'app-modify-form',
+  templateUrl: './modify-form.component.html',
+  styleUrls: ['./modify-form.component.css']
 })
-export class RegisterComponent implements OnInit, OnDestroy {
+export class ModifyFormComponent implements OnInit, OnDestroy {
+  @Input()
+  userId = 0;
+
+  @Input()
+  display = false;
+
   userNick = new FormControl();
   email = new FormControl();
   password = new FormControl();
 
-  isStudent= true;
+  isStudent= false;
   isTeacher= false;
   isAdmin= false;
 
@@ -34,11 +40,7 @@ export class RegisterComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    if (this.authenticationService.isLoggedIn()) {
-      this.router.navigateByUrl('/menu')
-    } else {
-      this.router.navigateByUrl('/register')
-    }
+
   }
 
   ngOnDestroy() {
@@ -49,27 +51,24 @@ export class RegisterComponent implements OnInit, OnDestroy {
     this.router.navigateByUrl('login');
   }
 
-  public onRegister(): void {
+  public modify(): void {
     const authorities: [string | null] = ['STUDENT'];
 
-    console.log(this.isAdmin);
     if(this.isAdmin){
       authorities.push('ADMIN');
     }
 
-    console.log(this.isTeacher);
     if(this.isTeacher){
       authorities.push('TEACHER');
     }
 
-    console.log(this.isStudent);
     if(this.isStudent){
       authorities.push('STUDENT');
     }
 
     //Add default student
     if (authorities.length < 1) {
-        authorities.push('STUDENT');
+      authorities.push('STUDENT');
     }
 
     const registerDto: UserRequestDto = {
@@ -82,18 +81,15 @@ export class RegisterComponent implements OnInit, OnDestroy {
     console.log(registerDto);
 
     this.subscriptions.push(
-      this.userService.register(registerDto).subscribe(
+      this.userService.modifyUser(this.userId, registerDto).subscribe(
         (response: User ) => {
-          console.log(response);
 
-          this.sendNotification(NotificationType.SUCCESS, 'Successfully registred!');
-
-          setTimeout(() => { this.router.navigateByUrl('/login'); }, 1000);
+          this.sendNotification(NotificationType.INFO, 'Successfully modified!');
 
         },
         (httpErrorResponse: HttpErrorResponse) => {
           console.log(httpErrorResponse);
-          this.sendNotification(NotificationType.ERROR, 'Register failure! ' + httpErrorResponse.error);
+          this.sendNotification(NotificationType.ERROR, 'Failure! ' + httpErrorResponse.error);
         }
       )
     );
@@ -108,4 +104,5 @@ export class RegisterComponent implements OnInit, OnDestroy {
     }
 
   }
+
 }

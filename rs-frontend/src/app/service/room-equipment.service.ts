@@ -37,9 +37,9 @@ export class RoomEquipmentService {
       (`${this.host}/${Urls.ROOMS}/${roomId}`);
   }
 
-  public getAllRooms(): Observable<Array<RoomResponseDto> | HttpErrorResponse> {
+  public getAllRooms(): Observable<Array<RoomResponseDto>> {
     return this.httpClient
-      .get<Array<RoomResponseDto> | HttpErrorResponse>
+      .get<Array<RoomResponseDto>>
       (`${this.host}/${Urls.ROOMS}`);
   }
 
@@ -51,33 +51,33 @@ export class RoomEquipmentService {
 
  //EQUIPMENT
 
-  public getAllEquipments(): Observable<Array<EquipmentResponseDto> | HttpErrorResponse> {
+  public getAllEquipments(): Observable<Array<EquipmentResponseDto>> {
     return this.httpClient
-      .get<Array<EquipmentResponseDto> | HttpErrorResponse>
+      .get<Array<EquipmentResponseDto>>
       (`${this.host}/${Urls.EQUIPMENT}`);
   }
 
-  public getEquipmentById(equipmentId: number): Observable<EquipmentResponseDto | HttpErrorResponse> {
+  public getEquipmentById(equipmentId: number): Observable<EquipmentResponseDto> {
     return this.httpClient
-      .get<EquipmentResponseDto | HttpErrorResponse>
+      .get<EquipmentResponseDto>
       (`${this.host}/${Urls.EQUIPMENT}/${equipmentId}`);
   }
 
-  public addEquipment(equipmentRequestDto: EquipmentRequestDto): Observable<EquipmentResponseDto | HttpErrorResponse> {
+  public addEquipment(equipmentRequestDto: EquipmentRequestDto): Observable<EquipmentResponseDto> {
     return this.httpClient
-      .post<EquipmentResponseDto | HttpErrorResponse>
+      .post<EquipmentResponseDto>
       (`${this.host}/${Urls.EQUIPMENT}`, equipmentRequestDto);
   }
 
-  public modifyEquipment(equipmentRequestDto: EquipmentRequestDto, equipmentId: number): Observable<EquipmentResponseDto | HttpErrorResponse> {
+  public modifyEquipment(equipmentRequestDto: EquipmentRequestDto, equipmentId: number): Observable<EquipmentResponseDto> {
     return this.httpClient
-      .put<EquipmentResponseDto | HttpErrorResponse>
+      .put<EquipmentResponseDto>
       (`${this.host}/${Urls.EQUIPMENT}/${equipmentId}`, equipmentRequestDto);
   }
 
-  public deleteEquipment(equipmentId: number): Observable<any | HttpErrorResponse> {
+  public deleteEquipment(equipmentId: number): Observable<any> {
     return this.httpClient
-      .delete<any | HttpErrorResponse>
+      .delete<any>
       (`${this.host}/${Urls.EQUIPMENT}/${equipmentId}`);
   }
 

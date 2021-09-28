@@ -16,19 +16,24 @@ import { RoomComponent } from './component/room/room.component';
 import { ReservationComponent } from './component/reservation/reservation.component';
 import { EquipmentComponent } from './component/equipment/equipment.component';
 import { ProfileComponent } from './component/profile/profile.component';
+import {ModifyFormComponent} from "./component/user/modify-form/modify-form.component";
+import { EquipmentFormComponent } from './component/equipment/equipment-form/equipment-form.component';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    LoginComponent,
-    MenuComponent,
-    RegisterComponent,
-    UserComponent,
-    RoomComponent,
-    ReservationComponent,
-    EquipmentComponent,
-    ProfileComponent
-  ],
+    declarations: [
+        AppComponent,
+        LoginComponent,
+        MenuComponent,
+        RegisterComponent,
+        UserComponent,
+        RoomComponent,
+        ReservationComponent,
+        EquipmentComponent,
+        ProfileComponent,
+        ModifyFormComponent,
+        ModifyFormComponent,
+        EquipmentFormComponent
+    ],
     imports: [
         BrowserModule,
         AppRoutingModule,

@@ -1,0 +1,14 @@
+<div *ngIf="display" style="text-align: center; margin-left: 32%">
+  <div style="margin: 8px; background-color: lightblue; border-radius: 3px; width: 50%">
+    <form (ngSubmit)="performSubmit()">
+      <input [formControl]="name" class="form-control form-control-sm" type="text" placeholder="Name">
+      <input [formControl]="description" class="form-control form-control-sm" type="text" placeholder="Description">
+      <label for="roomNumber">Room Number</label>
+      <select class="form-control" id="roomNumber" [formControl]="roomNumber">
+        <option *ngFor="let number of roomNumbersList">{{number}}</option>
+      </select>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>
+

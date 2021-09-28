@@ -66,7 +66,7 @@ public class EquipmentService {
     @Transactional
     public void deleteEquipmentById(Integer equipmentId) {
         Equipment equipment = equipmentRepository.findById(equipmentId)
-                .orElseThrow(() -> new NoSuchElementException("Equipment Of given Id does not exist"));
+                .orElseThrow(() -> new NoSuchElementException("Equipment of given Id does not exist"));
 
         equipmentRepository.delete(equipment);
     }
@@ -76,7 +76,7 @@ public class EquipmentService {
         validator.validate(equipmentRequestDto);
 
         Equipment equipment = equipmentRepository.findById(equipmentId)
-                .orElseThrow(() -> new NoSuchElementException("Equipment Of given Id does not exist"));
+                .orElseThrow(() -> new NoSuchElementException("Equipment of given Id does not exist"));
 
         // Set new room number
         if (equipmentRequestDto.getRoomNumber() != null) {

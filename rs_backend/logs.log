@@ -1,27 +1,25 @@
-2021-09-27 08:20:00.059  INFO 1280 --- [main] p.a.r.t.integration.EquipmentApiTest     : Starting EquipmentApiTest using Java 13.0.1 on DESKTOP-NJEN35A with PID 1280 (started by Adam Baranowski in C:\Users\Adam Baranowski\Desktop\Praca_Dyplomowa\reservation_system\rs_backend)
-2021-09-27 08:20:00.072  INFO 1280 --- [main] p.a.r.t.integration.EquipmentApiTest     : No active profile set, falling back to default profiles: default
-2021-09-27 08:20:01.684  INFO 1280 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-09-27 08:20:01.807  INFO 1280 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 114 ms. Found 5 JPA repository interfaces.
-2021-09-27 08:20:02.808  INFO 1280 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-09-27 08:20:03.066  INFO 1280 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-09-27 08:20:03.179  INFO 1280 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-09-27 08:20:03.265  INFO 1280 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
-2021-09-27 08:20:03.460  INFO 1280 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-09-27 08:20:03.974  INFO 1280 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2021-09-27 08:20:05.017  INFO 1280 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-09-27 08:20:05.024  INFO 1280 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-09-27 08:20:06.234  WARN 1280 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-09-27 08:20:07.132  INFO 1280 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
-2021-09-27 08:20:07.433  INFO 1280 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-2021-09-27 08:20:08.708  INFO 1280 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6a73b74c, org.springframework.security.web.context.SecurityContextPersistenceFilter@32441ed4, org.springframework.security.web.header.HeaderWriterFilter@f507d33, org.springframework.security.web.authentication.logout.LogoutFilter@7acb0a44, pl.adambaranowski.rsbackend.security.filter.JwtFilter@3ce74930, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@25e01756, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1227862a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@4c58212, org.springframework.security.web.session.SessionManagementFilter@7a461744, org.springframework.security.web.access.ExceptionTranslationFilter@34ccce55, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7262532a]
-2021-09-27 08:20:08.825  INFO 1280 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2021-09-27 08:20:08.826  INFO 1280 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2021-09-27 08:20:08.827  INFO 1280 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2021-09-27 08:20:09.412  INFO 1280 --- [main] p.a.r.t.integration.EquipmentApiTest     : Started EquipmentApiTest in 9.685 seconds (JVM running for 10.822)
-2021-09-27 08:20:10.366  INFO 1280 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
-
- Invoked controller: class org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint 
-
+2021-09-28 14:15:47.208  INFO 16448 --- [main] p.a.r.t.integration.EquipmentApiTest     : Starting EquipmentApiTest using Java 13.0.1 on DESKTOP-NJEN35A with PID 16448 (started by Adam Baranowski in C:\Users\Adam Baranowski\Desktop\Praca_Dyplomowa\reservation_system_app\rs_backend)
+2021-09-28 14:15:47.218  INFO 16448 --- [main] p.a.r.t.integration.EquipmentApiTest     : No active profile set, falling back to default profiles: default
+2021-09-28 14:15:49.019  INFO 16448 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-09-28 14:15:49.143  INFO 16448 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 113 ms. Found 5 JPA repository interfaces.
+2021-09-28 14:15:50.239  INFO 16448 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-09-28 14:15:50.539  INFO 16448 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-09-28 14:15:50.659  INFO 16448 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-09-28 14:15:50.745  INFO 16448 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-09-28 14:15:50.953  INFO 16448 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-09-28 14:15:51.435  INFO 16448 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-09-28 14:15:52.407  INFO 16448 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-09-28 14:15:52.416  INFO 16448 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-09-28 14:15:53.706  WARN 16448 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-09-28 14:15:54.675  INFO 16448 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2021-09-28 14:15:55.027  INFO 16448 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2021-09-28 14:15:56.302  INFO 16448 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@5524e471, org.springframework.security.web.context.SecurityContextPersistenceFilter@6f371390, org.springframework.security.web.header.HeaderWriterFilter@734d870f, org.springframework.web.filter.CorsFilter@3b6d94fc, org.springframework.security.web.authentication.logout.LogoutFilter@793577e0, pl.adambaranowski.rsbackend.security.filter.JwtFilter@71c77042, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7424a39e, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@35ca0dac, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@665fb1d8, org.springframework.security.web.session.SessionManagementFilter@79143853, org.springframework.security.web.access.ExceptionTranslationFilter@251d64d6, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@24c6a471]
+2021-09-28 14:15:56.489  INFO 16448 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-09-28 14:15:56.490  INFO 16448 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-09-28 14:15:56.492  INFO 16448 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2021-09-28 14:15:57.042  INFO 16448 --- [main] p.a.r.t.integration.EquipmentApiTest     : Started EquipmentApiTest in 10.277 seconds (JVM running for 11.746)
+2021-09-28 14:15:58.206  INFO 16448 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.login(pl.adambaranowski.rsbackend.model.dto.LoginRequestDto) 
  With params: 
  class LoginRequestDto {
     email: testadmin@gmail.com
@@ -30,34 +28,16 @@
  
  By User: 
  anonymousUser 
-
-2021-09-27 08:20:10.670  INFO 1280 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
-
- Invoked controller: class org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint 
-
- With params: 
- 5
- 
- By User: 
- testadmin@gmail.com 
-
-2021-09-27 08:20:10.855  INFO 1280 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
-
- Invoked controller: class org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint 
-
- With params: 
- class LoginRequestDto {
+ Returned: <200 OK OK,class LoginResponseDto {
+    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW5AZ21haWwuY29tIiwiZXhwIjoxNjMyODMyMTU4fQ.MaS37LsU27NXZ7gI6br1b95R9hq6zHxhP1xMdo1o3aM
+    userId: 4
+    userNick: testAdmin
     email: testadmin@gmail.com
-    password: testAdmin
-}
- 
- By User: 
- anonymousUser 
-
-2021-09-27 08:20:10.980  INFO 1280 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
-
- Invoked controller: class org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint 
-
+    authorities: [ADMIN]
+},[]>
+2021-09-28 14:15:58.250  INFO 16448 --- [main] p.a.rsbackend.service.EquipmentService   : ADDED NEW EQUIPMENT
+2021-09-28 14:15:58.251  INFO 16448 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.EquipmentController.addNewEquipmentItem(pl.adambaranowski.rsbackend.model.dto.EquipmentRequestDto) 
  With params: 
  class EquipmentRequestDto {
     name: Equipment
@@ -67,100 +47,44 @@
  
  By User: 
  testadmin@gmail.com 
-
-2021-09-27 08:20:10.986  INFO 1280 --- [main] p.a.rsbackend.service.EquipmentService   : ADDED NEW EQUIPMENT
-2021-09-27 08:20:11.107  INFO 1280 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
-
- Invoked controller: class org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint 
-
- With params: 
- class LoginRequestDto {
-    email: testadmin@gmail.com
-    password: testAdmin
-}
- 
- By User: 
- anonymousUser 
-
-2021-09-27 08:20:11.195  INFO 1280 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
-
- Invoked controller: class org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint 
-
- With params: 
-  
- By User: 
- testadmin@gmail.com 
-
-2021-09-27 08:20:11.297  INFO 1280 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
-
- Invoked controller: class org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint 
-
- With params: 
- class LoginRequestDto {
-    email: testadmin@gmail.com
-    password: testAdmin
-}
- 
- By User: 
- anonymousUser 
-
-2021-09-27 08:20:11.381  INFO 1280 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
-
- Invoked controller: class org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint 
-
- With params: 
- 9
-class EquipmentRequestDto {
-    name: updatedEq
-    description: updatedDes
-    roomNumber: 2137
-}
- 
- By User: 
- testadmin@gmail.com 
-
-2021-09-27 08:20:11.393  INFO 1280 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
-
- Invoked controller: class org.springframework.aop.aspectj.MethodInvocationProceedingJoinPoint 
-
- With params: 
- 9
- 
- By User: 
- testadmin@gmail.com 
-
-2021-09-27 08:20:11.814  INFO 1280 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-09-27 08:20:11.816  INFO 1280 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
-2021-09-27 08:20:11.818  WARN 1280 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
-2021-09-27 08:20:11.818 ERROR 1280 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : Baza danych jest ju� zamkni�ta (aby zablokowa� samoczynne zamykanie podczas zamkni�cia VM dodaj ";DB_CLOSE_ON_EXIT=FALSE" do URL bazy danych)
+ Returned: <201 CREATED Created,class EquipmentResponseDto {
+    id: 5
+    name: Equipment
+    description: Test equipment
+    roomNumber: 22
+},[]>
+2021-09-28 14:15:58.296  INFO 16448 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-09-28 14:15:58.298  INFO 16448 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2021-09-28 14:15:58.300  WARN 16448 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
+2021-09-28 14:15:58.301 ERROR 16448 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : Baza danych jest już zamknięta (aby zablokować samoczynne zamykanie podczas zamknięcia VM dodaj ";DB_CLOSE_ON_EXIT=FALSE" do URL bazy danych)
 Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
-2021-09-27 08:20:11.820  WARN 1280 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
-2021-09-27 08:20:11.820 ERROR 1280 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : Baza danych jest ju� zamkni�ta (aby zablokowa� samoczynne zamykanie podczas zamkni�cia VM dodaj ";DB_CLOSE_ON_EXIT=FALSE" do URL bazy danych)
+2021-09-28 14:15:58.302  WARN 16448 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
+2021-09-28 14:15:58.302 ERROR 16448 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : Baza danych jest już zamknięta (aby zablokować samoczynne zamykanie podczas zamknięcia VM dodaj ";DB_CLOSE_ON_EXIT=FALSE" do URL bazy danych)
 Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
-2021-09-27 08:20:11.820  WARN 1280 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'entityManagerFactory': org.hibernate.exception.JDBCConnectionException: Unable to release JDBC Connection used for DDL execution
-2021-09-27 08:20:11.821  INFO 1280 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-09-27 08:20:11.826  INFO 1280 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-09-27 08:25:44.780  INFO 9352 --- [main] p.a.r.t.integration.EquipmentApiTest     : Starting EquipmentApiTest using Java 13.0.1 on DESKTOP-NJEN35A with PID 9352 (started by Adam Baranowski in C:\Users\Adam Baranowski\Desktop\Praca_Dyplomowa\reservation_system\rs_backend)
-2021-09-27 08:25:44.784  INFO 9352 --- [main] p.a.r.t.integration.EquipmentApiTest     : No active profile set, falling back to default profiles: default
-2021-09-27 08:25:46.247  INFO 9352 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-09-27 08:25:46.356  INFO 9352 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 101 ms. Found 5 JPA repository interfaces.
-2021-09-27 08:25:47.379  INFO 9352 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-09-27 08:25:47.606  INFO 9352 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-09-27 08:25:47.699  INFO 9352 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-09-27 08:25:47.782  INFO 9352 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
-2021-09-27 08:25:47.947  INFO 9352 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-09-27 08:25:48.433  INFO 9352 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2021-09-27 08:25:49.403  INFO 9352 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-09-27 08:25:49.415  INFO 9352 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-09-27 08:25:50.616  WARN 9352 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-09-27 08:25:51.557  INFO 9352 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
-2021-09-27 08:25:51.851  INFO 9352 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-2021-09-27 08:25:53.252  INFO 9352 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@4c821dc7, org.springframework.security.web.context.SecurityContextPersistenceFilter@641bd93e, org.springframework.security.web.header.HeaderWriterFilter@7e544223, org.springframework.web.filter.CorsFilter@4390b78f, org.springframework.security.web.authentication.logout.LogoutFilter@247added, pl.adambaranowski.rsbackend.security.filter.JwtFilter@230ea983, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@32441ed4, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@55a46bf3, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@70290678, org.springframework.security.web.session.SessionManagementFilter@1fc02a84, org.springframework.security.web.access.ExceptionTranslationFilter@71ea9a0d, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3cc7cf58]
-2021-09-27 08:25:53.377  INFO 9352 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2021-09-27 08:25:53.377  INFO 9352 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2021-09-27 08:25:53.379  INFO 9352 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
-2021-09-27 08:25:53.981  INFO 9352 --- [main] p.a.r.t.integration.EquipmentApiTest     : Started EquipmentApiTest in 9.513 seconds (JVM running for 10.589)
-2021-09-27 08:25:55.260  INFO 9352 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+2021-09-28 14:15:58.302  WARN 16448 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'entityManagerFactory': org.hibernate.exception.JDBCConnectionException: Unable to release JDBC Connection used for DDL execution
+2021-09-28 14:15:58.302  INFO 16448 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-09-28 14:15:58.307  INFO 16448 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-09-28 14:16:46.778  INFO 14644 --- [main] p.a.r.t.integration.EquipmentApiTest     : Starting EquipmentApiTest using Java 13.0.1 on DESKTOP-NJEN35A with PID 14644 (started by Adam Baranowski in C:\Users\Adam Baranowski\Desktop\Praca_Dyplomowa\reservation_system_app\rs_backend)
+2021-09-28 14:16:46.781  INFO 14644 --- [main] p.a.r.t.integration.EquipmentApiTest     : No active profile set, falling back to default profiles: default
+2021-09-28 14:16:48.268  INFO 14644 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-09-28 14:16:48.384  INFO 14644 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 107 ms. Found 5 JPA repository interfaces.
+2021-09-28 14:16:49.354  INFO 14644 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-09-28 14:16:49.577  INFO 14644 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-09-28 14:16:49.671  INFO 14644 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-09-28 14:16:49.750  INFO 14644 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-09-28 14:16:49.934  INFO 14644 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-09-28 14:16:50.417  INFO 14644 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-09-28 14:16:51.352  INFO 14644 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-09-28 14:16:51.360  INFO 14644 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-09-28 14:16:52.567  WARN 14644 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-09-28 14:16:53.548  INFO 14644 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2021-09-28 14:16:53.834  INFO 14644 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2021-09-28 14:16:55.059  INFO 14644 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@64934acd, org.springframework.security.web.context.SecurityContextPersistenceFilter@4664cd32, org.springframework.security.web.header.HeaderWriterFilter@4ec1192f, org.springframework.web.filter.CorsFilter@480b785a, org.springframework.security.web.authentication.logout.LogoutFilter@295f115d, pl.adambaranowski.rsbackend.security.filter.JwtFilter@35427786, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@541ea657, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@4ef12d7e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6554f841, org.springframework.security.web.session.SessionManagementFilter@186f7553, org.springframework.security.web.access.ExceptionTranslationFilter@76e5d5e5, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6e6bb211]
+2021-09-28 14:16:55.182  INFO 14644 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-09-28 14:16:55.182  INFO 14644 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-09-28 14:16:55.184  INFO 14644 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2021-09-28 14:16:55.769  INFO 14644 --- [main] p.a.r.t.integration.EquipmentApiTest     : Started EquipmentApiTest in 9.41 seconds (JVM running for 10.742)
+2021-09-28 14:16:56.944  INFO 14644 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
  Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.login(pl.adambaranowski.rsbackend.model.dto.LoginRequestDto) 
  With params: 
  class LoginRequestDto {
@@ -171,26 +95,20 @@ Database is already closed (to disable automatic closing at VM shutdown, add ";D
  By User: 
  anonymousUser 
  Returned: <200 OK OK,class LoginResponseDto {
-    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW5AZ21haWwuY29tIiwiZXhwIjoxNjMyNzI0NzU1fQ.rzUGSvsIhZBJewG5zHXdgofIHQ4yfj9jxK0nHEL1X-0
+    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW5AZ21haWwuY29tIiwiZXhwIjoxNjMyODMyMjE2fQ.ek1bmRjKUlc6S9m16_XttbChCbDTpgw0_GMsKVWX3NU
     userId: 4
     userNick: testAdmin
     email: testadmin@gmail.com
     authorities: [ADMIN]
 },[]>
-2021-09-27 08:25:55.311  INFO 9352 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
- Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.EquipmentController.getEquipmentItemById(java.lang.Integer) 
- With params: 
- 5
+2021-09-28 14:16:56.979  INFO 14644 --- [main] p.a.rsbackend.loging.ExceptionsLogger    : 
+
+ Exception occurred: pl.adambaranowski.rsbackend.exception.WrongDtoException
  
  By User: 
  testadmin@gmail.com 
- Returned: <200 OK OK,class EquipmentResponseDto {
-    id: 5
-    name: eq
-    description: des
-    roomNumber: 2137
-},[]>
-2021-09-27 08:25:55.566  INFO 9352 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+
+2021-09-28 14:16:57.213  INFO 14644 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
  Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.login(pl.adambaranowski.rsbackend.model.dto.LoginRequestDto) 
  With params: 
  class LoginRequestDto {
@@ -201,14 +119,38 @@ Database is already closed (to disable automatic closing at VM shutdown, add ";D
  By User: 
  anonymousUser 
  Returned: <200 OK OK,class LoginResponseDto {
-    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW5AZ21haWwuY29tIiwiZXhwIjoxNjMyNzI0NzU1fQ.rzUGSvsIhZBJewG5zHXdgofIHQ4yfj9jxK0nHEL1X-0
+    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW5AZ21haWwuY29tIiwiZXhwIjoxNjMyODMyMjE3fQ.OThOZcdzF4dwbYzRi6d5IbtvGpVPOiR47hIuOpTYP7g
     userId: 5
     userNick: testAdmin
     email: testadmin@gmail.com
     authorities: [ADMIN]
 },[]>
-2021-09-27 08:25:55.587  INFO 9352 --- [main] p.a.rsbackend.service.EquipmentService   : ADDED NEW EQUIPMENT
-2021-09-27 08:25:55.587  INFO 9352 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+2021-09-28 14:16:57.242  INFO 14644 --- [main] p.a.rsbackend.loging.ExceptionsLogger    : 
+
+ Exception occurred: java.util.NoSuchElementException: Equipment Of given Id does not exist
+ 
+ By User: 
+ testadmin@gmail.com 
+
+2021-09-28 14:16:57.417  INFO 14644 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.login(pl.adambaranowski.rsbackend.model.dto.LoginRequestDto) 
+ With params: 
+ class LoginRequestDto {
+    email: testadmin@gmail.com
+    password: testAdmin
+}
+ 
+ By User: 
+ anonymousUser 
+ Returned: <200 OK OK,class LoginResponseDto {
+    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW5AZ21haWwuY29tIiwiZXhwIjoxNjMyODMyMjE3fQ.OThOZcdzF4dwbYzRi6d5IbtvGpVPOiR47hIuOpTYP7g
+    userId: 6
+    userNick: testAdmin
+    email: testadmin@gmail.com
+    authorities: [ADMIN]
+},[]>
+2021-09-28 14:16:57.428  INFO 14644 --- [main] p.a.rsbackend.service.EquipmentService   : ADDED NEW EQUIPMENT
+2021-09-28 14:16:57.429  INFO 14644 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
  Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.EquipmentController.addNewEquipmentItem(pl.adambaranowski.rsbackend.model.dto.EquipmentRequestDto) 
  With params: 
  class EquipmentRequestDto {
@@ -225,7 +167,7 @@ Database is already closed (to disable automatic closing at VM shutdown, add ";D
     description: Test equipment
     roomNumber: 22
 },[]>
-2021-09-27 08:25:55.806  INFO 9352 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+2021-09-28 14:16:57.597  INFO 14644 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
  Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.login(pl.adambaranowski.rsbackend.model.dto.LoginRequestDto) 
  With params: 
  class LoginRequestDto {
@@ -236,30 +178,78 @@ Database is already closed (to disable automatic closing at VM shutdown, add ";D
  By User: 
  anonymousUser 
  Returned: <200 OK OK,class LoginResponseDto {
-    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW5AZ21haWwuY29tIiwiZXhwIjoxNjMyNzI0NzU1fQ.rzUGSvsIhZBJewG5zHXdgofIHQ4yfj9jxK0nHEL1X-0
-    userId: 6
+    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW5AZ21haWwuY29tIiwiZXhwIjoxNjMyODMyMjE3fQ.OThOZcdzF4dwbYzRi6d5IbtvGpVPOiR47hIuOpTYP7g
+    userId: 7
     userNick: testAdmin
     email: testadmin@gmail.com
     authorities: [ADMIN]
 },[]>
-2021-09-27 08:25:55.823  INFO 9352 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+2021-09-28 14:16:57.604  INFO 14644 --- [main] p.a.rsbackend.loging.ExceptionsLogger    : 
+
+ Exception occurred: pl.adambaranowski.rsbackend.exception.WrongDtoException
+ 
+ By User: 
+ testadmin@gmail.com 
+
+2021-09-28 14:16:57.756  INFO 14644 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.login(pl.adambaranowski.rsbackend.model.dto.LoginRequestDto) 
+ With params: 
+ class LoginRequestDto {
+    email: testadmin@gmail.com
+    password: testAdmin
+}
+ 
+ By User: 
+ anonymousUser 
+ Returned: <200 OK OK,class LoginResponseDto {
+    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW5AZ21haWwuY29tIiwiZXhwIjoxNjMyODMyMjE3fQ.OThOZcdzF4dwbYzRi6d5IbtvGpVPOiR47hIuOpTYP7g
+    userId: 8
+    userNick: testAdmin
+    email: testadmin@gmail.com
+    authorities: [ADMIN]
+},[]>
+2021-09-28 14:16:57.768  INFO 14644 --- [main] p.a.rsbackend.loging.ExceptionsLogger    : 
+
+ Exception occurred: pl.adambaranowski.rsbackend.exception.WrongDtoException
+ 
+ By User: 
+ testadmin@gmail.com 
+
+2021-09-28 14:16:57.931  INFO 14644 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.login(pl.adambaranowski.rsbackend.model.dto.LoginRequestDto) 
+ With params: 
+ class LoginRequestDto {
+    email: testadmin@gmail.com
+    password: testAdmin
+}
+ 
+ By User: 
+ anonymousUser 
+ Returned: <200 OK OK,class LoginResponseDto {
+    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW5AZ21haWwuY29tIiwiZXhwIjoxNjMyODMyMjE3fQ.OThOZcdzF4dwbYzRi6d5IbtvGpVPOiR47hIuOpTYP7g
+    userId: 9
+    userNick: testAdmin
+    email: testadmin@gmail.com
+    authorities: [ADMIN]
+},[]>
+2021-09-28 14:16:57.943  INFO 14644 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
  Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.EquipmentController.getAllEquipmentItems() 
  With params: 
   
  By User: 
  testadmin@gmail.com 
  Returned: <200 OK OK,[class EquipmentResponseDto {
-    id: 7
+    id: 8
     name: eq1
     description: des1
     roomNumber: 2137
 }, class EquipmentResponseDto {
-    id: 8
+    id: 9
     name: eq2
     description: des2
     roomNumber: 2137
 }],[]>
-2021-09-27 08:25:56.013  INFO 9352 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+2021-09-28 14:16:58.161  INFO 14644 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
  Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.login(pl.adambaranowski.rsbackend.model.dto.LoginRequestDto) 
  With params: 
  class LoginRequestDto {
@@ -270,16 +260,16 @@ Database is already closed (to disable automatic closing at VM shutdown, add ";D
  By User: 
  anonymousUser 
  Returned: <200 OK OK,class LoginResponseDto {
-    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW5AZ21haWwuY29tIiwiZXhwIjoxNjMyNzI0NzU2fQ.rPWZEPV4qZVWFfKAInWhqdyuJF7yDYN_OqsQ1jmQo6A
-    userId: 7
+    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW5AZ21haWwuY29tIiwiZXhwIjoxNjMyODMyMjE4fQ.RjWYE1ivCiQOK1uHwSS2EaiyBnLgKKPBXGedjjxL5ic
+    userId: 10
     userNick: testAdmin
     email: testadmin@gmail.com
     authorities: [ADMIN]
 },[]>
-2021-09-27 08:25:56.028  INFO 9352 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+2021-09-28 14:16:58.190  INFO 14644 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
  Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.EquipmentController.updateEquipmentItemById(java.lang.Integer,pl.adambaranowski.rsbackend.model.dto.EquipmentRequestDto) 
  With params: 
- 9
+ 10
 class EquipmentRequestDto {
     name: updatedEq
     description: updatedDes
@@ -289,49 +279,12 @@ class EquipmentRequestDto {
  By User: 
  testadmin@gmail.com 
  Returned: <200 OK OK,class EquipmentResponseDto {
-    id: 9
+    id: 10
     name: updatedEq
     description: updatedDes
     roomNumber: 2137
 },[]>
-2021-09-27 08:25:56.039  INFO 9352 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
- Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.EquipmentController.getEquipmentItemById(java.lang.Integer) 
- With params: 
- 9
- 
- By User: 
- testadmin@gmail.com 
- Returned: <200 OK OK,class EquipmentResponseDto {
-    id: 9
-    name: updatedEq
-    description: updatedDes
-    roomNumber: 2137
-},[]>
-2021-09-27 08:25:56.597  INFO 9352 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-09-27 08:25:56.599  INFO 9352 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
-2021-09-27 08:25:56.607  INFO 9352 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-09-27 08:25:56.611  INFO 9352 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
-2021-09-27 08:26:31.908  INFO 19088 --- [main] p.a.r.t.integration.EquipmentApiTest     : Starting EquipmentApiTest using Java 13.0.1 on DESKTOP-NJEN35A with PID 19088 (started by Adam Baranowski in C:\Users\Adam Baranowski\Desktop\Praca_Dyplomowa\reservation_system\rs_backend)
-2021-09-27 08:26:31.912  INFO 19088 --- [main] p.a.r.t.integration.EquipmentApiTest     : No active profile set, falling back to default profiles: default
-2021-09-27 08:26:33.411  INFO 19088 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-09-27 08:26:33.519  INFO 19088 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 99 ms. Found 5 JPA repository interfaces.
-2021-09-27 08:26:34.411  INFO 19088 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-09-27 08:26:34.653  INFO 19088 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-09-27 08:26:34.774  INFO 19088 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-09-27 08:26:34.860  INFO 19088 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
-2021-09-27 08:26:35.046  INFO 19088 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-09-27 08:26:35.492  INFO 19088 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2021-09-27 08:26:36.428  INFO 19088 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-09-27 08:26:36.437  INFO 19088 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-09-27 08:26:37.531  WARN 19088 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-09-27 08:26:38.451  INFO 19088 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
-2021-09-27 08:26:38.739  INFO 19088 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-2021-09-27 08:26:40.002  INFO 19088 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@6cc91654, org.springframework.security.web.context.SecurityContextPersistenceFilter@32441ed4, org.springframework.security.web.header.HeaderWriterFilter@f507d33, org.springframework.web.filter.CorsFilter@3c72c488, org.springframework.security.web.authentication.logout.LogoutFilter@7acb0a44, pl.adambaranowski.rsbackend.security.filter.JwtFilter@290ebbbe, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@25e01756, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@1227862a, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7ae2f5b6, org.springframework.security.web.session.SessionManagementFilter@7a461744, org.springframework.security.web.access.ExceptionTranslationFilter@34ccce55, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@3d2a164e]
-2021-09-27 08:26:40.131  INFO 19088 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
-2021-09-27 08:26:40.131  INFO 19088 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
-2021-09-27 08:26:40.133  INFO 19088 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
-2021-09-27 08:26:40.710  INFO 19088 --- [main] p.a.r.t.integration.EquipmentApiTest     : Started EquipmentApiTest in 9.094 seconds (JVM running for 10.091)
-2021-09-27 08:26:41.913  INFO 19088 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+2021-09-28 14:16:58.436  INFO 14644 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
  Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.login(pl.adambaranowski.rsbackend.model.dto.LoginRequestDto) 
  With params: 
  class LoginRequestDto {
@@ -342,26 +295,178 @@ class EquipmentRequestDto {
  By User: 
  anonymousUser 
  Returned: <200 OK OK,class LoginResponseDto {
-    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW5AZ21haWwuY29tIiwiZXhwIjoxNjMyNzI0ODAxfQ.ME3qPZ_HhGgoIf-ZjjbN4h-S5B3D_6QvkupqqtQR6Io
+    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW5AZ21haWwuY29tIiwiZXhwIjoxNjMyODMyMjE4fQ.RjWYE1ivCiQOK1uHwSS2EaiyBnLgKKPBXGedjjxL5ic
+    userId: 11
+    userNick: testAdmin
+    email: testadmin@gmail.com
+    authorities: [ADMIN]
+},[]>
+2021-09-28 14:16:58.463  INFO 14644 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.EquipmentController.deleteEquipmentItemById(java.lang.Integer) 
+ With params: 
+ 11
+ 
+ By User: 
+ testadmin@gmail.com 
+ Returned: <200 OK OK,[]>
+2021-09-28 14:16:58.711  INFO 14644 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.login(pl.adambaranowski.rsbackend.model.dto.LoginRequestDto) 
+ With params: 
+ class LoginRequestDto {
+    email: testadmin@gmail.com
+    password: testAdmin
+}
+ 
+ By User: 
+ anonymousUser 
+ Returned: <200 OK OK,class LoginResponseDto {
+    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW5AZ21haWwuY29tIiwiZXhwIjoxNjMyODMyMjE4fQ.RjWYE1ivCiQOK1uHwSS2EaiyBnLgKKPBXGedjjxL5ic
+    userId: 12
+    userNick: testAdmin
+    email: testadmin@gmail.com
+    authorities: [ADMIN]
+},[]>
+2021-09-28 14:16:58.720  INFO 14644 --- [main] p.a.rsbackend.loging.ExceptionsLogger    : 
+
+ Exception occurred: java.util.NoSuchElementException: Equipment of given Id does not exist
+ 
+ By User: 
+ testadmin@gmail.com 
+
+2021-09-28 14:16:58.873  INFO 14644 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.login(pl.adambaranowski.rsbackend.model.dto.LoginRequestDto) 
+ With params: 
+ class LoginRequestDto {
+    email: testadmin@gmail.com
+    password: testAdmin
+}
+ 
+ By User: 
+ anonymousUser 
+ Returned: <200 OK OK,class LoginResponseDto {
+    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW5AZ21haWwuY29tIiwiZXhwIjoxNjMyODMyMjE4fQ.RjWYE1ivCiQOK1uHwSS2EaiyBnLgKKPBXGedjjxL5ic
+    userId: 13
+    userNick: testAdmin
+    email: testadmin@gmail.com
+    authorities: [ADMIN]
+},[]>
+2021-09-28 14:16:58.884  INFO 14644 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.EquipmentController.getEquipmentItemById(java.lang.Integer) 
+ With params: 
+ 13
+ 
+ By User: 
+ testadmin@gmail.com 
+ Returned: <200 OK OK,class EquipmentResponseDto {
+    id: 13
+    name: eq
+    description: des
+    roomNumber: 2137
+},[]>
+2021-09-28 14:16:59.038  INFO 14644 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.login(pl.adambaranowski.rsbackend.model.dto.LoginRequestDto) 
+ With params: 
+ class LoginRequestDto {
+    email: testadmin@gmail.com
+    password: testAdmin
+}
+ 
+ By User: 
+ anonymousUser 
+ Returned: <200 OK OK,class LoginResponseDto {
+    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW5AZ21haWwuY29tIiwiZXhwIjoxNjMyODMyMjE5fQ.WVxeiKssPFUfvCBOdl650C7KDw2_I5mwfXCsHjv0tqs
+    userId: 14
+    userNick: testAdmin
+    email: testadmin@gmail.com
+    authorities: [ADMIN]
+},[]>
+2021-09-28 14:16:59.046  INFO 14644 --- [main] p.a.rsbackend.loging.ExceptionsLogger    : 
+
+ Exception occurred: pl.adambaranowski.rsbackend.exception.WrongDtoException
+ 
+ By User: 
+ testadmin@gmail.com 
+
+2021-09-28 14:16:59.199  INFO 14644 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.login(pl.adambaranowski.rsbackend.model.dto.LoginRequestDto) 
+ With params: 
+ class LoginRequestDto {
+    email: testadmin@gmail.com
+    password: testAdmin
+}
+ 
+ By User: 
+ anonymousUser 
+ Returned: <200 OK OK,class LoginResponseDto {
+    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW5AZ21haWwuY29tIiwiZXhwIjoxNjMyODMyMjE5fQ.WVxeiKssPFUfvCBOdl650C7KDw2_I5mwfXCsHjv0tqs
+    userId: 15
+    userNick: testAdmin
+    email: testadmin@gmail.com
+    authorities: [ADMIN]
+},[]>
+2021-09-28 14:16:59.211  INFO 14644 --- [main] p.a.rsbackend.loging.ExceptionsLogger    : 
+
+ Exception occurred: java.util.NoSuchElementException: Equipment Of given Id does not exist
+ 
+ By User: 
+ testadmin@gmail.com 
+
+2021-09-28 14:16:59.228  INFO 14644 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-09-28 14:16:59.231  INFO 14644 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2021-09-28 14:16:59.232  WARN 14644 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
+2021-09-28 14:16:59.233 ERROR 14644 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : Baza danych jest już zamknięta (aby zablokować samoczynne zamykanie podczas zamknięcia VM dodaj ";DB_CLOSE_ON_EXIT=FALSE" do URL bazy danych)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-09-28 14:16:59.234  WARN 14644 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
+2021-09-28 14:16:59.234 ERROR 14644 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : Baza danych jest już zamknięta (aby zablokować samoczynne zamykanie podczas zamknięcia VM dodaj ";DB_CLOSE_ON_EXIT=FALSE" do URL bazy danych)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-09-28 14:16:59.234  WARN 14644 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'entityManagerFactory': org.hibernate.exception.JDBCConnectionException: Unable to release JDBC Connection used for DDL execution
+2021-09-28 14:16:59.234  INFO 14644 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-09-28 14:16:59.239  INFO 14644 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-09-28 14:21:42.182  INFO 11928 --- [main] p.a.r.t.integration.EquipmentApiTest     : Starting EquipmentApiTest using Java 13.0.1 on DESKTOP-NJEN35A with PID 11928 (started by Adam Baranowski in C:\Users\Adam Baranowski\Desktop\Praca_Dyplomowa\reservation_system_app\rs_backend)
+2021-09-28 14:21:42.184  INFO 11928 --- [main] p.a.r.t.integration.EquipmentApiTest     : No active profile set, falling back to default profiles: default
+2021-09-28 14:21:43.674  INFO 11928 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-09-28 14:21:43.783  INFO 11928 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 100 ms. Found 5 JPA repository interfaces.
+2021-09-28 14:21:44.897  INFO 11928 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-09-28 14:21:45.104  INFO 11928 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-09-28 14:21:45.208  INFO 11928 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-09-28 14:21:45.286  INFO 11928 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-09-28 14:21:45.453  INFO 11928 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-09-28 14:21:45.916  INFO 11928 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-09-28 14:21:46.882  INFO 11928 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-09-28 14:21:46.892  INFO 11928 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-09-28 14:21:48.229  WARN 11928 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-09-28 14:21:49.177  INFO 11928 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2021-09-28 14:21:49.471  INFO 11928 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2021-09-28 14:21:50.771  INFO 11928 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@36ba9aa3, org.springframework.security.web.context.SecurityContextPersistenceFilter@3f60ba06, org.springframework.security.web.header.HeaderWriterFilter@5327c503, org.springframework.web.filter.CorsFilter@54d5500e, org.springframework.security.web.authentication.logout.LogoutFilter@2138386f, pl.adambaranowski.rsbackend.security.filter.JwtFilter@1d1a706, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@73c25e8, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@5963a2c9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@5e136445, org.springframework.security.web.session.SessionManagementFilter@65595be7, org.springframework.security.web.access.ExceptionTranslationFilter@3aaeb65b, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@23e0ef68]
+2021-09-28 14:21:50.882  INFO 11928 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-09-28 14:21:50.882  INFO 11928 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-09-28 14:21:50.884  INFO 11928 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 1 ms
+2021-09-28 14:21:51.499  INFO 11928 --- [main] p.a.r.t.integration.EquipmentApiTest     : Started EquipmentApiTest in 9.653 seconds (JVM running for 10.945)
+2021-09-28 14:21:52.618  INFO 11928 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.login(pl.adambaranowski.rsbackend.model.dto.LoginRequestDto) 
+ With params: 
+ class LoginRequestDto {
+    email: testadmin@gmail.com
+    password: testAdmin
+}
+ 
+ By User: 
+ anonymousUser 
+ Returned: <200 OK OK,class LoginResponseDto {
+    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW5AZ21haWwuY29tIiwiZXhwIjoxNjMyODMyNTEyfQ.1ypFdEhPGIYO0JZkEjnhrjUWRD20A4g_E3OzffaObCc
     userId: 4
     userNick: testAdmin
     email: testadmin@gmail.com
     authorities: [ADMIN]
 },[]>
-2021-09-27 08:26:41.973  INFO 19088 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
- Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.EquipmentController.getEquipmentItemById(java.lang.Integer) 
- With params: 
- 5
+2021-09-28 14:21:52.647  INFO 11928 --- [main] p.a.rsbackend.loging.ExceptionsLogger    : 
+
+ Exception occurred: pl.adambaranowski.rsbackend.exception.WrongDtoException
  
  By User: 
  testadmin@gmail.com 
- Returned: <200 OK OK,class EquipmentResponseDto {
-    id: 5
-    name: eq
-    description: des
-    roomNumber: 2137
-},[]>
-2021-09-27 08:26:42.215  INFO 19088 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+
+2021-09-28 14:21:52.841  INFO 11928 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
  Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.login(pl.adambaranowski.rsbackend.model.dto.LoginRequestDto) 
  With params: 
  class LoginRequestDto {
@@ -372,14 +477,38 @@ class EquipmentRequestDto {
  By User: 
  anonymousUser 
  Returned: <200 OK OK,class LoginResponseDto {
-    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW5AZ21haWwuY29tIiwiZXhwIjoxNjMyNzI0ODAyfQ.N7hsgi4OEtUAWk_yQSNAIyCBvnQbex3jOTMwSkqLZxA
+    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW5AZ21haWwuY29tIiwiZXhwIjoxNjMyODMyNTEyfQ.1ypFdEhPGIYO0JZkEjnhrjUWRD20A4g_E3OzffaObCc
     userId: 5
     userNick: testAdmin
     email: testadmin@gmail.com
     authorities: [ADMIN]
 },[]>
-2021-09-27 08:26:42.230  INFO 19088 --- [main] p.a.rsbackend.service.EquipmentService   : ADDED NEW EQUIPMENT
-2021-09-27 08:26:42.231  INFO 19088 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+2021-09-28 14:21:52.863  INFO 11928 --- [main] p.a.rsbackend.loging.ExceptionsLogger    : 
+
+ Exception occurred: java.util.NoSuchElementException: Equipment Of given Id does not exist
+ 
+ By User: 
+ testadmin@gmail.com 
+
+2021-09-28 14:21:53.039  INFO 11928 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.login(pl.adambaranowski.rsbackend.model.dto.LoginRequestDto) 
+ With params: 
+ class LoginRequestDto {
+    email: testadmin@gmail.com
+    password: testAdmin
+}
+ 
+ By User: 
+ anonymousUser 
+ Returned: <200 OK OK,class LoginResponseDto {
+    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW5AZ21haWwuY29tIiwiZXhwIjoxNjMyODMyNTEzfQ.Dun227wv76znD6kcc_94Mul0OidBnwsoTgluyRPTjck
+    userId: 6
+    userNick: testAdmin
+    email: testadmin@gmail.com
+    authorities: [ADMIN]
+},[]>
+2021-09-28 14:21:53.049  INFO 11928 --- [main] p.a.rsbackend.service.EquipmentService   : ADDED NEW EQUIPMENT
+2021-09-28 14:21:53.050  INFO 11928 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
  Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.EquipmentController.addNewEquipmentItem(pl.adambaranowski.rsbackend.model.dto.EquipmentRequestDto) 
  With params: 
  class EquipmentRequestDto {
@@ -396,7 +525,7 @@ class EquipmentRequestDto {
     description: Test equipment
     roomNumber: 22
 },[]>
-2021-09-27 08:26:42.412  INFO 19088 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+2021-09-28 14:21:53.207  INFO 11928 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
  Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.login(pl.adambaranowski.rsbackend.model.dto.LoginRequestDto) 
  With params: 
  class LoginRequestDto {
@@ -407,30 +536,78 @@ class EquipmentRequestDto {
  By User: 
  anonymousUser 
  Returned: <200 OK OK,class LoginResponseDto {
-    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW5AZ21haWwuY29tIiwiZXhwIjoxNjMyNzI0ODAyfQ.N7hsgi4OEtUAWk_yQSNAIyCBvnQbex3jOTMwSkqLZxA
-    userId: 6
+    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW5AZ21haWwuY29tIiwiZXhwIjoxNjMyODMyNTEzfQ.Dun227wv76znD6kcc_94Mul0OidBnwsoTgluyRPTjck
+    userId: 7
     userNick: testAdmin
     email: testadmin@gmail.com
     authorities: [ADMIN]
 },[]>
-2021-09-27 08:26:42.428  INFO 19088 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+2021-09-28 14:21:53.213  INFO 11928 --- [main] p.a.rsbackend.loging.ExceptionsLogger    : 
+
+ Exception occurred: pl.adambaranowski.rsbackend.exception.WrongDtoException
+ 
+ By User: 
+ testadmin@gmail.com 
+
+2021-09-28 14:21:53.374  INFO 11928 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.login(pl.adambaranowski.rsbackend.model.dto.LoginRequestDto) 
+ With params: 
+ class LoginRequestDto {
+    email: testadmin@gmail.com
+    password: testAdmin
+}
+ 
+ By User: 
+ anonymousUser 
+ Returned: <200 OK OK,class LoginResponseDto {
+    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW5AZ21haWwuY29tIiwiZXhwIjoxNjMyODMyNTEzfQ.Dun227wv76znD6kcc_94Mul0OidBnwsoTgluyRPTjck
+    userId: 8
+    userNick: testAdmin
+    email: testadmin@gmail.com
+    authorities: [ADMIN]
+},[]>
+2021-09-28 14:21:53.398  INFO 11928 --- [main] p.a.rsbackend.loging.ExceptionsLogger    : 
+
+ Exception occurred: pl.adambaranowski.rsbackend.exception.WrongDtoException
+ 
+ By User: 
+ testadmin@gmail.com 
+
+2021-09-28 14:21:53.612  INFO 11928 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.login(pl.adambaranowski.rsbackend.model.dto.LoginRequestDto) 
+ With params: 
+ class LoginRequestDto {
+    email: testadmin@gmail.com
+    password: testAdmin
+}
+ 
+ By User: 
+ anonymousUser 
+ Returned: <200 OK OK,class LoginResponseDto {
+    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW5AZ21haWwuY29tIiwiZXhwIjoxNjMyODMyNTEzfQ.Dun227wv76znD6kcc_94Mul0OidBnwsoTgluyRPTjck
+    userId: 9
+    userNick: testAdmin
+    email: testadmin@gmail.com
+    authorities: [ADMIN]
+},[]>
+2021-09-28 14:21:53.630  INFO 11928 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
  Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.EquipmentController.getAllEquipmentItems() 
  With params: 
   
  By User: 
  testadmin@gmail.com 
  Returned: <200 OK OK,[class EquipmentResponseDto {
-    id: 7
+    id: 8
     name: eq1
     description: des1
     roomNumber: 2137
 }, class EquipmentResponseDto {
-    id: 8
+    id: 9
     name: eq2
     description: des2
     roomNumber: 2137
 }],[]>
-2021-09-27 08:26:42.606  INFO 19088 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+2021-09-28 14:21:53.830  INFO 11928 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
  Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.login(pl.adambaranowski.rsbackend.model.dto.LoginRequestDto) 
  With params: 
  class LoginRequestDto {
@@ -441,16 +618,16 @@ class EquipmentRequestDto {
  By User: 
  anonymousUser 
  Returned: <200 OK OK,class LoginResponseDto {
-    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW5AZ21haWwuY29tIiwiZXhwIjoxNjMyNzI0ODAyfQ.N7hsgi4OEtUAWk_yQSNAIyCBvnQbex3jOTMwSkqLZxA
-    userId: 7
+    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW5AZ21haWwuY29tIiwiZXhwIjoxNjMyODMyNTEzfQ.Dun227wv76znD6kcc_94Mul0OidBnwsoTgluyRPTjck
+    userId: 10
     userNick: testAdmin
     email: testadmin@gmail.com
     authorities: [ADMIN]
 },[]>
-2021-09-27 08:26:42.620  INFO 19088 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+2021-09-28 14:21:53.844  INFO 11928 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
  Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.EquipmentController.updateEquipmentItemById(java.lang.Integer,pl.adambaranowski.rsbackend.model.dto.EquipmentRequestDto) 
  With params: 
- 9
+ 10
 class EquipmentRequestDto {
     name: updatedEq
     description: updatedDes
@@ -460,25 +637,504 @@ class EquipmentRequestDto {
  By User: 
  testadmin@gmail.com 
  Returned: <200 OK OK,class EquipmentResponseDto {
-    id: 9
+    id: 10
     name: updatedEq
     description: updatedDes
     roomNumber: 2137
 },[]>
-2021-09-27 08:26:42.634  INFO 19088 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+2021-09-28 14:21:53.999  INFO 11928 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.login(pl.adambaranowski.rsbackend.model.dto.LoginRequestDto) 
+ With params: 
+ class LoginRequestDto {
+    email: testadmin@gmail.com
+    password: testAdmin
+}
+ 
+ By User: 
+ anonymousUser 
+ Returned: <200 OK OK,class LoginResponseDto {
+    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW5AZ21haWwuY29tIiwiZXhwIjoxNjMyODMyNTEzfQ.Dun227wv76znD6kcc_94Mul0OidBnwsoTgluyRPTjck
+    userId: 11
+    userNick: testAdmin
+    email: testadmin@gmail.com
+    authorities: [ADMIN]
+},[]>
+2021-09-28 14:21:54.013  INFO 11928 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.EquipmentController.deleteEquipmentItemById(java.lang.Integer) 
+ With params: 
+ 11
+ 
+ By User: 
+ testadmin@gmail.com 
+ Returned: <200 OK OK,[]>
+2021-09-28 14:21:54.188  INFO 11928 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.login(pl.adambaranowski.rsbackend.model.dto.LoginRequestDto) 
+ With params: 
+ class LoginRequestDto {
+    email: testadmin@gmail.com
+    password: testAdmin
+}
+ 
+ By User: 
+ anonymousUser 
+ Returned: <200 OK OK,class LoginResponseDto {
+    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW5AZ21haWwuY29tIiwiZXhwIjoxNjMyODMyNTE0fQ.1klMkOEl5bMSvFOmjaAnquCCA-9oJh_WgVutJYgywbQ
+    userId: 12
+    userNick: testAdmin
+    email: testadmin@gmail.com
+    authorities: [ADMIN]
+},[]>
+2021-09-28 14:21:54.199  INFO 11928 --- [main] p.a.rsbackend.loging.ExceptionsLogger    : 
+
+ Exception occurred: java.util.NoSuchElementException: Equipment of given Id does not exist
+ 
+ By User: 
+ testadmin@gmail.com 
+
+2021-09-28 14:21:54.368  INFO 11928 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.login(pl.adambaranowski.rsbackend.model.dto.LoginRequestDto) 
+ With params: 
+ class LoginRequestDto {
+    email: testadmin@gmail.com
+    password: testAdmin
+}
+ 
+ By User: 
+ anonymousUser 
+ Returned: <200 OK OK,class LoginResponseDto {
+    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW5AZ21haWwuY29tIiwiZXhwIjoxNjMyODMyNTE0fQ.1klMkOEl5bMSvFOmjaAnquCCA-9oJh_WgVutJYgywbQ
+    userId: 13
+    userNick: testAdmin
+    email: testadmin@gmail.com
+    authorities: [ADMIN]
+},[]>
+2021-09-28 14:21:54.379  INFO 11928 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
  Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.EquipmentController.getEquipmentItemById(java.lang.Integer) 
  With params: 
- 9
+ 13
  
  By User: 
  testadmin@gmail.com 
  Returned: <200 OK OK,class EquipmentResponseDto {
+    id: 13
+    name: eq
+    description: des
+    roomNumber: 2137
+},[]>
+2021-09-28 14:21:54.540  INFO 11928 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.login(pl.adambaranowski.rsbackend.model.dto.LoginRequestDto) 
+ With params: 
+ class LoginRequestDto {
+    email: testadmin@gmail.com
+    password: testAdmin
+}
+ 
+ By User: 
+ anonymousUser 
+ Returned: <200 OK OK,class LoginResponseDto {
+    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW5AZ21haWwuY29tIiwiZXhwIjoxNjMyODMyNTE0fQ.1klMkOEl5bMSvFOmjaAnquCCA-9oJh_WgVutJYgywbQ
+    userId: 14
+    userNick: testAdmin
+    email: testadmin@gmail.com
+    authorities: [ADMIN]
+},[]>
+2021-09-28 14:21:54.550  INFO 11928 --- [main] p.a.rsbackend.loging.ExceptionsLogger    : 
+
+ Exception occurred: pl.adambaranowski.rsbackend.exception.WrongDtoException
+ 
+ By User: 
+ testadmin@gmail.com 
+
+2021-09-28 14:21:54.707  INFO 11928 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.login(pl.adambaranowski.rsbackend.model.dto.LoginRequestDto) 
+ With params: 
+ class LoginRequestDto {
+    email: testadmin@gmail.com
+    password: testAdmin
+}
+ 
+ By User: 
+ anonymousUser 
+ Returned: <200 OK OK,class LoginResponseDto {
+    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW5AZ21haWwuY29tIiwiZXhwIjoxNjMyODMyNTE0fQ.1klMkOEl5bMSvFOmjaAnquCCA-9oJh_WgVutJYgywbQ
+    userId: 15
+    userNick: testAdmin
+    email: testadmin@gmail.com
+    authorities: [ADMIN]
+},[]>
+2021-09-28 14:21:54.718  INFO 11928 --- [main] p.a.rsbackend.loging.ExceptionsLogger    : 
+
+ Exception occurred: java.util.NoSuchElementException: Equipment Of given Id does not exist
+ 
+ By User: 
+ testadmin@gmail.com 
+
+2021-09-28 14:21:54.736  INFO 11928 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-09-28 14:21:54.738  INFO 11928 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2021-09-28 14:21:54.740  WARN 11928 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
+2021-09-28 14:21:54.741 ERROR 11928 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : Baza danych jest już zamknięta (aby zablokować samoczynne zamykanie podczas zamknięcia VM dodaj ";DB_CLOSE_ON_EXIT=FALSE" do URL bazy danych)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-09-28 14:21:54.742  WARN 11928 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
+2021-09-28 14:21:54.742 ERROR 11928 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : Baza danych jest już zamknięta (aby zablokować samoczynne zamykanie podczas zamknięcia VM dodaj ";DB_CLOSE_ON_EXIT=FALSE" do URL bazy danych)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-09-28 14:21:54.742  WARN 11928 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'entityManagerFactory': org.hibernate.exception.JDBCConnectionException: Unable to release JDBC Connection used for DDL execution
+2021-09-28 14:21:54.743  INFO 11928 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-09-28 14:21:54.748  INFO 11928 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-09-28 14:23:09.672  INFO 2264 --- [main] p.a.r.t.integration.EquipmentApiTest     : Starting EquipmentApiTest using Java 13.0.1 on DESKTOP-NJEN35A with PID 2264 (started by Adam Baranowski in C:\Users\Adam Baranowski\Desktop\Praca_Dyplomowa\reservation_system_app\rs_backend)
+2021-09-28 14:23:09.676  INFO 2264 --- [main] p.a.r.t.integration.EquipmentApiTest     : No active profile set, falling back to default profiles: default
+2021-09-28 14:23:11.382  INFO 2264 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-09-28 14:23:11.515  INFO 2264 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 123 ms. Found 5 JPA repository interfaces.
+2021-09-28 14:23:12.519  INFO 2264 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-09-28 14:23:12.718  INFO 2264 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-09-28 14:23:12.846  INFO 2264 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-09-28 14:23:12.916  INFO 2264 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-09-28 14:23:13.079  INFO 2264 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-09-28 14:23:13.614  INFO 2264 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-09-28 14:23:14.844  INFO 2264 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-09-28 14:23:14.853  INFO 2264 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-09-28 14:23:15.971  WARN 2264 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-09-28 14:23:16.934  INFO 2264 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2021-09-28 14:23:17.209  INFO 2264 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2021-09-28 14:23:18.495  INFO 2264 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@67b6cb6e, org.springframework.security.web.context.SecurityContextPersistenceFilter@652cb87d, org.springframework.security.web.header.HeaderWriterFilter@497ccf3, org.springframework.web.filter.CorsFilter@47de4dce, org.springframework.security.web.authentication.logout.LogoutFilter@3b96ea23, pl.adambaranowski.rsbackend.security.filter.JwtFilter@4951c45f, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@12a719ed, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7e5a8000, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@488ae823, org.springframework.security.web.session.SessionManagementFilter@7685912e, org.springframework.security.web.access.ExceptionTranslationFilter@1d92d132, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@1d691d4f]
+2021-09-28 14:23:18.616  INFO 2264 --- [main] o.s.b.t.m.w.SpringBootMockServletContext : Initializing Spring TestDispatcherServlet ''
+2021-09-28 14:23:18.616  INFO 2264 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Initializing Servlet ''
+2021-09-28 14:23:18.618  INFO 2264 --- [main] o.s.t.web.servlet.TestDispatcherServlet  : Completed initialization in 2 ms
+2021-09-28 14:23:19.161  INFO 2264 --- [main] p.a.r.t.integration.EquipmentApiTest     : Started EquipmentApiTest in 9.818 seconds (JVM running for 11.069)
+2021-09-28 14:23:20.453  INFO 2264 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.login(pl.adambaranowski.rsbackend.model.dto.LoginRequestDto) 
+ With params: 
+ class LoginRequestDto {
+    email: testadmin@gmail.com
+    password: testAdmin
+}
+ 
+ By User: 
+ anonymousUser 
+ Returned: <200 OK OK,class LoginResponseDto {
+    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW5AZ21haWwuY29tIiwiZXhwIjoxNjMyODMyNjAwfQ.DaeTH0whZJJ-5JLJd2PS1LDuyVHPzDVgsBUQSsRPZoA
+    userId: 4
+    userNick: testAdmin
+    email: testadmin@gmail.com
+    authorities: [ADMIN]
+},[]>
+2021-09-28 14:23:20.494  INFO 2264 --- [main] p.a.rsbackend.loging.ExceptionsLogger    : 
+
+ Exception occurred: pl.adambaranowski.rsbackend.exception.WrongDtoException
+ 
+ By User: 
+ testadmin@gmail.com 
+
+2021-09-28 14:23:20.688  INFO 2264 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.login(pl.adambaranowski.rsbackend.model.dto.LoginRequestDto) 
+ With params: 
+ class LoginRequestDto {
+    email: testadmin@gmail.com
+    password: testAdmin
+}
+ 
+ By User: 
+ anonymousUser 
+ Returned: <200 OK OK,class LoginResponseDto {
+    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW5AZ21haWwuY29tIiwiZXhwIjoxNjMyODMyNjAwfQ.DaeTH0whZJJ-5JLJd2PS1LDuyVHPzDVgsBUQSsRPZoA
+    userId: 5
+    userNick: testAdmin
+    email: testadmin@gmail.com
+    authorities: [ADMIN]
+},[]>
+2021-09-28 14:23:20.710  INFO 2264 --- [main] p.a.rsbackend.loging.ExceptionsLogger    : 
+
+ Exception occurred: java.util.NoSuchElementException: Equipment of given Id does not exist
+ 
+ By User: 
+ testadmin@gmail.com 
+
+2021-09-28 14:23:20.879  INFO 2264 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.login(pl.adambaranowski.rsbackend.model.dto.LoginRequestDto) 
+ With params: 
+ class LoginRequestDto {
+    email: testadmin@gmail.com
+    password: testAdmin
+}
+ 
+ By User: 
+ anonymousUser 
+ Returned: <200 OK OK,class LoginResponseDto {
+    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW5AZ21haWwuY29tIiwiZXhwIjoxNjMyODMyNjAwfQ.DaeTH0whZJJ-5JLJd2PS1LDuyVHPzDVgsBUQSsRPZoA
+    userId: 6
+    userNick: testAdmin
+    email: testadmin@gmail.com
+    authorities: [ADMIN]
+},[]>
+2021-09-28 14:23:20.888  INFO 2264 --- [main] p.a.rsbackend.service.EquipmentService   : ADDED NEW EQUIPMENT
+2021-09-28 14:23:20.888  INFO 2264 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.EquipmentController.addNewEquipmentItem(pl.adambaranowski.rsbackend.model.dto.EquipmentRequestDto) 
+ With params: 
+ class EquipmentRequestDto {
+    name: Equipment
+    description: Test equipment
+    roomNumber: 22
+}
+ 
+ By User: 
+ testadmin@gmail.com 
+ Returned: <201 CREATED Created,class EquipmentResponseDto {
+    id: 6
+    name: Equipment
+    description: Test equipment
+    roomNumber: 22
+},[]>
+2021-09-28 14:23:21.044  INFO 2264 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.login(pl.adambaranowski.rsbackend.model.dto.LoginRequestDto) 
+ With params: 
+ class LoginRequestDto {
+    email: testadmin@gmail.com
+    password: testAdmin
+}
+ 
+ By User: 
+ anonymousUser 
+ Returned: <200 OK OK,class LoginResponseDto {
+    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW5AZ21haWwuY29tIiwiZXhwIjoxNjMyODMyNjAxfQ.8qTQwA1Qa1AaHUR47oQUzTMP3q4otTsvXVvVy8Cxup8
+    userId: 7
+    userNick: testAdmin
+    email: testadmin@gmail.com
+    authorities: [ADMIN]
+},[]>
+2021-09-28 14:23:21.049  INFO 2264 --- [main] p.a.rsbackend.loging.ExceptionsLogger    : 
+
+ Exception occurred: pl.adambaranowski.rsbackend.exception.WrongDtoException
+ 
+ By User: 
+ testadmin@gmail.com 
+
+2021-09-28 14:23:21.214  INFO 2264 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.login(pl.adambaranowski.rsbackend.model.dto.LoginRequestDto) 
+ With params: 
+ class LoginRequestDto {
+    email: testadmin@gmail.com
+    password: testAdmin
+}
+ 
+ By User: 
+ anonymousUser 
+ Returned: <200 OK OK,class LoginResponseDto {
+    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW5AZ21haWwuY29tIiwiZXhwIjoxNjMyODMyNjAxfQ.8qTQwA1Qa1AaHUR47oQUzTMP3q4otTsvXVvVy8Cxup8
+    userId: 8
+    userNick: testAdmin
+    email: testadmin@gmail.com
+    authorities: [ADMIN]
+},[]>
+2021-09-28 14:23:21.226  INFO 2264 --- [main] p.a.rsbackend.loging.ExceptionsLogger    : 
+
+ Exception occurred: pl.adambaranowski.rsbackend.exception.WrongDtoException
+ 
+ By User: 
+ testadmin@gmail.com 
+
+2021-09-28 14:23:21.395  INFO 2264 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.login(pl.adambaranowski.rsbackend.model.dto.LoginRequestDto) 
+ With params: 
+ class LoginRequestDto {
+    email: testadmin@gmail.com
+    password: testAdmin
+}
+ 
+ By User: 
+ anonymousUser 
+ Returned: <200 OK OK,class LoginResponseDto {
+    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW5AZ21haWwuY29tIiwiZXhwIjoxNjMyODMyNjAxfQ.8qTQwA1Qa1AaHUR47oQUzTMP3q4otTsvXVvVy8Cxup8
+    userId: 9
+    userNick: testAdmin
+    email: testadmin@gmail.com
+    authorities: [ADMIN]
+},[]>
+2021-09-28 14:23:21.411  INFO 2264 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.EquipmentController.getAllEquipmentItems() 
+ With params: 
+  
+ By User: 
+ testadmin@gmail.com 
+ Returned: <200 OK OK,[class EquipmentResponseDto {
+    id: 8
+    name: eq1
+    description: des1
+    roomNumber: 2137
+}, class EquipmentResponseDto {
     id: 9
+    name: eq2
+    description: des2
+    roomNumber: 2137
+}],[]>
+2021-09-28 14:23:21.595  INFO 2264 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.login(pl.adambaranowski.rsbackend.model.dto.LoginRequestDto) 
+ With params: 
+ class LoginRequestDto {
+    email: testadmin@gmail.com
+    password: testAdmin
+}
+ 
+ By User: 
+ anonymousUser 
+ Returned: <200 OK OK,class LoginResponseDto {
+    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW5AZ21haWwuY29tIiwiZXhwIjoxNjMyODMyNjAxfQ.8qTQwA1Qa1AaHUR47oQUzTMP3q4otTsvXVvVy8Cxup8
+    userId: 10
+    userNick: testAdmin
+    email: testadmin@gmail.com
+    authorities: [ADMIN]
+},[]>
+2021-09-28 14:23:21.611  INFO 2264 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.EquipmentController.updateEquipmentItemById(java.lang.Integer,pl.adambaranowski.rsbackend.model.dto.EquipmentRequestDto) 
+ With params: 
+ 10
+class EquipmentRequestDto {
+    name: updatedEq
+    description: updatedDes
+    roomNumber: 2137
+}
+ 
+ By User: 
+ testadmin@gmail.com 
+ Returned: <200 OK OK,class EquipmentResponseDto {
+    id: 10
     name: updatedEq
     description: updatedDes
     roomNumber: 2137
 },[]>
-2021-09-27 08:26:43.182  INFO 19088 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
-2021-09-27 08:26:43.184  INFO 19088 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
-2021-09-27 08:26:43.191  INFO 19088 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
-2021-09-27 08:26:43.195  INFO 19088 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2021-09-28 14:23:21.805  INFO 2264 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.login(pl.adambaranowski.rsbackend.model.dto.LoginRequestDto) 
+ With params: 
+ class LoginRequestDto {
+    email: testadmin@gmail.com
+    password: testAdmin
+}
+ 
+ By User: 
+ anonymousUser 
+ Returned: <200 OK OK,class LoginResponseDto {
+    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW5AZ21haWwuY29tIiwiZXhwIjoxNjMyODMyNjAxfQ.8qTQwA1Qa1AaHUR47oQUzTMP3q4otTsvXVvVy8Cxup8
+    userId: 11
+    userNick: testAdmin
+    email: testadmin@gmail.com
+    authorities: [ADMIN]
+},[]>
+2021-09-28 14:23:21.819  INFO 2264 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.EquipmentController.deleteEquipmentItemById(java.lang.Integer) 
+ With params: 
+ 11
+ 
+ By User: 
+ testadmin@gmail.com 
+ Returned: <200 OK OK,[]>
+2021-09-28 14:23:21.973  INFO 2264 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.login(pl.adambaranowski.rsbackend.model.dto.LoginRequestDto) 
+ With params: 
+ class LoginRequestDto {
+    email: testadmin@gmail.com
+    password: testAdmin
+}
+ 
+ By User: 
+ anonymousUser 
+ Returned: <200 OK OK,class LoginResponseDto {
+    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW5AZ21haWwuY29tIiwiZXhwIjoxNjMyODMyNjAxfQ.8qTQwA1Qa1AaHUR47oQUzTMP3q4otTsvXVvVy8Cxup8
+    userId: 12
+    userNick: testAdmin
+    email: testadmin@gmail.com
+    authorities: [ADMIN]
+},[]>
+2021-09-28 14:23:21.982  INFO 2264 --- [main] p.a.rsbackend.loging.ExceptionsLogger    : 
+
+ Exception occurred: java.util.NoSuchElementException: Equipment of given Id does not exist
+ 
+ By User: 
+ testadmin@gmail.com 
+
+2021-09-28 14:23:22.169  INFO 2264 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.login(pl.adambaranowski.rsbackend.model.dto.LoginRequestDto) 
+ With params: 
+ class LoginRequestDto {
+    email: testadmin@gmail.com
+    password: testAdmin
+}
+ 
+ By User: 
+ anonymousUser 
+ Returned: <200 OK OK,class LoginResponseDto {
+    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW5AZ21haWwuY29tIiwiZXhwIjoxNjMyODMyNjAyfQ.v7FmozT8e41H2M-bxfdGleqWSMpDXkPKk8ysY8R_wmc
+    userId: 13
+    userNick: testAdmin
+    email: testadmin@gmail.com
+    authorities: [ADMIN]
+},[]>
+2021-09-28 14:23:22.182  INFO 2264 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.EquipmentController.getEquipmentItemById(java.lang.Integer) 
+ With params: 
+ 13
+ 
+ By User: 
+ testadmin@gmail.com 
+ Returned: <200 OK OK,class EquipmentResponseDto {
+    id: 13
+    name: eq
+    description: des
+    roomNumber: 2137
+},[]>
+2021-09-28 14:23:22.354  INFO 2264 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.login(pl.adambaranowski.rsbackend.model.dto.LoginRequestDto) 
+ With params: 
+ class LoginRequestDto {
+    email: testadmin@gmail.com
+    password: testAdmin
+}
+ 
+ By User: 
+ anonymousUser 
+ Returned: <200 OK OK,class LoginResponseDto {
+    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW5AZ21haWwuY29tIiwiZXhwIjoxNjMyODMyNjAyfQ.v7FmozT8e41H2M-bxfdGleqWSMpDXkPKk8ysY8R_wmc
+    userId: 14
+    userNick: testAdmin
+    email: testadmin@gmail.com
+    authorities: [ADMIN]
+},[]>
+2021-09-28 14:23:22.364  INFO 2264 --- [main] p.a.rsbackend.loging.ExceptionsLogger    : 
+
+ Exception occurred: pl.adambaranowski.rsbackend.exception.WrongDtoException
+ 
+ By User: 
+ testadmin@gmail.com 
+
+2021-09-28 14:23:22.508  INFO 2264 --- [main] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.login(pl.adambaranowski.rsbackend.model.dto.LoginRequestDto) 
+ With params: 
+ class LoginRequestDto {
+    email: testadmin@gmail.com
+    password: testAdmin
+}
+ 
+ By User: 
+ anonymousUser 
+ Returned: <200 OK OK,class LoginResponseDto {
+    token: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0YWRtaW5AZ21haWwuY29tIiwiZXhwIjoxNjMyODMyNjAyfQ.v7FmozT8e41H2M-bxfdGleqWSMpDXkPKk8ysY8R_wmc
+    userId: 15
+    userNick: testAdmin
+    email: testadmin@gmail.com
+    authorities: [ADMIN]
+},[]>
+2021-09-28 14:23:22.516  INFO 2264 --- [main] p.a.rsbackend.loging.ExceptionsLogger    : 
+
+ Exception occurred: java.util.NoSuchElementException: Equipment of given Id does not exist
+ 
+ By User: 
+ testadmin@gmail.com 
+
+2021-09-28 14:23:22.532  INFO 2264 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2021-09-28 14:23:22.534  INFO 2264 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2021-09-28 14:23:22.536  WARN 2264 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
+2021-09-28 14:23:22.536 ERROR 2264 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : Baza danych jest już zamknięta (aby zablokować samoczynne zamykanie podczas zamknięcia VM dodaj ";DB_CLOSE_ON_EXIT=FALSE" do URL bazy danych)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-09-28 14:23:22.537  WARN 2264 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 90121, SQLState: 90121
+2021-09-28 14:23:22.537 ERROR 2264 --- [SpringApplicationShutdownHook] o.h.engine.jdbc.spi.SqlExceptionHelper   : Baza danych jest już zamknięta (aby zablokować samoczynne zamykanie podczas zamknięcia VM dodaj ";DB_CLOSE_ON_EXIT=FALSE" do URL bazy danych)
+Database is already closed (to disable automatic closing at VM shutdown, add ";DB_CLOSE_ON_EXIT=FALSE" to the db URL) [90121-200]
+2021-09-28 14:23:22.537  WARN 2264 --- [SpringApplicationShutdownHook] o.s.b.f.support.DisposableBeanAdapter    : Invocation of destroy method failed on bean with name 'entityManagerFactory': org.hibernate.exception.JDBCConnectionException: Unable to release JDBC Connection used for DDL execution
+2021-09-28 14:23:22.538  INFO 2264 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2021-09-28 14:23:22.542  INFO 2264 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

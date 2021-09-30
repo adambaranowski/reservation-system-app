@@ -5,6 +5,7 @@ import lombok.*;
 
 import javax.persistence.*;
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 @Getter
@@ -35,5 +36,18 @@ public class Authority {
                 ", role='" + role + '\'' +
                 ", users=" + users.size() +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Authority authority = (Authority) o;
+        return Objects.equals(id, authority.id) && Objects.equals(role, authority.role);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(id, role);
     }
 }

@@ -70,8 +70,7 @@ public class TestUtils {
     }
 
     public static final List<String> TEST_AUTHORITIES = List.of(
-            "admin",
-            "user"
+            "STUDENT"
     );
 
 

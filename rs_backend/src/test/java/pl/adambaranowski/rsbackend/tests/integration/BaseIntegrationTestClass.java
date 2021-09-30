@@ -17,6 +17,8 @@ import pl.adambaranowski.rsbackend.repository.ReservationRepository;
 import pl.adambaranowski.rsbackend.repository.RoomRepository;
 import pl.adambaranowski.rsbackend.repository.UserRepository;
 import pl.adambaranowski.rsbackend.service.utils.EquipmentResponseMapper;
+import pl.adambaranowski.rsbackend.service.utils.RoomResponseMapper;
+import pl.adambaranowski.rsbackend.service.utils.UserResponseMapper;
 
 import javax.annotation.PostConstruct;
 import java.util.Set;
@@ -29,9 +31,12 @@ import static pl.adambaranowski.rsbackend.security.UrlsConstants.LOGIN_ENDPOINT;
 public abstract class BaseIntegrationTestClass {
     protected static final int AUTH_HEADER_NAME = 0;
     protected static final int AUTH_HEADER_VALUE = 1;
-    private static final String ADMIN_EMAIL = "testadmin@gmail.com";
+    protected static final String ADMIN_EMAIL = "testadmin@gmail.com";
     private static final String ADMIN_PASSWORD = "testAdmin";
     private static final String ADMIN_NICK = "testAdmin";
+    protected static final String STUDENT_EMAIL = "student@gmail.com";
+    private static final String STUDENT_PASSWORD = "student";
+    private static final String STUDENT_NICK = "student";
     @Autowired
     protected MockMvc mvc;
 
@@ -52,6 +57,13 @@ public abstract class BaseIntegrationTestClass {
     @Autowired
     EquipmentResponseMapper equipmentResponseMapper;
 
+    @Autowired
+    RoomResponseMapper roomResponseMapper;
+
+    @Autowired
+    UserResponseMapper userResponseMapper;
+
+
     @PostConstruct
     protected void configureTestUsers() {
         clearRepositories();
@@ -67,10 +79,12 @@ public abstract class BaseIntegrationTestClass {
 
     private void createAuthorities() {
         Authority admin = authorityRepository.save(Authority.builder().role(UserRole.ADMIN.name()).build());
+        Authority student = authorityRepository.save(Authority.builder().role(UserRole.STUDENT.name()).build());
     }
 
     private void createUsers() {
         Authority adminAuthority = authorityRepository.findByRole(UserRole.ADMIN.name()).get();
+        Authority studentAuthority = authorityRepository.findByRole(UserRole.STUDENT.name()).get();
 
         User user = new User();
         user.setUserNick(ADMIN_NICK);
@@ -84,6 +98,19 @@ public abstract class BaseIntegrationTestClass {
         getAttachedUser.addAuthorities(Set.of(adminAuthority));
         userRepository.save(getAttachedUser);
 
+
+        User student = new User();
+        student.setUserNick(STUDENT_NICK);
+        student.setEmail(STUDENT_EMAIL);
+        student.setPassword(passwordEncoder.encode(STUDENT_PASSWORD));
+        student.setAccountNonLocked(true);
+
+        userRepository.save(student);
+
+        User getAttachedStudent = userRepository.findByEmail(STUDENT_EMAIL).get();
+        getAttachedStudent.addAuthorities(Set.of(studentAuthority));
+        userRepository.save(getAttachedStudent);
+
     }
 
 
@@ -91,6 +118,28 @@ public abstract class BaseIntegrationTestClass {
         LoginRequestDto requestDto = new LoginRequestDto();
         requestDto.setEmail(ADMIN_EMAIL);
         requestDto.setPassword(ADMIN_PASSWORD);
+
+        String body = mvc.perform(
+                post(LOGIN_ENDPOINT)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(mapper.writeValueAsString(requestDto))
+        )
+                .andReturn()
+                .getResponse()
+                .getContentAsString();
+
+        LoginResponseDto loginResponseDto = mapper.readValue(body, LoginResponseDto.class);
+
+        String headerValue = "Bearer: " + loginResponseDto.getToken();
+
+        return new String[]{"Authentication", headerValue};
+
+    }
+
+    protected String[] getStudentTokenHeader() throws Exception {
+        LoginRequestDto requestDto = new LoginRequestDto();
+        requestDto.setEmail(STUDENT_EMAIL);
+        requestDto.setPassword(STUDENT_PASSWORD);
 
         String body = mvc.perform(
                 post(LOGIN_ENDPOINT)

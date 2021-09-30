@@ -66,7 +66,7 @@ public class EquipmentApiTest extends BaseIntegrationTestClass{
     }
 
     @Test
-    void createEquipment_responseWithWrongDto() throws Exception{
+    void createEquipment_emptyFields_return400Status() throws Exception{
         String[] adminTokenHeader = getAdminTokenHeader();
 
         EquipmentRequestDto requestDto = EquipmentRequestDto.builder()
@@ -100,7 +100,7 @@ public class EquipmentApiTest extends BaseIntegrationTestClass{
     }
 
     @Test
-    void createEquipment_responseWithWrongDto_tooLongDescription() throws Exception{
+    void createEquipment_tooLongDescription_return400Status() throws Exception{
         String[] adminTokenHeader = getAdminTokenHeader();
 
         EquipmentRequestDto requestDto = EquipmentRequestDto.builder()
@@ -130,7 +130,47 @@ public class EquipmentApiTest extends BaseIntegrationTestClass{
         List<String> actualErrorsList = Arrays.asList(body.substring(1, body.length() - 1).split(", "));
 
         assertEquals(expectedErrorsList, actualErrorsList);
+    }
 
+    @Test
+    void createEquipment_notAllowed_return403Status() throws Exception{
+        String[] studentTokenHeader = getStudentTokenHeader();
+
+        EquipmentRequestDto requestDto = EquipmentRequestDto.builder()
+                .name("Equipment")
+                .description("Test equipment")
+                .roomNumber(22)
+                .build();
+
+        mvc.perform(
+                post(EQUIPMENT_ENDPOINT)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .header(studentTokenHeader[AUTH_HEADER_NAME], studentTokenHeader[AUTH_HEADER_VALUE])
+                        .content(mapper.writeValueAsString(requestDto))
+        )
+                .andDo(print())
+                .andExpect(status().isForbidden())
+                .andReturn()
+                .getResponse();
+    }
+
+    @Test
+    void createEquipment_unauthorized_return403Status() throws Exception{
+        EquipmentRequestDto requestDto = EquipmentRequestDto.builder()
+                .name("Equipment")
+                .description("Test equipment")
+                .roomNumber(22)
+                .build();
+
+        mvc.perform(
+                post(EQUIPMENT_ENDPOINT)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(mapper.writeValueAsString(requestDto))
+        )
+                .andDo(print())
+                .andExpect(status().isForbidden())
+                .andReturn()
+                .getResponse();
     }
 
     @Test
@@ -186,6 +226,44 @@ public class EquipmentApiTest extends BaseIntegrationTestClass{
     }
 
     @Test
+    void getEquipment_unauthorized_return403Status() throws Exception {
+        Room room = Room.builder()
+                .roomStatus(RoomStatus.NORMAL)
+                .number(TEST_ROOM_NUMBER)
+                .description(TEST_ROOM_NAME)
+                .reservations(null)
+                .build();
+
+        Room attachedRoom = roomRepository.save(room);
+
+        Equipment equipment1 = Equipment.builder()
+                .name("eq1")
+                .description("des1")
+                .room(attachedRoom)
+                .build();
+
+        Equipment equipment2 = Equipment.builder()
+                .name("eq2")
+                .description("des2")
+                .room(attachedRoom)
+                .build();
+
+        equipmentRepository.deleteAll();
+
+        equipmentRepository.save(equipment1);
+        equipmentRepository.save(equipment2);
+
+        mvc.perform(
+                get(EQUIPMENT_ENDPOINT)
+                        .contentType(MediaType.APPLICATION_JSON)
+        )
+                .andDo(print())
+                .andExpect(status().isForbidden())
+                .andReturn()
+                .getResponse();
+    }
+
+    @Test
     void getEquipmentById_responseWithCorrectDto() throws Exception{
         String[] adminTokenHeader = getAdminTokenHeader();
 
@@ -230,7 +308,7 @@ public class EquipmentApiTest extends BaseIntegrationTestClass{
     }
 
     @Test
-    void getEquipmentById_responseWithWrongDto() throws Exception{
+    void getEquipmentById_notFound_return404Status() throws Exception{
         String[] adminTokenHeader = getAdminTokenHeader();
 
         Room room = Room.builder()
@@ -269,6 +347,37 @@ public class EquipmentApiTest extends BaseIntegrationTestClass{
 
         assertEquals(INVALID_EQUIPMENT_ID, actualResponse);
         assertTrue(actualEquipment.isEmpty());
+    }
+
+    @Test
+    void getEquipmentById_notAllowed_return403Status() throws Exception{
+        Room room = Room.builder()
+                .roomStatus(RoomStatus.NORMAL)
+                .number(TEST_ROOM_NUMBER)
+                .description(TEST_ROOM_NAME)
+                .reservations(null)
+                .build();
+
+        Room attachedRoom = roomRepository.save(room);
+
+        Equipment equipment = Equipment.builder()
+                .name("eq")
+                .description("des")
+                .room(attachedRoom)
+                .build();
+
+        equipmentRepository.deleteAll();
+
+        int id = equipmentRepository.save(equipment).getId();
+
+        mvc.perform(
+                get(EQUIPMENT_ENDPOINT + "/" + id)
+                        .contentType(MediaType.APPLICATION_JSON)
+        )
+                .andDo(print())
+                .andExpect(status().isForbidden())
+                .andReturn()
+                .getResponse();
     }
 
     @Test
@@ -336,7 +445,7 @@ public class EquipmentApiTest extends BaseIntegrationTestClass{
     }
 
     @Test
-    void updateEquipmentById_responseWithWrongDto() throws Exception{
+    void updateEquipmentById_emptyFields_return400Status() throws Exception{
         String[] adminTokenHeader = getAdminTokenHeader();
 
         Room room = Room.builder()
@@ -392,7 +501,7 @@ public class EquipmentApiTest extends BaseIntegrationTestClass{
     }
 
     @Test
-    void updateEquipmentById_responseWithWrongDto_tooLongDescription() throws Exception{
+    void updateEquipmentById_tooLongDescription_return400Status() throws Exception{
         String[] adminTokenHeader = getAdminTokenHeader();
 
         Room room = Room.builder()
@@ -448,7 +557,7 @@ public class EquipmentApiTest extends BaseIntegrationTestClass{
     }
 
     @Test
-    void updateEquipmentById_responseWithWrongDto_wrongId() throws Exception{
+    void updateEquipmentById_notFound_return404Status() throws Exception{
         String[] adminTokenHeader = getAdminTokenHeader();
 
         Room room = Room.builder()
@@ -497,6 +606,85 @@ public class EquipmentApiTest extends BaseIntegrationTestClass{
     }
 
     @Test
+    void updateEquipmentById_notAllowed_return403Status() throws Exception{
+        String[] studentTokenHeader = getStudentTokenHeader();
+
+        Room room = Room.builder()
+                .roomStatus(RoomStatus.NORMAL)
+                .number(TEST_ROOM_NUMBER)
+                .description(TEST_ROOM_NAME)
+                .reservations(null)
+                .build();
+
+        Room attachedRoom = roomRepository.save(room);
+
+        Equipment equipment = Equipment.builder()
+                .name("eq")
+                .description("des")
+                .room(attachedRoom)
+                .build();
+
+        equipmentRepository.deleteAll();
+
+        int id = equipmentRepository.save(equipment).getId();
+
+        EquipmentRequestDto updatedEquipmentDto = EquipmentRequestDto.builder()
+                .name("updatedEq")
+                .description("updatedDes")
+                .roomNumber(TEST_ROOM_NUMBER)
+                .build();
+
+        mvc.perform(
+                put(EQUIPMENT_ENDPOINT + "/" + id)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(mapper.writeValueAsString(updatedEquipmentDto))
+                        .header(studentTokenHeader[AUTH_HEADER_NAME], studentTokenHeader[AUTH_HEADER_VALUE])
+        )
+                .andDo(print())
+                .andExpect(status().isForbidden())
+                .andReturn()
+                .getResponse();
+    }
+
+    @Test
+    void updateEquipmentById_unauthorized_return403Status() throws Exception{
+        Room room = Room.builder()
+                .roomStatus(RoomStatus.NORMAL)
+                .number(TEST_ROOM_NUMBER)
+                .description(TEST_ROOM_NAME)
+                .reservations(null)
+                .build();
+
+        Room attachedRoom = roomRepository.save(room);
+
+        Equipment equipment = Equipment.builder()
+                .name("eq")
+                .description("des")
+                .room(attachedRoom)
+                .build();
+
+        equipmentRepository.deleteAll();
+
+        int id = equipmentRepository.save(equipment).getId();
+
+        EquipmentRequestDto updatedEquipmentDto = EquipmentRequestDto.builder()
+                .name("updatedEq")
+                .description("updatedDes")
+                .roomNumber(TEST_ROOM_NUMBER)
+                .build();
+
+        mvc.perform(
+                put(EQUIPMENT_ENDPOINT + "/" + id)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(mapper.writeValueAsString(updatedEquipmentDto))
+        )
+                .andDo(print())
+                .andExpect(status().isForbidden())
+                .andReturn()
+                .getResponse();
+    }
+
+    @Test
     void deleteEquipmentById_successResponse() throws Exception{
         String[] adminTokenHeader = getAdminTokenHeader();
 
@@ -529,14 +717,14 @@ public class EquipmentApiTest extends BaseIntegrationTestClass{
                 .andDo(print())
                 .andExpect(status().isOk())
                 .andReturn()
-                .getResponse()
-                .getContentAsString();
+                .getResponse();
 
         assertTrue(equipmentRepository.findById(id).isEmpty());
+        //blad
     }
 
     @Test
-    void deleteEquipmentById_notFoundResponse() throws Exception{
+    void deleteEquipmentById_notFound_return404Status() throws Exception{
         String[] adminTokenHeader = getAdminTokenHeader();
 
         Room room = Room.builder()

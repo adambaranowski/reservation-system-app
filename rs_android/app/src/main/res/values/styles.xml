@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+    <style name="FormField" parent="Widget.AppCompat.EditText">
+        <item name="android:textAlignment">center</item>
+    </style>
+
+    <style name="Header" parent="Widget.AppCompat.TextView">
+        <item name="android:textAlignment">center</item>
+        <item name="android:background">?colorPrimary</item>
+        <item name="android:textColor">?colorOnPrimary</item>
+        <item name="android:textSize">@dimen/text_size_large</item>
+        <item name="android:paddingTop">@dimen/header_vertical_padding</item>
+        <item name="android:paddingBottom">@dimen/header_vertical_padding</item>
+    </style>
+</resources>

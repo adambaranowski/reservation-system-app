@@ -1,8 +1,8 @@
 <div *ngIf="display">
   <div style="margin: 8px; background-color: lightblue; border-radius: 3px; width: 200px">
     <form (ngSubmit)="modify()">
-      <input [formControl]="userNick" class="form-control form-control-sm" type="text" placeholder="Email">
-      <input [formControl]="email" class="form-control form-control-sm" type="text" placeholder="Nick">
+      <input [formControl]="email" class="form-control form-control-sm" type="text" placeholder="Email">
+      <input [formControl]="userNick" class="form-control form-control-sm" type="text" placeholder="Nick">
       <input [formControl]="password" class="form-control form-control-sm" type="text" placeholder="Password">
 
       <input type="checkbox" id="isStudentm" value="option1" [checked]="isStudent"

@@ -5,6 +5,7 @@
       <input [formControl]="description" class="form-control form-control-sm" type="text" placeholder="Description">
       <label for="roomNumber">Room Number</label>
       <select class="form-control" id="roomNumber" [formControl]="roomNumber">
+        <option></option>
         <option *ngFor="let number of roomNumbersList">{{number}}</option>
       </select>
       <button type="submit">Submit</button>

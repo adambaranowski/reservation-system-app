@@ -33,6 +33,12 @@ export class UserService {
       (`${this.host}/${Urls.USERS}/${userId}`);
   }
 
+  public getLoggedUserByToken(): Observable<User> {
+    return this.httpClient
+      .get<User>
+      (`${this.host}/login`);
+  }
+
 
   public disableUsers(usersIds: [number]): Observable<any | HttpErrorResponse>{
     return this.httpClient.post<void>(`${this.host}/${Urls.USERS}/disable`, usersIds);

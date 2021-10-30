@@ -23,16 +23,6 @@ paths:
                 $ref: "#/components/schemas/LoginResponseDto"
         401:
           description: Login failure
-    get:
-      summary: Get User info by token
-      operationId: getUserInfo
-      responses:
-        200:
-          description: Correct token, sucessfully found user
-          content:
-            application/json:
-              schema:
-                $ref: "UsersApi.yaml#/components/schemas/UserResponseDto"
 
 components:
   schemas:
@@ -56,19 +46,6 @@ components:
         token:
           type: string
           description: Generated JWT for user
-        userId:
-          type: integer
-          description: User's id
-        userNick:
-          type: string
-          description: User's nick
         email:
           type: string
           description: User's email
-        authorities:
-          type: array
-          items:
-            type: string
-          example: [ADMIN, STUDENT]
-
-

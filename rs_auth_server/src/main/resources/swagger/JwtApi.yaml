@@ -1,0 +1,26 @@
+openapi: 3.0.3
+info:
+  title: JwtApi
+  description: JwtApi
+  version: 1.0.0
+
+paths:
+  /publicKey:
+    get:
+      responses:
+        200:
+          description: Succesful login
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/PublicKeyResponseDto"
+
+components:
+  schemas:
+    PublicKeyResponseDto:
+      type: object
+      description: Json with public key for Jwt decoding
+      properties:
+        key:
+          type: string
+          description: Generated public key

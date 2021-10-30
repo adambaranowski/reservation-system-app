@@ -33,6 +33,9 @@ public class UserDtoValidator {
             errors.add(PASSWORD_INSTRUCTIONS);
         }
 
+        System.out.println(dto.getEmail());
+        System.out.println(VALID_EMAIL_ADDRESS_REGEX.matcher(dto.getEmail()).matches());
+
         if (dto.getEmail() == null || dto.getEmail().isBlank()) {
             errors.add(EMPTY_EMAIL);
         } else {

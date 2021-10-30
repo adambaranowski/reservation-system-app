@@ -3,55 +3,81 @@ package pl.adambaranowski.rsbackend.security.jwt;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.JwtParser;
 import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
-import io.jsonwebtoken.security.Keys;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.core.env.Environment;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.stereotype.Service;
-import pl.adambaranowski.rsbackend.model.Authority;
-import pl.adambaranowski.rsbackend.model.User;
+import org.springframework.web.client.RestTemplate;
 
-import javax.crypto.SecretKey;
-import java.util.*;
-import java.util.stream.Collectors;
+import javax.annotation.PostConstruct;
+import java.security.KeyFactory;
+import java.security.PublicKey;
+import java.security.spec.X509EncodedKeySpec;
+import java.util.Base64;
 
 @Service
 public class JwtService {
-    private static final SecretKey KEY = Keys.secretKeyFor(SignatureAlgorithm.HS256);
-    private static final JwtParser TOKEN_PARSER = Jwts.parserBuilder().setSigningKey(KEY).build();
-    private final int EXPIRATION_TIME_SECONDS;
+    private static final String PUBLIC_KEY_URL = "http://localhost:8081/publicKey";
 
-    @Autowired
-    public JwtService(@Value("${jwt.expiration.seconds:180}") Integer expirationTime) {
-        this.EXPIRATION_TIME_SECONDS = expirationTime;
+    private final RestTemplate restTemplate = new RestTemplate();
+    private JwtParser tokenParser;
+
+////    @Value("${spring.profiles.active}")
+////    private String activeProfile;
+//
+//    @Autowired
+//    private Environment environment;
+
+    public JwtService() {
     }
 
-    public String generateTokenForUser(User user) {
-        return Jwts.builder()
-                .setSubject(user.getEmail())
-                //.setClaims(prepareClaims(user))
-                .setExpiration(calculateExpirationDate())
-                .signWith(KEY)
-                .compact();
+    @PostConstruct
+    private void getKey() {
+
+            String key = restTemplate.getForEntity(PUBLIC_KEY_URL, PublicKeyDto.class).getBody().getKey();
+
+            byte[] byteKey = Base64.getDecoder().decode(key.getBytes());
+            X509EncodedKeySpec X509publicKey = new X509EncodedKeySpec(byteKey);
+
+            try {
+                KeyFactory kf = KeyFactory.getInstance("RSA");
+                PublicKey publicKey = kf.generatePublic(X509publicKey);
+                this.tokenParser = Jwts.parserBuilder().setSigningKey(publicKey).build();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+
     }
 
-    private Map<String, String> prepareClaims(User user){
-        Map<String, String> claims = new HashMap<>();
-
-        List<String> authorities = user.getAuthorities().stream().map(Authority::getRole).collect(Collectors.toList());
-
-        claims.put("subject", user.getEmail());
-        claims.put("authorities", authorities.toString());
-        claims.put("nick", user.getUserNick());
-
-        return claims;
-    }
+//    public String generateTokenForUser(User user) {
+//        return Jwts.builder()
+//                .setSubject(user.getEmail())
+//                //.setClaims(prepareClaims(user))
+//                .setExpiration(calculateExpirationDate())
+//                .signWith(KEYS.getPrivate())
+//                .compact();
+//    }
+//
+//    private Map<String, String> prepareClaims(User user){
+//        Map<String, String> claims = new HashMap<>();
+//
+//        List<String> authorities = user.getAuthorities().stream().map(Authority::getRole).collect(Collectors.toList());
+//
+//        claims.put("subject", user.getEmail());
+//        claims.put("authorities", authorities.toString());
+//        claims.put("nick", user.getUserNick());
+//
+//        return claims;
+//    }
 
     public String extractSubjectIfTokenIsValid(String jwtToken) {
         try {
             //throws exception if token is wrong
-            Claims claims = TOKEN_PARSER.parseClaimsJws(jwtToken).getBody();
+            Claims claims = tokenParser.parseClaimsJws(jwtToken).getBody();
 
             return claims.getSubject();
         } catch (Exception e) {
@@ -60,7 +86,14 @@ public class JwtService {
         }
     }
 
-    private Date calculateExpirationDate() {
-        return new Date(System.currentTimeMillis() + EXPIRATION_TIME_SECONDS * 1000L);
+//    private Date calculateExpirationDate() {
+//        return new Date(System.currentTimeMillis() + EXPIRATION_TIME_SECONDS * 1000L);
+//    }
+
+    @Data
+    @NoArgsConstructor
+    @AllArgsConstructor
+    public static class PublicKeyDto {
+        private String key;
     }
 }

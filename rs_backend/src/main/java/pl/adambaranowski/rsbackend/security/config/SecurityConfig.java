@@ -30,7 +30,6 @@ import static pl.adambaranowski.rsbackend.security.UrlsConstants.*;
 @RequiredArgsConstructor
 public class SecurityConfig extends WebSecurityConfigurerAdapter implements WebMvcConfigurer{
 
-
     private static final String ADMIN_AUTHORITY = UserRole.ADMIN.name();
     private static final String TEACHER_AUTHORITY = UserRole.TEACHER.name();
     private static final String STUDENT_AUTHORITY = UserRole.STUDENT.name();

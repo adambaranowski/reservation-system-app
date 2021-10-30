@@ -15,6 +15,7 @@ import pl.adambaranowski.rsbackend.repository.UserRepository;
 import java.time.LocalDateTime;
 import java.util.Collection;
 import java.util.HashSet;
+import java.util.NoSuchElementException;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -31,7 +32,7 @@ public class JpaUserDetailsService implements UserDetailsService {
     @Transactional
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         User user = userRepository.findByEmail(email)
-                .orElseThrow(() -> new UsernameNotFoundException("User of email: " + email + " not found"));
+                .orElseThrow(() -> new NoSuchElementException("User of email: " + email + " not found"));
 
         //Last login here. It doesn't have to be successful. Last login means just attempt to log.
         user.setLastLoginDateTime(LocalDateTime.now());

@@ -116,6 +116,11 @@ public class UserService {
     public void deleteUserById(Integer userId) {
         User user = userRepository.findById(userId).orElseThrow(() -> new NoSuchElementException(String.format(NO_SUCH_USER, userId)));
 
+        String currentlyLoggedUserEmail = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if (user.getEmail().equals(currentlyLoggedUserEmail)) {
+            throw new WrongDtoException(List.of("You cannot remove yourself"));
+        }
+
         Set<Authority> authorities = user.getAuthorities();
         authorities.forEach(authority -> authority.getUsers().remove(user));
         List<Reservation> byUser = reservationRepository.findByUser(user);

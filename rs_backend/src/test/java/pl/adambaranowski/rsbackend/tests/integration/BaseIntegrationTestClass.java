@@ -6,6 +6,7 @@ import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMock
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.web.servlet.MockMvc;
 import pl.adambaranowski.rsbackend.model.Authority;
 import pl.adambaranowski.rsbackend.model.User;
@@ -28,6 +29,7 @@ import static pl.adambaranowski.rsbackend.security.UrlsConstants.LOGIN_ENDPOINT;
 
 @SpringBootTest(properties = "rs.security.enabled=true")
 @AutoConfigureMockMvc
+@ActiveProfiles("test")
 public abstract class BaseIntegrationTestClass {
     protected static final int AUTH_HEADER_NAME = 0;
     protected static final int AUTH_HEADER_VALUE = 1;

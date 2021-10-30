@@ -33,8 +33,6 @@ public class JwtFilter extends OncePerRequestFilter {
 
             String authenticationHeader = httpServletRequest.getHeader(AUTHENTICATION_HEADER_NAME);
 
-            System.out.println(authenticationHeader);
-
             if (authenticationHeader != null) {
                 String jwt = authenticationHeader.substring(TOKEN_PREFIX_LENGTH);
                 String username = jwtService.extractSubjectIfTokenIsValid(jwt);

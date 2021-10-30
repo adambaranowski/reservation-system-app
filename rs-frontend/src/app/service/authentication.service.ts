@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable, OnDestroy} from '@angular/core';
 import { environment} from "../../environments/environment";
 import {HttpClient, HttpErrorResponse, HttpResponse} from "@angular/common/http";
 import {Observable, Subscription} from "rxjs";
@@ -14,10 +14,10 @@ import {NotificationService} from "./notification.service";
 @Injectable({
   providedIn: 'root'
 })
-export class AuthenticationService  {
+export class AuthenticationService implements OnDestroy{
   private subscriptions: Subscription[] = [];
 
-  public host: string = environment.apiUrl;
+  public host: string = environment.authApiUrl;
 
   private token: string | undefined;
   private user: User | undefined;
@@ -47,7 +47,7 @@ export class AuthenticationService  {
     this.token = loginResponseDto.token;
     localStorage.setItem('token', loginResponseDto.token);
 
-    this.subscriptions.push(this.userService.getUserById(loginResponseDto.userId).subscribe(
+    this.subscriptions.push(this.userService.getLoggedUserByToken().subscribe(
       (response: User) => {
         this.user = response;
         localStorage.setItem('user', JSON.stringify(response));
@@ -61,6 +61,7 @@ export class AuthenticationService  {
     ));
 
   }
+
 
   private sendNotification(type: NotificationType, message: any): void {
     if (message) {
@@ -102,5 +103,9 @@ export class AuthenticationService  {
       return false;
     }
     return false;
+  }
+
+  ngOnDestroy(): void {
+    this.subscriptions.forEach(sub => sub.unsubscribe())
   }
 }

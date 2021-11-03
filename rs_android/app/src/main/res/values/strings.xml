@@ -1,5 +1,8 @@
 <resources>
     <string name="app_name">Room Management System</string>
+    <!-- Simple dialog -->
+    <string name="dialog_confirm">Yes</string>
+    <string name="dialog_decline">No</string>
 
     <!-- Login -->
     <string name="title_activity_login">Login</string>
@@ -20,6 +23,9 @@
     <string name="nav_reservation">Reservation</string>
     <string name="nav_logout">Logout</string>
     <string name="nav_settings">Settings</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- Logout -->
+    <string name="assert_logout">Are you sure you want to logout?</string>
+
+    <string name="hello_blank_fragment">Hello blank fragment!</string>
 </resources>

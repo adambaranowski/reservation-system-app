@@ -19,7 +19,11 @@
         android:id="@+id/logoutFragment"
         android:name="com.ksiezyk.roommanagementsystem.ui.mainfragments.logout.LogoutFragment"
         android:label="Logout"
-        tools:layout="@layout/fragment_logout" />
+        tools:layout="@layout/fragment_logout" >
+        <action
+            android:id="@+id/navigate_home"
+            app:destination="@id/homeFragment" />
+    </fragment>
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.ksiezyk.roommanagementsystem.ui.mainfragments.settings.SettingsFragment"

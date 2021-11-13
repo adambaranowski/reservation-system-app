@@ -4,8 +4,8 @@ import androidx.lifecycle.ViewModel;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.annotation.NonNull;
 
-import com.ksiezyk.roommanagementsystem.data.LoginDataSource;
-import com.ksiezyk.roommanagementsystem.data.LoginRepository;
+import com.ksiezyk.roommanagementsystem.data.datasource.LoginDataSource;
+import com.ksiezyk.roommanagementsystem.data.repository.LoginRepository;
 
 /**
  * ViewModel provider factory to instantiate LoginViewModel.

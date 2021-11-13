@@ -1,5 +1,6 @@
-package com.ksiezyk.roommanagementsystem.data;
+package com.ksiezyk.roommanagementsystem.data.datasource;
 
+import com.ksiezyk.roommanagementsystem.data.Result;
 import com.ksiezyk.roommanagementsystem.data.model.LoggedInUser;
 
 import java.io.IOException;

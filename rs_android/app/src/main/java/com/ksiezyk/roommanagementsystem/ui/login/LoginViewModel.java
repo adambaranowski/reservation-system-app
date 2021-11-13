@@ -1,15 +1,15 @@
 package com.ksiezyk.roommanagementsystem.ui.login;
 
+import android.util.Patterns;
+
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-import android.util.Patterns;
-
-import com.ksiezyk.roommanagementsystem.data.LoginRepository;
+import com.ksiezyk.roommanagementsystem.R;
 import com.ksiezyk.roommanagementsystem.data.Result;
 import com.ksiezyk.roommanagementsystem.data.model.LoggedInUser;
-import com.ksiezyk.roommanagementsystem.R;
+import com.ksiezyk.roommanagementsystem.data.repository.LoginRepository;
 
 public class LoginViewModel extends ViewModel {
 

@@ -1,5 +1,7 @@
-package com.ksiezyk.roommanagementsystem.data;
+package com.ksiezyk.roommanagementsystem.data.repository;
 
+import com.ksiezyk.roommanagementsystem.data.Result;
+import com.ksiezyk.roommanagementsystem.data.datasource.LoginDataSource;
 import com.ksiezyk.roommanagementsystem.data.model.LoggedInUser;
 
 /**

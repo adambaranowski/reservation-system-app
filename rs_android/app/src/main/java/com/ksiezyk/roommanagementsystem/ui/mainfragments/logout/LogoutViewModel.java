@@ -2,7 +2,7 @@ package com.ksiezyk.roommanagementsystem.ui.mainfragments.logout;
 
 import androidx.lifecycle.ViewModel;
 
-import com.ksiezyk.roommanagementsystem.data.LoginRepository;
+import com.ksiezyk.roommanagementsystem.data.repository.LoginRepository;
 
 public class LogoutViewModel extends ViewModel {
 

@@ -28,4 +28,7 @@
     <string name="assert_logout">Are you sure you want to logout?</string>
 
     <string name="hello_blank_fragment">Hello blank fragment!</string>
+
+    <!-- Reservations -->
+    <string name="get_reservations_failed">Get reservations failed</string>
 </resources>

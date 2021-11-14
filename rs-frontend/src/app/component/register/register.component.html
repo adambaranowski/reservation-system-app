@@ -45,18 +45,6 @@
             </div>
             <div class="form-group">
               <div class="col-sm-10 col-sm-offset-2">
-                <div class="checkbox">
-                  <input style="margin: 5px" type="checkbox" id="studentCheckBox" [checked]="isStudent" (change)="isStudent = !isStudent">
-                  <label for="studentCheckBox">Student</label>
-                  <input style="margin: 5px"type="checkbox" id="teacherCheckBox" [checked]="isTeacher" (change)="isTeacher = !isTeacher">
-                  <label for="teacherCheckBox">Teacher</label>
-                  <input style="margin: 5px"type="checkbox" id="adminCheckBox" [checked]="isAdmin" (change)="isAdmin = !isAdmin">
-                  <label for="adminCheckBox">Admin</label>
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="col-sm-10 col-sm-offset-2">
                 <button type="submit" class="btn btn-primary" style="margin: 5px">Submit</button>
                 <button (click)="backToLogin()" class="btn btn-secondary" style="margin: 5px">Back</button>
               </div>

@@ -17,7 +17,6 @@ import pl.adambaranowski.rs_auth_server.service.bruteforce.LoginAttemptService;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.NoSuchElementException;
-import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor

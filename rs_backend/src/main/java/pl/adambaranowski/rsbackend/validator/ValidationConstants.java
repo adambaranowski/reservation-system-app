@@ -3,11 +3,10 @@ package pl.adambaranowski.rsbackend.validator;
 public final class ValidationConstants {
     public static int ROOM_DESCRIPTION_MAX_LENGTH = 350;
     public static int NICK_MAX_LENGTH = 30;
-    public static String EMPTY_NICK = "User must have not-empty nick";
-    public static String TOO_LONG_NICK = "User must have not-empty nick";
-    public static String EMPTY_EMAIL = "User must have not-empty email";
-    public static String WRONG_EMAIL_PATTERN = "User must have valid email";
-    public static String NO_AUTHORITY = "User must have authority";
+
+    public static String WRONG_NICK = "User must have not-empty nick of max length: " + NICK_MAX_LENGTH;
+    public static String WRONG_EMAIL = "User must have not-empty valid email";
+
     public static String NULL_ROOM_NUMBER = "Room number cannot be empty or null";
     public static String NULL_ROOM_STATUS = "Room status cannot be empty or null";
     public static String BLANK_DESCRIPTION = "Room description cannot be blank";

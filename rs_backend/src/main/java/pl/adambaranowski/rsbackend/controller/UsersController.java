@@ -38,10 +38,16 @@ public class UsersController implements UsersApi {
         return ResponseEntity.ok(userService.modifyUser(userId, userRequestDto));
     }
 
-    @CrossOrigin(origins = "http://localhost:4200")
+//    @CrossOrigin(origins = "http://localhost:4200")
     @Override
     public ResponseEntity<UserResponseDto> postNewUser(UserRequestDto userRequestDto) {
         return ResponseEntity.status(HttpStatus.CREATED).body(userService.addNewUser(userRequestDto));
+    }
+
+    @Override
+    public ResponseEntity<Void> addAuthorities(Integer userId, List<String> authorities) {
+        userService.addAuthorities(userId, authorities);
+        return ResponseEntity.ok().build();
     }
 
     @Override

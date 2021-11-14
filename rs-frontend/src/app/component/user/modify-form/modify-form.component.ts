@@ -52,30 +52,11 @@ export class ModifyFormComponent implements OnInit, OnDestroy {
   }
 
   public modify(): void {
-    const authorities: [string | null] = ['STUDENT'];
-
-    if(this.isAdmin){
-      authorities.push('ADMIN');
-    }
-
-    if(this.isTeacher){
-      authorities.push('TEACHER');
-    }
-
-    if(this.isStudent){
-      authorities.push('STUDENT');
-    }
-
-    //Add default student
-    if (authorities.length < 1) {
-      authorities.push('STUDENT');
-    }
 
     const registerDto: UserRequestDto = {
       email: this.email.value,
       userNick: this.userNick.value,
-      password: this.password.value,
-      authorities: authorities
+      password: this.password.value
     };
 
     console.log(registerDto);

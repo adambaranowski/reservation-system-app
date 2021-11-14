@@ -20,11 +20,6 @@ export class RegisterComponent implements OnInit, OnDestroy {
   email = new FormControl();
   password = new FormControl();
 
-  isStudent= true;
-  isTeacher= false;
-  isAdmin= false;
-
-
   private subscriptions: Subscription[] = [];
 
   constructor(private router: Router,
@@ -50,36 +45,12 @@ export class RegisterComponent implements OnInit, OnDestroy {
   }
 
   public onRegister(): void {
-    const authorities: [string | null] = ['STUDENT'];
-
-    console.log(this.isAdmin);
-    if(this.isAdmin){
-      authorities.push('ADMIN');
-    }
-
-    console.log(this.isTeacher);
-    if(this.isTeacher){
-      authorities.push('TEACHER');
-    }
-
-    console.log(this.isStudent);
-    if(this.isStudent){
-      authorities.push('STUDENT');
-    }
-
-    //Add default student
-    if (authorities.length < 1) {
-        authorities.push('STUDENT');
-    }
 
     const registerDto: UserRequestDto = {
       email: this.email.value,
       userNick: this.userNick.value,
-      password: this.password.value,
-      authorities: authorities
+      password: this.password.value
     };
-
-    console.log(registerDto);
 
     this.subscriptions.push(
       this.userService.register(registerDto).subscribe(

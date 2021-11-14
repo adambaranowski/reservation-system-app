@@ -83,7 +83,7 @@ paths:
         403:
           description: You are not allowed to do this
     put:
-      summary: Modify user, allows admins adding new authorities
+      summary: Modify user, allows admins modify user params
       operationId: modifyUser
       parameters:
         - name: userId
@@ -106,6 +106,35 @@ paths:
                 $ref: "#/components/schemas/UserResponseDto"
         404:
           description: Given User does not exist
+        403:
+          description: You are not allowed to do this
+
+
+  /users/{userId}/addAuthorities:
+    put:
+      summary: Modify user, allows admins modify user params
+      operationId: addAuthorities
+      parameters:
+        - name: userId
+          in: path
+          description: "User id"
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                type: string
+                example: [ "ADMIN", "TEACHER" ]
+                description: New authorities
+      responses:
+        200:
+          description: Authorities modified
+        404:
+          description: Given User or Authority does not exist
         403:
           description: You are not allowed to do this
 
@@ -170,12 +199,6 @@ components:
           type: string
           description: User's password
           example: fkR5Y89W
-        authorities:
-          type: array
-          items:
-            type: string
-          description: Authority of the user
-          example: [ TEACHER, ADMIN ]
 
     UserResponseDto:
       type: object

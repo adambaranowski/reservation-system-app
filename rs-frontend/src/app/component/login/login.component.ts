@@ -4,10 +4,7 @@ import {AuthenticationService} from "../../service/authentication.service";
 import {NotificationService} from "../../service/notification.service";
 import {Subscription} from "rxjs";
 import {UserLoginDto} from "../../model/UserLoginDto";
-import {HttpErrorResponse, HttpResponse} from "@angular/common/http";
 import {NotificationType} from "../../enum/notification-type";
-import {UserLoginResponseDto} from "../../model/UserLoginResponseDto";
-import {NotifierService} from "angular-notifier";
 import {FormControl} from "@angular/forms";
 
 
@@ -28,7 +25,6 @@ export class LoginComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit(): void {
-    console.log(this.authenticationService.isLoggedIn());
     if (this.authenticationService.isLoggedIn()) {
       this.router.navigateByUrl('/menu')
     } else {
@@ -47,19 +43,14 @@ export class LoginComponent implements OnInit, OnDestroy {
     }
 
     this.subscriptions.push(
-      this.authenticationService.sendLoginRequest(loginDto).subscribe(
-        (response: UserLoginResponseDto ) => {
+      this.authenticationService.login(loginDto).subscribe(
+        (isLoggedSuccessfully: boolean) => {
 
-          this.authenticationService.saveUserdata(response);
-
-          this.sendNotification(NotificationType.SUCCESS, 'Successfully logged in!');
-
-          setTimeout(() => { this.router.navigateByUrl('/menu'); }, 1000);
-
-        },
-        (httpErrorResponse: HttpErrorResponse) => {
-          console.log(httpErrorResponse);
-          this.sendNotification(NotificationType.ERROR, 'Login failure! ' + httpErrorResponse.error);
+          if (isLoggedSuccessfully) {
+            setTimeout(() => {
+              this.router.navigateByUrl('/menu');
+            }, 1000);
+          }
         }
       )
     );

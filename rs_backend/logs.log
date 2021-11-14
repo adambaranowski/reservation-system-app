@@ -1,1 +1,341 @@
-2021-10-26 10:35:21.547  WARN 16444 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=19h59s138ms252µs800ns).
+2021-11-15 00:09:18.101  INFO 16832 --- [http-nio-8080-exec-7] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.getUserInfo() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,class UserResponseDto {
+    id: 3
+    userNick: admin
+    email: admin@gmail.com
+    authorities: [ADMIN]
+    lastLoginDateTime: 2021-11-15T00:09:18.067159
+    joinDateTime: 2021-11-14T22:28:28.274323
+    accountNonExpired: true
+    accountNonLocked: true
+    credentialsNonExpired: true
+},[]>
+2021-11-15 00:09:25.030  INFO 16832 --- [http-nio-8080-exec-10] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.getUserInfo() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,class UserResponseDto {
+    id: 3
+    userNick: admin
+    email: admin@gmail.com
+    authorities: [ADMIN]
+    lastLoginDateTime: 2021-11-15T00:09:25.01454
+    joinDateTime: 2021-11-14T22:28:28.274323
+    accountNonExpired: true
+    accountNonLocked: true
+    credentialsNonExpired: true
+},[]>
+2021-11-15 00:09:45.295  INFO 16832 --- [http-nio-8080-exec-2] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.getUserInfo() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,class UserResponseDto {
+    id: 3
+    userNick: admin
+    email: admin@gmail.com
+    authorities: [ADMIN]
+    lastLoginDateTime: 2021-11-15T00:09:45.291587
+    joinDateTime: 2021-11-14T22:28:28.274323
+    accountNonExpired: true
+    accountNonLocked: true
+    credentialsNonExpired: true
+},[]>
+2021-11-15 00:10:37.996  INFO 16832 --- [http-nio-8080-exec-4] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.getUserInfo() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,class UserResponseDto {
+    id: 3
+    userNick: admin
+    email: admin@gmail.com
+    authorities: [ADMIN]
+    lastLoginDateTime: 2021-11-15T00:10:37.996855
+    joinDateTime: 2021-11-14T22:28:28.274323
+    accountNonExpired: true
+    accountNonLocked: true
+    credentialsNonExpired: true
+},[]>
+2021-11-15 00:14:28.757  INFO 16832 --- [http-nio-8080-exec-8] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.getUserInfo() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,class UserResponseDto {
+    id: 3
+    userNick: admin
+    email: admin@gmail.com
+    authorities: [ADMIN]
+    lastLoginDateTime: 2021-11-15T00:14:28.757677
+    joinDateTime: 2021-11-14T22:28:28.274323
+    accountNonExpired: true
+    accountNonLocked: true
+    credentialsNonExpired: true
+},[]>
+2021-11-15 00:14:42.065  INFO 16832 --- [http-nio-8080-exec-10] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.EquipmentController.getAllEquipmentItems() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class EquipmentResponseDto {
+    id: 1
+    name: Pneumatic Organ
+    description: II+P, 8 stops, pneumatic tracture organ
+    roomNumber: 21
+}, class EquipmentResponseDto {
+    id: 2
+    name: Yamaha Small Grand Piano
+    description: Yamaha Small Grand Piano, well-tuned
+    roomNumber: 22
+}, class EquipmentResponseDto {
+    id: 3
+    name: Mechanic Walcker Organ
+    description: II+P, 7 stops, mechanic tracture organ
+    roomNumber: 25
+}, class EquipmentResponseDto {
+    id: 4
+    name: Calisia Piano
+    description: Small piano
+    roomNumber: 25
+}],[]>
+2021-11-15 00:14:42.073  INFO 16832 --- [http-nio-8080-exec-1] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.RoomController.getAllRooms() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class RoomResponseDto {
+    roomNumber: 21
+    description: Small organ room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 1
+        name: Pneumatic Organ
+        description: II+P, 8 stops, pneumatic tracture organ
+        roomNumber: 21
+    }]
+}, class RoomResponseDto {
+    roomNumber: 22
+    description: Grand Piano room on 2nd floor
+    roomStatus: ONLY_TEACHER
+    equipmentItems: [class EquipmentResponseDto {
+        id: 2
+        name: Yamaha Small Grand Piano
+        description: Yamaha Small Grand Piano, well-tuned
+        roomNumber: 22
+    }]
+}, class RoomResponseDto {
+    roomNumber: 25
+    description: Small organ-piano room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 3
+        name: Mechanic Walcker Organ
+        description: II+P, 7 stops, mechanic tracture organ
+        roomNumber: 25
+    }, class EquipmentResponseDto {
+        id: 4
+        name: Calisia Piano
+        description: Small piano
+        roomNumber: 25
+    }]
+}],[]>
+2021-11-15 00:14:42.091  INFO 16832 --- [http-nio-8080-exec-2] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.EquipmentController.getAllEquipmentItems() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class EquipmentResponseDto {
+    id: 1
+    name: Pneumatic Organ
+    description: II+P, 8 stops, pneumatic tracture organ
+    roomNumber: 21
+}, class EquipmentResponseDto {
+    id: 2
+    name: Yamaha Small Grand Piano
+    description: Yamaha Small Grand Piano, well-tuned
+    roomNumber: 22
+}, class EquipmentResponseDto {
+    id: 3
+    name: Mechanic Walcker Organ
+    description: II+P, 7 stops, mechanic tracture organ
+    roomNumber: 25
+}, class EquipmentResponseDto {
+    id: 4
+    name: Calisia Piano
+    description: Small piano
+    roomNumber: 25
+}],[]>
+2021-11-15 00:14:43.129  INFO 16832 --- [http-nio-8080-exec-4] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.UsersController.getAllUsers() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class UserResponseDto {
+    id: 1
+    userNick: teacher student
+    email: teacher@gmail.com
+    authorities: [TEACHER]
+    lastLoginDateTime: null
+    joinDateTime: 2021-11-14T22:28:28.08691
+    accountNonExpired: true
+    accountNonLocked: true
+    credentialsNonExpired: true
+}, class UserResponseDto {
+    id: 2
+    userNick: student
+    email: student@gmail.com
+    authorities: [STUDENT]
+    lastLoginDateTime: null
+    joinDateTime: 2021-11-14T22:28:28.196252
+    accountNonExpired: true
+    accountNonLocked: true
+    credentialsNonExpired: true
+}, class UserResponseDto {
+    id: 3
+    userNick: admin
+    email: admin@gmail.com
+    authorities: [ADMIN]
+    lastLoginDateTime: 2021-11-15T00:14:43.118187
+    joinDateTime: 2021-11-14T22:28:28.274323
+    accountNonExpired: true
+    accountNonLocked: true
+    credentialsNonExpired: true
+}, class UserResponseDto {
+    id: 4
+    userNick: asdf
+    email: asdf@gmail.com
+    authorities: [STUDENT]
+    lastLoginDateTime: 2021-11-15T00:09:11.137135
+    joinDateTime: 2021-11-14T22:28:47.877405
+    accountNonExpired: true
+    accountNonLocked: false
+    credentialsNonExpired: true
+}],[]>
+2021-11-15 00:14:46.739  INFO 16832 --- [http-nio-8080-exec-5] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.EquipmentController.getAllEquipmentItems() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class EquipmentResponseDto {
+    id: 1
+    name: Pneumatic Organ
+    description: II+P, 8 stops, pneumatic tracture organ
+    roomNumber: 21
+}, class EquipmentResponseDto {
+    id: 2
+    name: Yamaha Small Grand Piano
+    description: Yamaha Small Grand Piano, well-tuned
+    roomNumber: 22
+}, class EquipmentResponseDto {
+    id: 3
+    name: Mechanic Walcker Organ
+    description: II+P, 7 stops, mechanic tracture organ
+    roomNumber: 25
+}, class EquipmentResponseDto {
+    id: 4
+    name: Calisia Piano
+    description: Small piano
+    roomNumber: 25
+}],[]>
+2021-11-15 00:14:46.743  INFO 16832 --- [http-nio-8080-exec-6] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.RoomController.getAllRooms() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class RoomResponseDto {
+    roomNumber: 21
+    description: Small organ room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 1
+        name: Pneumatic Organ
+        description: II+P, 8 stops, pneumatic tracture organ
+        roomNumber: 21
+    }]
+}, class RoomResponseDto {
+    roomNumber: 22
+    description: Grand Piano room on 2nd floor
+    roomStatus: ONLY_TEACHER
+    equipmentItems: [class EquipmentResponseDto {
+        id: 2
+        name: Yamaha Small Grand Piano
+        description: Yamaha Small Grand Piano, well-tuned
+        roomNumber: 22
+    }]
+}, class RoomResponseDto {
+    roomNumber: 25
+    description: Small organ-piano room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 3
+        name: Mechanic Walcker Organ
+        description: II+P, 7 stops, mechanic tracture organ
+        roomNumber: 25
+    }, class EquipmentResponseDto {
+        id: 4
+        name: Calisia Piano
+        description: Small piano
+        roomNumber: 25
+    }]
+}],[]>
+2021-11-15 00:14:46.758  INFO 16832 --- [http-nio-8080-exec-8] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.EquipmentController.getAllEquipmentItems() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class EquipmentResponseDto {
+    id: 1
+    name: Pneumatic Organ
+    description: II+P, 8 stops, pneumatic tracture organ
+    roomNumber: 21
+}, class EquipmentResponseDto {
+    id: 2
+    name: Yamaha Small Grand Piano
+    description: Yamaha Small Grand Piano, well-tuned
+    roomNumber: 22
+}, class EquipmentResponseDto {
+    id: 3
+    name: Mechanic Walcker Organ
+    description: II+P, 7 stops, mechanic tracture organ
+    roomNumber: 25
+}, class EquipmentResponseDto {
+    id: 4
+    name: Calisia Piano
+    description: Small piano
+    roomNumber: 25
+}],[]>
+2021-11-15 00:18:25.077  INFO 16832 --- [http-nio-8080-exec-1] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.getUserInfo() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,class UserResponseDto {
+    id: 3
+    userNick: admin
+    email: admin@gmail.com
+    authorities: [ADMIN]
+    lastLoginDateTime: 2021-11-15T00:18:25.077433
+    joinDateTime: 2021-11-14T22:28:28.274323
+    accountNonExpired: true
+    accountNonLocked: true
+    credentialsNonExpired: true
+},[]>

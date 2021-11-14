@@ -1,7 +1,7 @@
 import {Injectable, OnDestroy} from '@angular/core';
-import { environment} from "../../environments/environment";
-import {HttpClient, HttpErrorResponse, HttpResponse} from "@angular/common/http";
-import {Observable, Subscription} from "rxjs";
+import {environment} from "../../environments/environment";
+import {HttpClient, HttpErrorResponse} from "@angular/common/http";
+import {Observable, Subject, Subscription} from "rxjs";
 import {UserLoginDto} from "../model/UserLoginDto";
 import {User} from "../model/User";
 import {JwtHelperService} from "@auth0/angular-jwt";
@@ -14,10 +14,8 @@ import {NotificationService} from "./notification.service";
 @Injectable({
   providedIn: 'root'
 })
-export class AuthenticationService implements OnDestroy{
+export class AuthenticationService implements OnDestroy {
   private subscriptions: Subscription[] = [];
-
-  public host: string = environment.authApiUrl;
 
   private token: string | undefined;
   private user: User | undefined;
@@ -26,12 +24,49 @@ export class AuthenticationService implements OnDestroy{
 
   constructor(private httpClient: HttpClient,
               private userService: UserService,
-              private notifier: NotificationService) { }
+              private notifier: NotificationService) {
+  }
 
-  public sendLoginRequest(loginDto: UserLoginDto): Observable<UserLoginResponseDto> {
-    return this.httpClient
-      .post<UserLoginResponseDto>
-      (`${this.host}/${Urls.LOGIN}`, loginDto);
+  // public sendLoginRequest(loginDto: UserLoginDto): Observable<UserLoginResponseDto> {
+  //   return this.httpClient
+  //     .post<UserLoginResponseDto>
+  //     (`${environment.authApiUrl}/${Urls.LOGIN}`, loginDto);
+  // }
+
+  public login(loginDto: UserLoginDto): Observable<boolean> {
+
+    var isLoggedSubject: Subject<boolean> = new Subject<boolean>();
+
+    this.httpClient.post<UserLoginResponseDto>(`${environment.authApiUrl}/${Urls.LOGIN}`, loginDto).subscribe(
+      (response: UserLoginResponseDto) => {
+
+        // load token to allow interceptor o use it during next api call
+        this.saveToken(response.token);
+
+        this.httpClient.get<User>(`${environment.apiUrl}/${Urls.LOGIN}`).subscribe(
+          (user: User) => {
+
+            this.saveUser(user);
+            this.sendNotification(NotificationType.SUCCESS, 'Successfully logged in!');
+
+            isLoggedSubject.next(true);
+          },
+          (httpErrorResponse: HttpErrorResponse) => {
+            console.log(httpErrorResponse);
+            this.sendNotification(NotificationType.ERROR, 'Login failure! ' + httpErrorResponse.error);
+
+            isLoggedSubject.next(false);
+          }
+        );
+      },
+      (httpErrorResponse: HttpErrorResponse) => {
+        console.log(httpErrorResponse);
+        this.sendNotification(NotificationType.ERROR, 'Login failure! ' + httpErrorResponse.error);
+
+        isLoggedSubject.next(false);
+      }
+    );
+    return isLoggedSubject.asObservable();
   }
 
 
@@ -42,24 +77,14 @@ export class AuthenticationService implements OnDestroy{
     localStorage.removeItem('token');
   }
 
-  public saveUserdata(loginResponseDto: UserLoginResponseDto): void {
-    console.log('dto token:' + loginResponseDto.token)
-    this.token = loginResponseDto.token;
-    localStorage.setItem('token', loginResponseDto.token);
+  public saveToken(token: string): void {
+    this.token = token;
+    localStorage.setItem('token', token);
+  }
 
-    this.subscriptions.push(this.userService.getLoggedUserByToken().subscribe(
-      (response: User) => {
-        this.user = response;
-        localStorage.setItem('user', JSON.stringify(response));
-      },
-      (httpErrorResponse: HttpErrorResponse) => {
-        console.log(httpErrorResponse);
-        this.sendNotification(NotificationType.ERROR, 'Login failure! Cannot load user data ' + httpErrorResponse.error);
-        this.token = undefined;
-        this.user = undefined;
-      }
-    ));
-
+  public saveUser(user: User): void {
+    this.user = user;
+    localStorage.setItem('user', JSON.stringify(user));
   }
 
 
@@ -94,10 +119,10 @@ export class AuthenticationService implements OnDestroy{
 
   public isLoggedIn(): boolean {
     this.loadDataFromStorage();
-    if (this.token != undefined && this.token !== ''){
-        if(!this.jwtHelper.isTokenExpired(this.token)){
-          return true;
-        }
+    if (this.token != undefined && this.token !== '') {
+      if (!this.jwtHelper.isTokenExpired(this.token)) {
+        return true;
+      }
     } else {
       this.logOut();
       return false;

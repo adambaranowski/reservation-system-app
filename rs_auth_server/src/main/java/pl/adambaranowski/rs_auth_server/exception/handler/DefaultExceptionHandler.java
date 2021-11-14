@@ -35,21 +35,6 @@ public class DefaultExceptionHandler {
         return ResponseEntity.status(HttpStatus.NOT_FOUND).body(e.getMessage());
     }
 
-//    @ExceptionHandler(ConflictException.class)
-//    public ResponseEntity<String> handleConflictException(ConflictException e) {
-//        return ResponseEntity.status(HttpStatus.CONFLICT).body(e.getMessage());
-//    }
-//
-//    @ExceptionHandler(WrongDtoException.class)
-//    public ResponseEntity<String> handleWrongDtoException(WrongDtoException e) {
-//        return ResponseEntity.badRequest().body(e.getErrors().toString());
-//    }
-//
-//    @ExceptionHandler(NotAllowedException.class)
-//    public ResponseEntity<String> handleNotAllowedException(NotAllowedException e) {
-//        return ResponseEntity.status(HttpStatus.FORBIDDEN).body(e.getMessage());
-//    }
-
     @ExceptionHandler(TooMuchAttemptsException.class)
     public ResponseEntity<String> handleTooMuchAttemptsException(TooMuchAttemptsException e) {
         return ResponseEntity.status(HttpStatus.FORBIDDEN).body(e.getMessage());

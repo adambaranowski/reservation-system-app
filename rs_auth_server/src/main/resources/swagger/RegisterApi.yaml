@@ -1,0 +1,36 @@
+openapi: 3.0.3
+info:
+  title: RegisterApi
+  description: RegisterApi
+  version: 1.0.0
+
+paths:
+  /register:
+    post:
+      summary: Enpoint for logging
+      operationId: register
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/RegisterRequestDto"
+      responses:
+        200:
+          description: Succesful registred user
+        401:
+          description: Registration failure
+
+components:
+  schemas:
+    RegisterRequestDto:
+      type: object
+      description: Contains login (email) and password
+      properties:
+        email:
+          type: string
+          description: User's email
+          example: puciak@gmail.com
+        password:
+          type: string
+          description: User's password
+          example: kdo@AAFeein23

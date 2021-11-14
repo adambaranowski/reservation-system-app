@@ -7,6 +7,7 @@ import {
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import {AuthenticationService} from "../service/authentication.service";
+import {environment} from "../../environments/environment";
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
@@ -14,17 +15,11 @@ export class AuthInterceptor implements HttpInterceptor {
   constructor(private authenticationService: AuthenticationService) {}
 
   intercept(request: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
-    if (request.url.includes(`${this.authenticationService.host}/login`)){
+    if (request.url.includes(`${environment.authApiUrl}/login`)){
       return next.handle(request);
     }
 
-    // console.log(`${this.authenticationService.host}/users`)
-    // console.log(request);
-    // console.log(request.method);
-    // console.log(request.url.includes(`${this.authenticationService.host}/users`));
-    // console.log(request.method == 'post');
-    if (request.url.includes(`${this.authenticationService.host}/users`)  && !request.url.endsWith('e') && request.method === 'POST'){
-      // console.log('TRRUEE')
+    if (request.url.includes(`${environment.apiUrl}/users`)  && !request.url.endsWith('e') && request.method === 'POST'){
       return next.handle(request);
     }
 

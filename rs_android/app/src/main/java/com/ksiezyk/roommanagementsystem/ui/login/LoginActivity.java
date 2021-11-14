@@ -18,15 +18,15 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.annotation.StringRes;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.biometric.BiometricManager;
+import androidx.biometric.BiometricPrompt;
 import androidx.core.content.ContextCompat;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
-import androidx.biometric.BiometricManager;
-import androidx.biometric.BiometricPrompt;
 
-import com.ksiezyk.roommanagementsystem.ui.MainActivity;
 import com.ksiezyk.roommanagementsystem.R;
 import com.ksiezyk.roommanagementsystem.databinding.ActivityLoginBinding;
+import com.ksiezyk.roommanagementsystem.ui.MainActivity;
 
 import java.util.concurrent.Executor;
 
@@ -61,7 +61,7 @@ public class LoginActivity extends AppCompatActivity {
                 biometricText.setText("You can authenticate with fingerprint scanner.");
                 break;
             default:
-                biometricText.setText("Fingerprint scanner unavailable, error code: "+canAuth);
+                biometricText.setText("Fingerprint scanner unavailable, error code: " + canAuth);
                 biometricButton.setVisibility(View.GONE);
                 break;
         }
@@ -118,6 +118,7 @@ public class LoginActivity extends AppCompatActivity {
                 loadingProgressBar.setVisibility(View.VISIBLE);
                 loginViewModel.login("user1@test.com", "password1");
             }
+
             @Override
             public void onAuthenticationFailed() {
                 super.onAuthenticationFailed();

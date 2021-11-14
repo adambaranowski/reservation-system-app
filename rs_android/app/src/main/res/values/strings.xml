@@ -3,6 +3,8 @@
     <!-- Simple dialog -->
     <string name="dialog_confirm">Yes</string>
     <string name="dialog_decline">No</string>
+    <string name="dialog_search">Search</string>
+
 
     <!-- Login -->
     <string name="title_activity_login">Login</string>
@@ -31,4 +33,6 @@
 
     <!-- Reservations -->
     <string name="get_reservations_failed">Get reservations failed</string>
+    <string name="invalid_begin_datetime">Invalid begin date or time</string>
+    <string name="invalid_end_datetime">Invalid end date or time</string>
 </resources>

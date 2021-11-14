@@ -2,6 +2,8 @@ package com.ksiezyk.roommanagementsystem.ui.mainfragments.reservation;
 
 import android.os.Build;
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,9 +21,9 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.ksiezyk.roommanagementsystem.R;
 import com.ksiezyk.roommanagementsystem.data.model.Reservation;
+import com.ksiezyk.roommanagementsystem.ui.components.DateTimePickerWidget;
 import com.ksiezyk.roommanagementsystem.ui.components.ReservationWidget;
 
-import java.time.LocalDateTime;
 import java.util.List;
 
 /**
@@ -31,7 +33,29 @@ import java.util.List;
  */
 public class ReservationFragment extends Fragment {
     private ReservationViewModel reservationViewModel;
+    private int roomNumber;
     private ProgressBar loadingProgressBar;
+    private DateTimePickerWidget beginDateTimeWidget;
+    private DateTimePickerWidget endDateTimeWidget;
+    private final TextWatcher afterFormChangedListener = new TextWatcher() {
+        @Override
+        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+            // ignore
+        }
+
+        @Override
+        public void onTextChanged(CharSequence s, int start, int before, int count) {
+            // ignore
+        }
+
+        @RequiresApi(api = Build.VERSION_CODES.O)
+        @Override
+        public void afterTextChanged(Editable s) {
+            reservationViewModel.reservationFormChanged(
+                    beginDateTimeWidget.getText().toString(),
+                    endDateTimeWidget.getText().toString());
+        }
+    };
     private Button searchButton;
     private LinearLayout reservationsContainer;
 
@@ -63,11 +87,33 @@ public class ReservationFragment extends Fragment {
         View rootView = inflater.inflate(R.layout.fragment_reservation, container, false);
 
         loadingProgressBar = rootView.findViewById(R.id.reservations_loading_bar);
-        reservationsContainer = rootView.findViewById(R.id.reservations_container);
+        beginDateTimeWidget = rootView.findViewById(R.id.reservation_begin_date_time_form);
+        endDateTimeWidget = rootView.findViewById(R.id.reservation_end_date_time_form);
         searchButton = rootView.findViewById(R.id.reservations_search);
+        reservationsContainer = rootView.findViewById(R.id.reservations_container);
 
-        searchButton.setOnClickListener(e -> reservationViewModel.getReservations(
-                25, LocalDateTime.now(), LocalDateTime.now().plusHours(1)));
+        beginDateTimeWidget.addTextChangedListener(afterFormChangedListener);
+        endDateTimeWidget.addTextChangedListener(afterFormChangedListener);
+
+        roomNumber = 25;
+        searchButton.setOnClickListener(e -> reservationViewModel.getReservations(roomNumber,
+                beginDateTimeWidget.getText().toString(), endDateTimeWidget.getText().toString()));
+
+        reservationViewModel.getReservationFormState().observe(getViewLifecycleOwner(), new Observer<ReservationFormState>() {
+            @Override
+            public void onChanged(@Nullable ReservationFormState reservationFormState) {
+                if (reservationFormState == null) {
+                    return;
+                }
+                searchButton.setEnabled(reservationFormState.isDataValid());
+                if (reservationFormState.getBeginDateTimeError() != null) {
+                    beginDateTimeWidget.setError(getString(reservationFormState.getBeginDateTimeError()));
+                }
+                if (reservationFormState.getEndDateTimeError() != null) {
+                    endDateTimeWidget.setError(getString(reservationFormState.getEndDateTimeError()));
+                }
+            }
+        });
 
         reservationViewModel.getReservationsResult().observe(getViewLifecycleOwner(), new Observer<GetReservationsResult>() {
             @RequiresApi(api = Build.VERSION_CODES.O)
@@ -96,7 +142,8 @@ public class ReservationFragment extends Fragment {
     @RequiresApi(api = Build.VERSION_CODES.O)
     private void updateUiWithReservations(List<Reservation> success) {
         reservationsContainer.removeAllViews();
-        success.forEach(r -> reservationsContainer.addView(new ReservationWidget(getContext(), r)));
+        success.forEach(r -> reservationsContainer.addView(
+                new ReservationWidget(getContext(), r, roomNumber)));
     }
 }
 

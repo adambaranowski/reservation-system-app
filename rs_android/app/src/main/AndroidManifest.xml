@@ -23,5 +23,5 @@
             android:name=".ui.MainActivity"
             android:exported="false" />
     </application>
-
+    <uses-permission android:name="android.permission.USE_BIOMETRIC"/>
 </manifest>

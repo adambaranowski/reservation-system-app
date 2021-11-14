@@ -1,4 +1,4 @@
-package com.ksiezyk.roommanagementsystem.ui.home;
+package com.ksiezyk.roommanagementsystem.ui.mainfragments.home;
 
 import android.os.Bundle;
 

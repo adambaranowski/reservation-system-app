@@ -31,7 +31,7 @@ public class ReservationDataSource {
                     .collect(Collectors.toList());
             return new Result.Success<>(reservations);
         } catch (Exception e) {
-            return new Result.Error(new IOException("Error logging in", e));
+            return new Result.Error(new IOException("Error getting reservations", e));
         }
     }
 

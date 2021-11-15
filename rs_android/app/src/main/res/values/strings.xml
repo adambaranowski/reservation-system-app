@@ -32,7 +32,13 @@
     <string name="hello_blank_fragment">Hello blank fragment!</string>
 
     <!-- Reservations -->
+    <string name="get_rooms_failed">Get rooms failed</string>
     <string name="get_reservations_failed">Get reservations failed</string>
+    <string name="invalid_room_number">Invalid room number</string>
     <string name="invalid_begin_datetime">Invalid begin date or time</string>
     <string name="invalid_end_datetime">Invalid end date or time</string>
+
+    <!-- Reservation widget -->
+    <string name="reservation_room">Room %d</string>
+    <string name="reservation_time">%s - %s</string>
 </resources>

@@ -32,6 +32,7 @@ public class DateTimePickerWidget extends AppCompatEditText {
     }
 
     private void init() {
+        setFocusable(false);
         setOnClickListener(v -> {
             final Calendar cldr = Calendar.getInstance();
             calendar = Calendar.getInstance();

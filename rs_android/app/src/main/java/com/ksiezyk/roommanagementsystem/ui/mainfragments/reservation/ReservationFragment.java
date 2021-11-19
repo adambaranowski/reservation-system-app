@@ -15,17 +15,17 @@ import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
 import androidx.annotation.RequiresApi;
 import androidx.annotation.StringRes;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.ksiezyk.roommanagementsystem.R;
 import com.ksiezyk.roommanagementsystem.data.model.Reservation;
 import com.ksiezyk.roommanagementsystem.data.model.Room;
 import com.ksiezyk.roommanagementsystem.ui.components.DateTimePickerWidget;
+import com.ksiezyk.roommanagementsystem.ui.components.MakeReservationPopup;
 import com.ksiezyk.roommanagementsystem.ui.components.ReservationWidget;
 
 import java.util.List;
@@ -62,6 +62,7 @@ public class ReservationFragment extends Fragment {
         }
     };
     private Button searchButton;
+    private FloatingActionButton makeReservationButton;
     private LinearLayout reservationsContainer;
 
     public ReservationFragment() {
@@ -93,13 +94,10 @@ public class ReservationFragment extends Fragment {
 
         // Find UI elements
         loadingProgressBar = rootView.findViewById(R.id.reservations_loading_bar);
-        roomsSpinner = rootView.findViewById(R.id.reservations_rooms);
-        beginDateTimeWidget = rootView.findViewById(R.id.reservation_begin_date_time_form);
-        endDateTimeWidget = rootView.findViewById(R.id.reservation_end_date_time_form);
-        searchButton = rootView.findViewById(R.id.reservations_search);
         reservationsContainer = rootView.findViewById(R.id.reservations_container);
 
-        // Update form state when data changes
+        // Add handlers
+        roomsSpinner = rootView.findViewById(R.id.reservations_rooms);
         roomsSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
             public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
@@ -114,72 +112,72 @@ public class ReservationFragment extends Fragment {
 
             }
         });
+
+        beginDateTimeWidget = rootView.findViewById(R.id.reservation_begin_date_time_form);
         beginDateTimeWidget.addTextChangedListener(afterFormChangedListener);
+
+        endDateTimeWidget = rootView.findViewById(R.id.reservation_end_date_time_form);
         endDateTimeWidget.addTextChangedListener(afterFormChangedListener);
 
-        // Update UI when form state changes
-        reservationViewModel.getReservationFormState().observe(getViewLifecycleOwner(), new Observer<ReservationFormState>() {
-            @Override
-            public void onChanged(@Nullable ReservationFormState reservationFormState) {
-                if (reservationFormState == null) {
-                    return;
-                }
-                searchButton.setEnabled(reservationFormState.isDataValid());
-                if (reservationFormState.getRoomNumberError() != null) {
-                    beginDateTimeWidget.setError(getString(reservationFormState.getRoomNumberError()));
-                } else {
-                    beginDateTimeWidget.setError(null);
-                }
-                if (reservationFormState.getBeginDateTimeError() != null) {
-                    beginDateTimeWidget.setError(getString(reservationFormState.getBeginDateTimeError()));
-                } else {
-                    beginDateTimeWidget.setError(null);
-                }
-                if (reservationFormState.getEndDateTimeError() != null) {
-                    endDateTimeWidget.setError(getString(reservationFormState.getEndDateTimeError()));
-                } else {
-                    endDateTimeWidget.setError(null);
-                }
-            }
-        });
-
-        // Get reservations when button clicked
+        searchButton = rootView.findViewById(R.id.reservations_search);
         searchButton.setOnClickListener(e -> reservationViewModel.getReservations(
                 ((Room) roomsSpinner.getSelectedItem()).getId(),
                 beginDateTimeWidget.getText().toString(), endDateTimeWidget.getText().toString()));
 
+        makeReservationButton = rootView.findViewById(R.id.make_reservation_button);
+        makeReservationButton.setOnClickListener(v -> {
+            MakeReservationPopup makeReservationPopup = new MakeReservationPopup();
+            makeReservationPopup.showPopupWindow(v);
+        });
+
+        // Update UI when form state changes
+        reservationViewModel.getReservationFormState().observe(getViewLifecycleOwner(), reservationFormState -> {
+            if (reservationFormState == null) {
+                return;
+            }
+            searchButton.setEnabled(reservationFormState.isDataValid());
+            if (reservationFormState.getRoomNumberError() != null) {
+                beginDateTimeWidget.setError(getString(reservationFormState.getRoomNumberError()));
+            } else {
+                beginDateTimeWidget.setError(null);
+            }
+            if (reservationFormState.getBeginDateTimeError() != null) {
+                beginDateTimeWidget.setError(getString(reservationFormState.getBeginDateTimeError()));
+            } else {
+                beginDateTimeWidget.setError(null);
+            }
+            if (reservationFormState.getEndDateTimeError() != null) {
+                endDateTimeWidget.setError(getString(reservationFormState.getEndDateTimeError()));
+            } else {
+                endDateTimeWidget.setError(null);
+            }
+        });
+
         // Update UI when rooms change
-        reservationViewModel.getGetRoomsResult().observe(getViewLifecycleOwner(), new Observer<GetRoomsResult>() {
-            @Override
-            public void onChanged(GetRoomsResult getRoomsResult) {
-                if (getRoomsResult == null) {
-                    return;
-                }
-                loadingProgressBar.setVisibility(View.GONE);
-                if (getRoomsResult.getError() != null) {
-                    showGetRoomsFailed(getRoomsResult.getError());
-                }
-                if (getRoomsResult.getSuccess() != null) {
-                    updateUiWithRooms(getRoomsResult.getSuccess());
-                }
+        reservationViewModel.getGetRoomsResult().observe(getViewLifecycleOwner(), getRoomsResult -> {
+            if (getRoomsResult == null) {
+                return;
+            }
+            loadingProgressBar.setVisibility(View.GONE);
+            if (getRoomsResult.getError() != null) {
+                showGetRoomsFailed(getRoomsResult.getError());
+            }
+            if (getRoomsResult.getSuccess() != null) {
+                updateUiWithRooms(getRoomsResult.getSuccess());
             }
         });
 
         // Update UI when reservations change
-        reservationViewModel.getGetReservationsResult().observe(getViewLifecycleOwner(), new Observer<GetReservationsResult>() {
-            @RequiresApi(api = Build.VERSION_CODES.O)
-            @Override
-            public void onChanged(@Nullable GetReservationsResult getReservationsResult) {
-                if (getReservationsResult == null) {
-                    return;
-                }
-                loadingProgressBar.setVisibility(View.GONE);
-                if (getReservationsResult.getError() != null) {
-                    showGetReservationsFailed(getReservationsResult.getError());
-                }
-                if (getReservationsResult.getSuccess() != null) {
-                    updateUiWithReservations(getReservationsResult.getSuccess());
-                }
+        reservationViewModel.getGetReservationsResult().observe(getViewLifecycleOwner(), getReservationsResult -> {
+            if (getReservationsResult == null) {
+                return;
+            }
+            loadingProgressBar.setVisibility(View.GONE);
+            if (getReservationsResult.getError() != null) {
+                showGetReservationsFailed(getReservationsResult.getError());
+            }
+            if (getReservationsResult.getSuccess() != null) {
+                updateUiWithReservations(getReservationsResult.getSuccess());
             }
         });
 

@@ -3,6 +3,7 @@
     <!-- Simple dialog -->
     <string name="dialog_confirm">Yes</string>
     <string name="dialog_decline">No</string>
+    <string name="dialog_cancel">Cancel</string>
     <string name="dialog_search">Search</string>
 
 
@@ -37,8 +38,13 @@
     <string name="invalid_room_number">Invalid room number</string>
     <string name="invalid_begin_datetime">Invalid begin date or time</string>
     <string name="invalid_end_datetime">Invalid end date or time</string>
+    <string name="add_reservation">Add reservation</string>
 
     <!-- Reservation widget -->
     <string name="reservation_room">Room %d</string>
     <string name="reservation_time">%s - %s</string>
+
+    <!-- Make Reservation Popup -->
+    <string name="make_reservation_title">Make reservation</string>
+    <string name="make_reservation_confirm">Make reservation</string>
 </resources>

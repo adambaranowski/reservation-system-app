@@ -47,4 +47,5 @@
     <!-- Make Reservation Popup -->
     <string name="make_reservation_title">Make reservation</string>
     <string name="make_reservation_confirm">Make reservation</string>
+    <string name="make_reservation_choose_room_label">Choose room</string>
 </resources>

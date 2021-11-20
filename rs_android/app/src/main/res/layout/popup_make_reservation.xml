@@ -19,7 +19,7 @@
             android:padding="@dimen/make_reservation_inner_padding">
 
             <TextView
-                android:id="@+id/add_reservation_title"
+                android:id="@+id/make_reservation_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
@@ -27,6 +27,23 @@
                 android:text="@string/make_reservation_title"
                 android:textSize="20sp"
                 android:textStyle="bold" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/outlinedTextField"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/make_reservation_choose_room_label"
+                app:startIconContentDescription="@string/make_reservation_choose_room_label"
+                app:startIconDrawable="@drawable/ic_outline_sensor_door_24">
+
+                <AutoCompleteTextView
+                    android:id="@+id/make_reservation_choose_room_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:inputType="none" />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"

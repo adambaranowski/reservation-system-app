@@ -64,6 +64,7 @@ public class ReservationFragment extends Fragment {
     private Button searchButton;
     private FloatingActionButton makeReservationButton;
     private LinearLayout reservationsContainer;
+    private List<Room> rooms;
 
     public ReservationFragment() {
         // Required empty public constructor
@@ -126,7 +127,7 @@ public class ReservationFragment extends Fragment {
 
         makeReservationButton = rootView.findViewById(R.id.make_reservation_button);
         makeReservationButton.setOnClickListener(v -> {
-            MakeReservationPopup makeReservationPopup = new MakeReservationPopup();
+            MakeReservationPopup makeReservationPopup = new MakeReservationPopup(rooms);
             makeReservationPopup.showPopupWindow(v);
         });
 
@@ -163,7 +164,8 @@ public class ReservationFragment extends Fragment {
                 showGetRoomsFailed(getRoomsResult.getError());
             }
             if (getRoomsResult.getSuccess() != null) {
-                updateUiWithRooms(getRoomsResult.getSuccess());
+                rooms = getRoomsResult.getSuccess();
+                updateUiWithRooms();
             }
         });
 
@@ -190,8 +192,8 @@ public class ReservationFragment extends Fragment {
         Toast.makeText(getContext(), errorString, Toast.LENGTH_SHORT).show();
     }
 
-    private void updateUiWithRooms(List<Room> success) {
-        ArrayAdapter aa = new ArrayAdapter(getContext(), R.layout.support_simple_spinner_dropdown_item, success);
+    private void updateUiWithRooms() {
+        ArrayAdapter aa = new ArrayAdapter(getContext(), R.layout.support_simple_spinner_dropdown_item, rooms);
         aa.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
         roomsSpinner.setAdapter(aa);
     }

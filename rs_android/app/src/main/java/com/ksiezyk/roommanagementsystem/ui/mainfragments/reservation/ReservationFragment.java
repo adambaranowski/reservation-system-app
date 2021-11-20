@@ -2,17 +2,14 @@ package com.ksiezyk.roommanagementsystem.ui.mainfragments.reservation;
 
 import android.os.Build;
 import android.os.Bundle;
-import android.text.Editable;
-import android.text.TextWatcher;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.ProgressBar;
-import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.annotation.RequiresApi;
@@ -38,29 +35,10 @@ import java.util.List;
 public class ReservationFragment extends Fragment {
     private ReservationViewModel reservationViewModel;
     private ProgressBar loadingProgressBar;
-    private Spinner roomsSpinner;
+    private AutoCompleteTextView chooseRoomView;
+    private Room chosenRoom;
     private DateTimePickerWidget beginDateTimeWidget;
     private DateTimePickerWidget endDateTimeWidget;
-    private final TextWatcher afterFormChangedListener = new TextWatcher() {
-        @Override
-        public void beforeTextChanged(CharSequence s, int start, int count, int after) {
-            // ignore
-        }
-
-        @Override
-        public void onTextChanged(CharSequence s, int start, int before, int count) {
-            // ignore
-        }
-
-        @RequiresApi(api = Build.VERSION_CODES.O)
-        @Override
-        public void afterTextChanged(Editable s) {
-            reservationViewModel.reservationFormChanged(
-                    (Room) roomsSpinner.getSelectedItem(),
-                    beginDateTimeWidget.getText().toString(),
-                    endDateTimeWidget.getText().toString());
-        }
-    };
     private Button searchButton;
     private FloatingActionButton makeReservationButton;
     private LinearLayout reservationsContainer;
@@ -98,32 +76,23 @@ public class ReservationFragment extends Fragment {
         reservationsContainer = rootView.findViewById(R.id.reservations_container);
 
         // Add handlers
-        roomsSpinner = rootView.findViewById(R.id.reservations_rooms);
-        roomsSpinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
-            @Override
-            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-                reservationViewModel.reservationFormChanged(
-                        (Room) roomsSpinner.getSelectedItem(),
-                        beginDateTimeWidget.getText().toString(),
-                        endDateTimeWidget.getText().toString());
-            }
-
-            @Override
-            public void onNothingSelected(AdapterView<?> parent) {
-
-            }
+        chooseRoomView = rootView.findViewById(R.id.reservations_rooms);
+        chooseRoomView.setOnItemClickListener((parent, view, position, id) -> {
+            chosenRoom = (Room) parent.getSelectedItem();
+            afterFormChangedListener();
         });
 
         beginDateTimeWidget = rootView.findViewById(R.id.reservation_begin_date_time_form);
-        beginDateTimeWidget.addTextChangedListener(afterFormChangedListener);
+        beginDateTimeWidget.addTextChangedListener(this::afterFormChangedListener);
 
         endDateTimeWidget = rootView.findViewById(R.id.reservation_end_date_time_form);
-        endDateTimeWidget.addTextChangedListener(afterFormChangedListener);
+        endDateTimeWidget.addTextChangedListener(this::afterFormChangedListener);
 
         searchButton = rootView.findViewById(R.id.reservations_search);
         searchButton.setOnClickListener(e -> reservationViewModel.getReservations(
-                ((Room) roomsSpinner.getSelectedItem()).getId(),
-                beginDateTimeWidget.getText().toString(), endDateTimeWidget.getText().toString()));
+                chosenRoom.getId(),
+                beginDateTimeWidget.getDateTime(),
+                endDateTimeWidget.getDateTime()));
 
         makeReservationButton = rootView.findViewById(R.id.make_reservation_button);
         makeReservationButton.setOnClickListener(v -> {
@@ -188,6 +157,14 @@ public class ReservationFragment extends Fragment {
         return rootView;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    private void afterFormChangedListener() {
+        reservationViewModel.reservationFormChanged(
+                chosenRoom,
+                beginDateTimeWidget.getDateTime(),
+                endDateTimeWidget.getDateTime());
+    }
+
     private void showGetRoomsFailed(@StringRes Integer errorString) {
         Toast.makeText(getContext(), errorString, Toast.LENGTH_SHORT).show();
     }
@@ -195,7 +172,7 @@ public class ReservationFragment extends Fragment {
     private void updateUiWithRooms() {
         ArrayAdapter aa = new ArrayAdapter(getContext(), R.layout.support_simple_spinner_dropdown_item, rooms);
         aa.setDropDownViewResource(R.layout.support_simple_spinner_dropdown_item);
-        roomsSpinner.setAdapter(aa);
+        chooseRoomView.setAdapter(aa);
     }
 
     private void showGetReservationsFailed(@StringRes Integer errorString) {
@@ -205,9 +182,8 @@ public class ReservationFragment extends Fragment {
     @RequiresApi(api = Build.VERSION_CODES.O)
     private void updateUiWithReservations(List<Reservation> success) {
         reservationsContainer.removeAllViews();
-        int roomNumber = ((Room) roomsSpinner.getSelectedItem()).getId();
         success.forEach(r -> reservationsContainer.addView(
-                new ReservationWidget(getContext(), r, roomNumber)));
+                new ReservationWidget(getContext(), r, chosenRoom.getId())));
     }
 }
 

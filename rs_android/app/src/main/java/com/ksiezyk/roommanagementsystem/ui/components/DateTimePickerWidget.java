@@ -3,18 +3,25 @@ package com.ksiezyk.roommanagementsystem.ui.components;
 import android.app.DatePickerDialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.AttributeSet;
+import android.view.View;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.widget.AppCompatEditText;
+
+import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
+import com.ksiezyk.roommanagementsystem.R;
 
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
-public class DateTimePickerWidget extends AppCompatEditText {
+public class DateTimePickerWidget extends TextInputLayout {
     private final SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd HH:mm", Locale.ENGLISH);
     private Calendar calendar;
+    private TextInputEditText editText;
 
     public DateTimePickerWidget(Context context) {
         super(context);
@@ -22,7 +29,7 @@ public class DateTimePickerWidget extends AppCompatEditText {
     }
 
     public DateTimePickerWidget(Context context, @Nullable AttributeSet attrs) {
-        super(context, attrs);
+        super(context, attrs, R.style.Widget_MaterialComponents_TextInputLayout_OutlinedBox);
         init();
     }
 
@@ -32,7 +39,9 @@ public class DateTimePickerWidget extends AppCompatEditText {
     }
 
     private void init() {
-        setFocusable(false);
+        //Create a View object yourself through inflater
+        View view = inflate(getContext(), R.layout.widget_date_time_picker, this);
+        editText = view.findViewById(R.id.date_time_picker_edit_text);
         setOnClickListener(v -> {
             final Calendar cldr = Calendar.getInstance();
             calendar = Calendar.getInstance();
@@ -44,7 +53,7 @@ public class DateTimePickerWidget extends AppCompatEditText {
                                 getContext(),
                                 (timeView, hour, minute) -> {
                                     setTime(hour, minute);
-                                    setText(getDateTime());
+                                    editText.setText(getDateTime());
                                 },
                                 cldr.get(Calendar.HOUR_OF_DAY),
                                 cldr.get(Calendar.MINUTE),
@@ -71,6 +80,25 @@ public class DateTimePickerWidget extends AppCompatEditText {
     }
 
     public String getDateTime() {
-        return formatter.format(calendar.getTime());
+        return calendar == null ? "" : formatter.format(calendar.getTime());
+    }
+
+    public void addTextChangedListener(Runnable listener) {
+        editText.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+                // Ignore
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+                // Ignore
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                listener.run();
+            }
+        });
     }
 }

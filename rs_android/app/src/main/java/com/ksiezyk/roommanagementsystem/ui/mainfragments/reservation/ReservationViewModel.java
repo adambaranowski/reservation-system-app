@@ -47,13 +47,13 @@ public class ReservationViewModel extends ViewModel {
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
-    public void reservationFormChanged(Room roomNumber, String beginDateTime, String endDateTime) {
-        if (roomNumber == null) {
-            reservationFormState.setValue(new ReservationFormState(R.string.invalid_room_number, null, null));
+    public void reservationFormChanged(Room room, String beginDateTime, String endDateTime) {
+        if (room == null) {
+            reservationFormState.setValue(new ReservationFormState(R.string.reservations_invalid_room_number, null, null));
         } else if (!isDateTimeValid(beginDateTime)) {
-            reservationFormState.setValue(new ReservationFormState(null, R.string.invalid_begin_datetime, null));
+            reservationFormState.setValue(new ReservationFormState(null, R.string.reservations_invalid_begin_datetime, null));
         } else if (!isDateTimeValid(endDateTime)) {
-            reservationFormState.setValue(new ReservationFormState(null, null, R.string.invalid_end_datetime));
+            reservationFormState.setValue(new ReservationFormState(null, null, R.string.reservations_invalid_end_datetime));
         } else {
             reservationFormState.setValue(new ReservationFormState(true));
         }
@@ -80,7 +80,7 @@ public class ReservationViewModel extends ViewModel {
             List<Room> data = ((Result.Success<List<Room>>) result).getData();
             getRoomsResult.setValue(new GetRoomsResult(data));
         } else {
-            getRoomsResult.setValue(new GetRoomsResult(R.string.get_rooms_failed));
+            getRoomsResult.setValue(new GetRoomsResult(R.string.reservations_get_rooms_failed));
         }
     }
 
@@ -99,7 +99,7 @@ public class ReservationViewModel extends ViewModel {
             List<Reservation> data = ((Result.Success<List<Reservation>>) result).getData();
             getReservationsResult.setValue(new GetReservationsResult(data));
         } else {
-            getReservationsResult.setValue(new GetReservationsResult(R.string.get_reservations_failed));
+            getReservationsResult.setValue(new GetReservationsResult(R.string.reservations_get_reservations_failed));
         }
     }
 }

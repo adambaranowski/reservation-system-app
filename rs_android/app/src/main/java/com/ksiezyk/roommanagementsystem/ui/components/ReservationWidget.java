@@ -43,7 +43,7 @@ public class ReservationWidget extends CardView {
         reservation = res;
         roomNumber = roomNum;
         LayoutInflater inflater = LayoutInflater.from(context);
-        inflater.inflate(R.layout.reservation_widget, this);
+        inflater.inflate(R.layout.widget_reservation, this);
 
         dateView = findViewById(R.id.reservation_date);
         timeView = findViewById(R.id.reservation_time);

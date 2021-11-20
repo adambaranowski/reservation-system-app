@@ -33,8 +33,9 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:hint="@string/make_reservation_choose_room_label"
-                app:startIconContentDescription="@string/make_reservation_choose_room_label"
+                android:hint="@string/make_reservation_choose_room"
+                android:padding="@dimen/form_element_padding"
+                app:startIconContentDescription="@string/make_reservation_choose_room"
                 app:startIconDrawable="@drawable/ic_outline_sensor_door_24">
 
                 <AutoCompleteTextView
@@ -44,6 +45,30 @@
                     android:inputType="none" />
 
             </com.google.android.material.textfield.TextInputLayout>
+
+            <com.ksiezyk.roommanagementsystem.ui.components.DateTimePickerWidget
+                android:id="@+id/reservation_begin_date_time_form"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/make_reservation_choose_begin_datetime"
+                android:importantForAutofill="no"
+                android:inputType="datetime"
+                android:padding="@dimen/form_element_padding"
+                app:startIconContentDescription="calender"
+                app:startIconDrawable="@drawable/ic_outline_event_24" />
+
+            <com.ksiezyk.roommanagementsystem.ui.components.DateTimePickerWidget
+                android:id="@+id/reservation_end_date_time_form"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/make_reservation_choose_end_datetime"
+                android:importantForAutofill="no"
+                android:inputType="datetime"
+                android:padding="@dimen/form_element_padding"
+                app:startIconContentDescription="calender"
+                app:startIconDrawable="@drawable/ic_outline_event_24" />
 
             <LinearLayout
                 android:layout_width="wrap_content"

@@ -18,6 +18,7 @@
         <entry key="..\:/Users/Adam - Student/AndroidStudioProjects/RoomManagementSystem/app/src/main/res/menu/navigation_menu.xml" value="0.1796875" />
         <entry key="..\:/Users/Adam - Student/IntelliJIDEAProjects/reservation-system-app/rs_android/app/src/main/res/drawable-anydpi/ic_action_name.xml" value="0.1259259259259259" />
         <entry key="..\:/Users/Adam - Student/IntelliJIDEAProjects/reservation-system-app/rs_android/app/src/main/res/drawable/ic_android_black_24dp.xml" value="0.12962962962962962" />
+        <entry key="..\:/Users/Adam - Student/IntelliJIDEAProjects/reservation-system-app/rs_android/app/src/main/res/drawable/ic_outline_event_24.xml" value="0.13425925925925927" />
         <entry key="..\:/Users/Adam - Student/IntelliJIDEAProjects/reservation-system-app/rs_android/app/src/main/res/drawable/ic_outline_favorite_24.xml" value="0.12129629629629629" />
         <entry key="..\:/Users/Adam - Student/IntelliJIDEAProjects/reservation-system-app/rs_android/app/src/main/res/drawable/ic_outline_sensor_door_24.xml" value="0.12129629629629629" />
         <entry key="..\:/Users/Adam - Student/IntelliJIDEAProjects/reservation-system-app/rs_android/app/src/main/res/layout/activity_login.xml" value="0.286231884057971" />
@@ -29,6 +30,8 @@
         <entry key="..\:/Users/Adam - Student/IntelliJIDEAProjects/reservation-system-app/rs_android/app/src/main/res/layout/popup_make_reservation.xml" value="0.1796875" />
         <entry key="..\:/Users/Adam - Student/IntelliJIDEAProjects/reservation-system-app/rs_android/app/src/main/res/layout/reservation_widget.xml" value="0.22" />
         <entry key="..\:/Users/Adam - Student/IntelliJIDEAProjects/reservation-system-app/rs_android/app/src/main/res/layout/resource.xml" value="0.1" />
+        <entry key="..\:/Users/Adam - Student/IntelliJIDEAProjects/reservation-system-app/rs_android/app/src/main/res/layout/widget_date_time_picker.xml" value="0.22" />
+        <entry key="..\:/Users/Adam - Student/IntelliJIDEAProjects/reservation-system-app/rs_android/app/src/main/res/layout/widget_reservation.xml" value="0.1796875" />
         <entry key="..\:/Users/Adam - Student/IntelliJIDEAProjects/reservation-system-app/rs_android/app/src/main/res/menu/main_navigation_menu.xml" value="0.3375" />
         <entry key="..\:/Users/Stealth/AndroidStudioProjects/reservation-system-app/rs_android/app/src/main/res/layout-w1240dp/activity_login.xml" value="0.23560910307898258" />
         <entry key="..\:/Users/Stealth/AndroidStudioProjects/reservation-system-app/rs_android/app/src/main/res/layout/activity_login.xml" value="0.36666666666666664" />

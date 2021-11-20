@@ -6,7 +6,6 @@
     <string name="dialog_cancel">Cancel</string>
     <string name="dialog_search">Search</string>
 
-
     <!-- Login -->
     <string name="title_activity_login">Login</string>
     <string name="prompt_email">Email</string>
@@ -33,12 +32,15 @@
     <string name="hello_blank_fragment">Hello blank fragment!</string>
 
     <!-- Reservations -->
-    <string name="get_rooms_failed">Get rooms failed</string>
-    <string name="get_reservations_failed">Get reservations failed</string>
-    <string name="invalid_room_number">Invalid room number</string>
-    <string name="invalid_begin_datetime">Invalid begin date or time</string>
-    <string name="invalid_end_datetime">Invalid end date or time</string>
-    <string name="add_reservation">Add reservation</string>
+    <string name="reservations_get_rooms_failed">Get rooms failed</string>
+    <string name="reservations_get_reservations_failed">Get reservations failed</string>
+    <string name="reservations_choose_room">Choose room</string>
+    <string name="reservations_invalid_room_number">Invalid room number</string>
+    <string name="reservations_choose_begin_datetime">Choose begin date and time</string>
+    <string name="reservations_invalid_begin_datetime">Invalid begin date or time</string>
+    <string name="reservations_choose_end_datetime">Choose end date and time</string>
+    <string name="reservations_invalid_end_datetime">Invalid end date or time</string>
+    <string name="reservations_add_reservation">Add reservation</string>
 
     <!-- Reservation widget -->
     <string name="reservation_room">Room %d</string>
@@ -47,5 +49,7 @@
     <!-- Make Reservation Popup -->
     <string name="make_reservation_title">Make reservation</string>
     <string name="make_reservation_confirm">Make reservation</string>
-    <string name="make_reservation_choose_room_label">Choose room</string>
+    <string name="make_reservation_choose_room">Choose room</string>
+    <string name="make_reservation_choose_begin_datetime">Choose begin date and time</string>
+    <string name="make_reservation_choose_end_datetime">Choose end date and time</string>
 </resources>

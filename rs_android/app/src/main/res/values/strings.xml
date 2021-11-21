@@ -1,5 +1,9 @@
 <resources>
     <string name="app_name">Room Management System</string>
+
+    <!-- State -->
+    <string name="logged_in_user">logged_in_user</string>
+
     <!-- Simple dialog -->
     <string name="dialog_confirm">Yes</string>
     <string name="dialog_decline">No</string>
@@ -41,6 +45,7 @@
     <string name="reservations_choose_end_datetime">Choose end date and time</string>
     <string name="reservations_invalid_end_datetime">Invalid end date or time</string>
     <string name="reservations_add_reservation">Add reservation</string>
+    <string name="reservations_create_reservation_failed">Failed to create reservation</string>
 
     <!-- Reservation widget -->
     <string name="reservation_room">Room %d</string>

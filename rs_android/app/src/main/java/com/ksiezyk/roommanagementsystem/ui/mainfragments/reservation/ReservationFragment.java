@@ -22,7 +22,6 @@ import com.ksiezyk.roommanagementsystem.R;
 import com.ksiezyk.roommanagementsystem.data.model.Reservation;
 import com.ksiezyk.roommanagementsystem.data.model.Room;
 import com.ksiezyk.roommanagementsystem.ui.components.DateTimePickerWidget;
-import com.ksiezyk.roommanagementsystem.ui.components.MakeReservationPopup;
 import com.ksiezyk.roommanagementsystem.ui.components.ReservationWidget;
 
 import java.util.List;
@@ -78,7 +77,7 @@ public class ReservationFragment extends Fragment {
         // Add handlers
         chooseRoomView = rootView.findViewById(R.id.reservations_rooms);
         chooseRoomView.setOnItemClickListener((parent, view, position, id) -> {
-            chosenRoom = (Room) parent.getSelectedItem();
+            chosenRoom = (Room) parent.getItemAtPosition(position);
             afterFormChangedListener();
         });
 

@@ -45,4 +45,20 @@ public class ReservationDataSource {
                 beginTime.plusMinutes(30),
                 "User" + i);
     }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public Result<Reservation> createReservation(int roomNumber, LocalDateTime beginDt,
+                                                 LocalDateTime endDt, String userName) {
+        try {
+            return new Result.Success<>(new Reservation(
+                    0,
+                    beginDt.toLocalDate(),
+                    beginDt.toLocalTime(),
+                    endDt.toLocalTime(),
+                    userName
+            ));
+        } catch (Exception e) {
+            return new Result.Error(new IOException("Error creating reservation", e));
+        }
+    }
 }

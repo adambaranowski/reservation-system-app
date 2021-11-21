@@ -18,6 +18,7 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.android.material.textfield.TextInputLayout;
 import com.ksiezyk.roommanagementsystem.R;
 import com.ksiezyk.roommanagementsystem.data.model.Reservation;
 import com.ksiezyk.roommanagementsystem.data.model.Room;
@@ -34,6 +35,7 @@ import java.util.List;
 public class ReservationFragment extends Fragment {
     private ReservationViewModel reservationViewModel;
     private ProgressBar loadingProgressBar;
+    private TextInputLayout chooseRoomLayout;
     private AutoCompleteTextView chooseRoomView;
     private Room chosenRoom;
     private DateTimePickerWidget beginDateTimeWidget;
@@ -100,15 +102,16 @@ public class ReservationFragment extends Fragment {
         });
 
         // Update UI when form state changes
+        chooseRoomLayout = rootView.findViewById(R.id.reservations_rooms_layout);
         reservationViewModel.getReservationFormState().observe(getViewLifecycleOwner(), reservationFormState -> {
             if (reservationFormState == null) {
                 return;
             }
             searchButton.setEnabled(reservationFormState.isDataValid());
             if (reservationFormState.getRoomNumberError() != null) {
-                beginDateTimeWidget.setError(getString(reservationFormState.getRoomNumberError()));
+                chooseRoomLayout.setError(getString(reservationFormState.getRoomNumberError()));
             } else {
-                beginDateTimeWidget.setError(null);
+                chooseRoomLayout.setError(null);
             }
             if (reservationFormState.getBeginDateTimeError() != null) {
                 beginDateTimeWidget.setError(getString(reservationFormState.getBeginDateTimeError()));

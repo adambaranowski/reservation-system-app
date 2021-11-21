@@ -57,6 +57,7 @@
                     app:startIconDrawable="@drawable/ic_outline_event_24" />
 
                 <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/reservations_rooms_layout"
                     style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"

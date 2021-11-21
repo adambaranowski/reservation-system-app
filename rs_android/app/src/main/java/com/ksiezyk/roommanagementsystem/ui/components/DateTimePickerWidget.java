@@ -42,7 +42,7 @@ public class DateTimePickerWidget extends TextInputLayout {
         //Create a View object yourself through inflater
         View view = inflate(getContext(), R.layout.widget_date_time_picker, this);
         editText = view.findViewById(R.id.date_time_picker_edit_text);
-        setOnClickListener(v -> {
+        editText.setOnClickListener(v -> {
             final Calendar cldr = Calendar.getInstance();
             calendar = Calendar.getInstance();
             DatePickerDialog datePicker = new DatePickerDialog(

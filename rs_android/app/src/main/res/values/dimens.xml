@@ -11,10 +11,17 @@
 
     <dimen name="header_vertical_padding">10dp</dimen>
 
+    <!-- Reservations Fragment -->
+    <dimen name="reservations_container_padding">10dp</dimen>
+
     <!-- Reservation Widget -->
     <dimen name="reservation_vertical_margin">5dp</dimen>
     <dimen name="reservation_horizontal_margin">3dp</dimen>
 
-    <!-- Reservations Fragment -->
-    <dimen name="reservations_container_padding">10dp</dimen>
+    <!-- Make Reservation Popup -->
+    <dimen name="make_reservation_outer_padding">10dp</dimen>
+    <dimen name="make_reservation_inner_padding">10dp</dimen>
+    <dimen name="make_reservation_corner_radius">5dp</dimen>
+    <dimen name="make_reservation_title_padding">10dp</dimen>
+    <dimen name="make_reservation_form_padding">10dp</dimen>
 </resources>

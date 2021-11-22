@@ -37,4 +37,10 @@ public class ReservationRepository {
                                                      LocalDateTime endDateTime) {
         return dataSource.getReservations(roomNumber, beginDateTime, endDateTime);
     }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public Result<Reservation> createReservation(int roomNumber, LocalDateTime beginDateTime,
+                                                 LocalDateTime endDateTime, String userNick) {
+        return dataSource.createReservation(roomNumber, beginDateTime, endDateTime, userNick);
+    }
 }

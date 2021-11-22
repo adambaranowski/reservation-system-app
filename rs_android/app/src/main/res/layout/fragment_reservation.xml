@@ -6,84 +6,106 @@
     android:layout_height="match_parent"
     tools:context=".ui.mainfragments.reservation.ReservationFragment">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <ProgressBar
-            android:id="@+id/reservations_loading_bar"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="64dp"
-            android:layout_marginBottom="64dp"
-            android:visibility="gone" />
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
-            android:weightSum="100">
+            android:orientation="vertical">
+
+            <ProgressBar
+                android:id="@+id/reservations_loading_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="64dp"
+                android:layout_marginBottom="64dp"
+                android:visibility="gone" />
 
             <LinearLayout
-                android:layout_width="0dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginHorizontal="@dimen/form_margin"
-                android:layout_weight="70"
                 android:orientation="vertical">
 
                 <com.ksiezyk.roommanagementsystem.ui.components.DateTimePickerWidget
                     android:id="@+id/reservation_begin_date_time_form"
-                    android:layout_width="match_parent"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="300dp"
                     android:layout_height="wrap_content"
-                    android:hint="Begin date and time"
+                    android:layout_gravity="center"
+                    android:hint="@string/reservations_choose_begin_datetime"
                     android:importantForAutofill="no"
                     android:inputType="datetime"
-                    android:padding="@dimen/form_element_padding" />
+                    android:padding="@dimen/form_element_padding"
+                    app:startIconContentDescription="calender"
+                    app:startIconDrawable="@drawable/ic_outline_event_24" />
 
                 <com.ksiezyk.roommanagementsystem.ui.components.DateTimePickerWidget
                     android:id="@+id/reservation_end_date_time_form"
-                    android:layout_width="match_parent"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="300dp"
                     android:layout_height="wrap_content"
-                    android:hint="End date and time"
+                    android:layout_gravity="center"
+                    android:hint="@string/reservations_choose_end_datetime"
                     android:importantForAutofill="no"
                     android:inputType="datetime"
-                    android:padding="@dimen/form_element_padding" />
-            </LinearLayout>
+                    android:padding="@dimen/form_element_padding"
+                    app:startIconContentDescription="calender"
+                    app:startIconDrawable="@drawable/ic_outline_event_24" />
 
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                android:layout_weight="30">
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/reservations_rooms_layout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:hint="@string/make_reservation_choose_room"
+                    android:padding="@dimen/form_element_padding"
+                    app:startIconContentDescription="@string/make_reservation_choose_room"
+                    app:startIconDrawable="@drawable/ic_outline_sensor_door_24">
+
+                    <AutoCompleteTextView
+                        android:id="@+id/reservations_rooms"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="none" />
+
+                </com.google.android.material.textfield.TextInputLayout>
 
                 <Button
                     android:id="@+id/reservations_search"
+                    style="@style/Widget.MaterialComponents.Button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/form_margin"
                     android:enabled="false"
-                    android:text="@string/dialog_search"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
+                    android:text="@string/dialog_search" />
 
-        </LinearLayout>
+            </LinearLayout>
 
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
 
             <LinearLayout
                 android:id="@+id/reservations_container"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:paddingTop="@dimen/reservations_container_padding">
 
             </LinearLayout>
-        </ScrollView>
-    </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/make_reservation_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="16dp"
+        android:contentDescription="@string/reservations_add_reservation"
+        android:src="@drawable/ic_add" />
 
 </FrameLayout>

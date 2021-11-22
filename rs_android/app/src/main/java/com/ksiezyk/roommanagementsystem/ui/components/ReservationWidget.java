@@ -21,8 +21,7 @@ public class ReservationWidget extends CardView {
     private Reservation reservation;
     private int roomNumber;
     private TextView dateView;
-    private TextView beginTimeView;
-    private TextView endTimeView;
+    private TextView timeView;
     private TextView userNickView;
     private TextView roomNumberView;
 
@@ -44,11 +43,10 @@ public class ReservationWidget extends CardView {
         reservation = res;
         roomNumber = roomNum;
         LayoutInflater inflater = LayoutInflater.from(context);
-        inflater.inflate(R.layout.reservation_widget, this);
+        inflater.inflate(R.layout.widget_reservation, this);
 
         dateView = findViewById(R.id.reservation_date);
-        beginTimeView = findViewById(R.id.reservation_begin_time);
-        endTimeView = findViewById(R.id.reservation_end_time);
+        timeView = findViewById(R.id.reservation_time);
         userNickView = findViewById(R.id.reservation_user_nick);
         roomNumberView = findViewById(R.id.reservation_room_number);
 
@@ -58,9 +56,13 @@ public class ReservationWidget extends CardView {
     @RequiresApi(api = Build.VERSION_CODES.O)
     private void setContent() {
         dateView.setText(reservation.getDate().format(dateFormatter));
-        beginTimeView.setText(reservation.getBeginTime().format(timeFormatter));
-        endTimeView.setText(reservation.getEndTime().format(timeFormatter));
+        timeView.setText(String.format(
+                getContext().getString(R.string.reservation_time),
+                reservation.getBeginTime().format(timeFormatter),
+                reservation.getEndTime().format(timeFormatter)));
         userNickView.setText(reservation.getUserNick());
-        roomNumberView.setText(String.format("Room %d", roomNumber));
+        roomNumberView.setText(String.format(
+                getContext().getString(R.string.reservation_room),
+                roomNumber));
     }
 }

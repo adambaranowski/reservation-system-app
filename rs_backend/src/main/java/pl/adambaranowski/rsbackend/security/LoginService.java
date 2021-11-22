@@ -26,38 +26,6 @@ public class LoginService {
     private final UserRepository userRepository;
     private final UserResponseMapper mapper;
 
-    @Autowired
-    HttpServletRequest request;
-
-    public LoginResponseDto login(LoginRequestDto loginDto) {
-//        try {
-//            String ip = getClientIP();
-//            if (loginAttemptService.isMaxAttemptsExceeded(ip)) {
-//                throw new TooMuchAttemptsException("You've tried to log too much times. Try again after few minutes");
-//            }
-//
-//            Authentication authentication = authenticationManager
-//                    .authenticate(new UsernamePasswordAuthenticationToken(loginDto.getEmail(), loginDto.getPassword()));
-//
-//            User user = userRepository.findByEmail(loginDto.getEmail()).orElseThrow(() -> new NoSuchElementException("User not found"));
-//            String generatedJwtToken = jwtService.generateTokenForUser(user);
-//
-//            LoginResponseDto response = new LoginResponseDto();
-//            response.setToken(generatedJwtToken);
-//            response.setUserId(user.getId());
-//            response.setEmail(user.getEmail());
-//            response.setUserNick(user.getUserNick());
-//            response.setAuthorities(user.getAuthorities()
-//                    .stream()
-//                    .map(authority -> authority.getRole())
-//                    .collect(Collectors.toList()));
-//
-//            return response;
-//        } catch (AuthenticationException e) {
-//            throw new WrongLoginOrPasswordException("Your password or login is incorrect or your account is locked!");
-//        }
-        return null;
-    }
 
     public UserResponseDto getUserInfoFromToken() {
         String loggedEmail = SecurityContextHolder.getContext().getAuthentication().getPrincipal().toString();
@@ -67,11 +35,4 @@ public class LoginService {
         return mapper.mapToDto(user);
     }
 
-    private String getClientIP() {
-        String xfHeader = request.getHeader("X-Forwarded-For");
-        if (xfHeader == null) {
-            return request.getRemoteAddr();
-        }
-        return xfHeader.split(",")[0];
-    }
 }

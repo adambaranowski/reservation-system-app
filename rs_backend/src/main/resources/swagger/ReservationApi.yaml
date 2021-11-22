@@ -6,7 +6,26 @@ info:
 
 paths:
   /reservations:
-    get:
+    post:
+      summary: Add new reservation (Single event or recurrence event)
+      operationId: addReservation
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/CreateReservationRequestDto"
+      responses:
+        201:
+          description: Reservation has been created
+        400:
+          description: Wrong reservation parameters
+        404:
+          description: Content not found
+        403:
+          description: Youre not allowed to create this reservation
+
+  /reservations/forPeriod/getAll:
+    post:
       summary: Get all reservations for given period for specific room
       operationId: getReservationsForRoom
       requestBody:
@@ -29,23 +48,7 @@ paths:
           description: Room not found
         403:
           description: Youre not allowed to get this information
-    post:
-      summary: Add new reservation (Single event or recurrence event)
-      operationId: addReservation
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: "#/components/schemas/CreateReservationRequestDto"
-      responses:
-        201:
-          description: Reservation has been created
-        400:
-          description: Wrong reservation parameters
-        404:
-          description: Content not found
-        403:
-          description: Youre not allowed to create this reservation
+
 
   /reservations/{reservationId}:
     delete:

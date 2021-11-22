@@ -3,7 +3,6 @@ package pl.adambaranowski.rsbackend.controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RestController;
 import pl.adambaranowski.rsbackend.api.UsersApi;
 import pl.adambaranowski.rsbackend.model.dto.UserRequestDto;
@@ -38,15 +37,15 @@ public class UsersController implements UsersApi {
         return ResponseEntity.ok(userService.modifyUser(userId, userRequestDto));
     }
 
-//    @CrossOrigin(origins = "http://localhost:4200")
+    //    @CrossOrigin(origins = "http://localhost:4200")
     @Override
     public ResponseEntity<UserResponseDto> postNewUser(UserRequestDto userRequestDto) {
         return ResponseEntity.status(HttpStatus.CREATED).body(userService.addNewUser(userRequestDto));
     }
 
     @Override
-    public ResponseEntity<Void> addAuthorities(Integer userId, List<String> authorities) {
-        userService.addAuthorities(userId, authorities);
+    public ResponseEntity<Void> modifyAuthorities(Integer userId, List<String> authorities) {
+        userService.modifyAuthorities(userId, authorities);
         return ResponseEntity.ok().build();
     }
 

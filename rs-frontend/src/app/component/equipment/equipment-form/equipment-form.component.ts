@@ -7,6 +7,7 @@ import {HttpErrorResponse} from "@angular/common/http";
 import {RoomEquipmentService} from "../../../service/room-equipment.service";
 import {EquipmentRequestDto} from "../../../model/equipmentRequestDto";
 import {EquipmentResponseDto} from "../../../model/equipmentResponseDto";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-equipment-form',
@@ -22,22 +23,41 @@ export class EquipmentFormComponent implements OnInit, OnDestroy {
   display = false;
 
   @Input()
-  roomNumbersList: any[] = [];
+  roomNumbersList: number[] = [];
 
   @Input()
-  equipmentEditId: number | undefined = -1;
+  equipmentEditId: number = -1;
+
+  @Input()
+  public equipments: EquipmentResponseDto[] = [];
+
 
   name = new FormControl();
   description = new FormControl();
   roomNumber = new FormControl();
 
+
   private subscriptions: Subscription[] = [];
 
-  constructor(private equipmentService: RoomEquipmentService, private notifier: NotificationService) {
+  constructor(private equipmentService: RoomEquipmentService,
+              private notifier: NotificationService,
+              private router: Router) {
   }
 
   ngOnInit(): void {
-
+    /**
+     * set initial values in form
+     */
+    if (this.option === 'EDIT') {
+      for (let n = 0; n < this.equipments.length; n++) {
+        if (this.equipments[n].id === this.equipmentEditId) {
+          this.name.setValue(this.equipments[n].name);
+          this.description.setValue(this.equipments[n].description);
+          this.roomNumber.setValue(this.equipments[n].roomNumber);
+          break;
+        }
+      }
+    }
   }
 
   ngOnDestroy() {
@@ -67,10 +87,10 @@ export class EquipmentFormComponent implements OnInit, OnDestroy {
         (response: EquipmentResponseDto) => {
 
           this.sendNotification(NotificationType.SUCCESS, 'Equipment added!');
-
+          window.location.reload();
         },
         (httpErrorResponse: HttpErrorResponse) => {
-          console.log(httpErrorResponse);
+
           this.sendNotification(NotificationType.ERROR, 'Failure! ' + httpErrorResponse.error);
         }
       )
@@ -91,7 +111,7 @@ export class EquipmentFormComponent implements OnInit, OnDestroy {
           (response: EquipmentResponseDto) => {
 
             this.sendNotification(NotificationType.INFO, 'Equipment Edited!');
-
+            window.location.reload();
           },
           (httpErrorResponse: HttpErrorResponse) => {
             console.log(httpErrorResponse);

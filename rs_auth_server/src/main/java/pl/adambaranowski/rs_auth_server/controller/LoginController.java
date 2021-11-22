@@ -13,7 +13,6 @@ import pl.adambaranowski.rs_auth_server.service.LoginService;
 @RequiredArgsConstructor
 public class LoginController implements LoginApi {
     private final LoginService loginService;
-    private final JwtService jwtService;
 
     @Override
     public ResponseEntity<LoginResponseDto> login(LoginRequestDto loginRequestDto) {

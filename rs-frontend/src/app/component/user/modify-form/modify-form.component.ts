@@ -1,11 +1,9 @@
 import {Component, Input, OnDestroy, OnInit} from '@angular/core';
-import {FormControl} from "@angular/forms";
 import {Subscription} from "rxjs";
 import {Router} from "@angular/router";
 import {AuthenticationService} from "../../../service/authentication.service";
 import {UserService} from "../../../service/user.service";
 import {NotificationService} from "../../../service/notification.service";
-import {UserRequestDto} from "../../../model/UserRequestDto";
 import {User} from "../../../model/User";
 import {NotificationType} from "../../../enum/notification-type";
 import {HttpErrorResponse} from "@angular/common/http";
@@ -22,14 +20,13 @@ export class ModifyFormComponent implements OnInit, OnDestroy {
   @Input()
   display = false;
 
-  userNick = new FormControl();
-  email = new FormControl();
-  password = new FormControl();
+  // userNick = new FormControl();
+  // email = new FormControl();
+  // password = new FormControl();
 
-  isStudent= false;
-  isTeacher= false;
-  isAdmin= false;
-
+  isStudent = false;
+  isTeacher = false;
+  isAdmin = false;
 
   private subscriptions: Subscription[] = [];
 
@@ -47,26 +44,33 @@ export class ModifyFormComponent implements OnInit, OnDestroy {
     this.subscriptions.forEach(sub => sub.unsubscribe());
   }
 
-  public backToLogin(): void {
-    this.router.navigateByUrl('login');
-  }
 
-  public modify(): void {
+  public addAuthorities(): void {
+    const authorities = [];
 
-    const registerDto: UserRequestDto = {
-      email: this.email.value,
-      userNick: this.userNick.value,
-      password: this.password.value
-    };
+    if (this.isAdmin) {
+      authorities.push('ADMIN');
+    }
 
-    console.log(registerDto);
+    if (this.isTeacher) {
+      authorities.push('TEACHER');
+    }
+
+    if (this.isStudent) {
+      authorities.push('STUDENT');
+    }
+
+    //Add default student
+    if (authorities.length < 1) {
+      authorities.push('STUDENT');
+    }
 
     this.subscriptions.push(
-      this.userService.modifyUser(this.userId, registerDto).subscribe(
-        (response: User ) => {
+      this.userService.modifyAuthorities(this.userId, authorities).subscribe(
+        (response: User) => {
 
           this.sendNotification(NotificationType.INFO, 'Successfully modified!');
-
+          window.location.reload();
         },
         (httpErrorResponse: HttpErrorResponse) => {
           console.log(httpErrorResponse);

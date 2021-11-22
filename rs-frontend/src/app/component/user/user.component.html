@@ -21,7 +21,7 @@
       <button  class="btn" style="background-color: lightgreen" (click)="enableUser(user)">Activate</button>
       <button  class="btn" style="background-color: lightyellow" (click)="disableUser(user)">Lock</button>
       <button  class="btn btn-danger" (click)="deleteUser(user)">Delete</button>
-      <button  class="btn btn-info" (click)="displayEditForm = !displayEditForm; reloadUsers();">Modify</button>
+      <button  class="btn btn-info" (click)="displayEditForm = !displayEditForm; reloadUsers();">Add Authorities</button>
       <app-modify-form [userId]="user.id" [display]="displayEditForm"></app-modify-form>
     </td>
     <td>{{user.authorities}}</td>

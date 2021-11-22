@@ -1,0 +1,14 @@
+<div *ngIf="display" style="text-align: center; margin-left: 32%">
+  <div style="margin: 8px; background-color: lightblue; border-radius: 3px; width: 50%">
+    <form (ngSubmit)="performSubmit()">
+      <input [formControl]="roomNumber" class="form-control form-control-sm" type="text" placeholder="Number">
+      <input [formControl]="description" class="form-control form-control-sm" type="text" placeholder="Description">
+      <label for="RoomStatus">Room Status</label>
+      <select class="form-control" id="RoomStatus" [formControl]="roomStatus">
+        <option></option>
+        <option *ngFor="let status of statusValues">{{status}}</option>
+      </select>
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+</div>

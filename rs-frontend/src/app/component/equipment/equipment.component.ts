@@ -59,33 +59,6 @@ export class EquipmentComponent implements OnInit, OnDestroy {
     this.subscriptions.forEach(s => s.unsubscribe());
   }
 
-  //
-  // enableUser(user: User): void {
-  //   this.subscriptions.push(this.userService.enableUsers([user.id]).subscribe(
-  //     (response: any ) => {
-  //       this.notifier.showNotification(NotificationType.INFO, 'User enabled');
-  //       this.reloadUsers();
-  //     },
-  //     (httpErrorResponse: HttpErrorResponse) => {
-  //       console.log(httpErrorResponse);
-  //       this.notifier.showNotification(NotificationType.ERROR,  httpErrorResponse.error);
-  //     }
-  //   ))
-  // }
-  //
-  // disableUser(user: User): void {
-  //   this.subscriptions.push(this.userService.disableUsers([user.id]).subscribe(
-  //     (response: any ) => {
-  //       this.notifier.showNotification(NotificationType.WARNING, 'User disabled');
-  //       this.reloadUsers();
-  //     },
-  //     (httpErrorResponse: HttpErrorResponse) => {
-  //       console.log(httpErrorResponse);
-  //       this.notifier.showNotification(NotificationType.ERROR,  httpErrorResponse.error);
-  //     }
-  //   ))
-  // }
-  //
   deleteEquipment(eqId: number | undefined): void {
     if (eqId) {
       this.subscriptions.push(this.roomEquipmentService.deleteEquipment(eqId).subscribe(

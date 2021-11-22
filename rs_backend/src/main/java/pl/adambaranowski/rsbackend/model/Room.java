@@ -28,7 +28,7 @@ public class Room {
             mappedBy = "room")
     private Set<Equipment> equipmentItems = new HashSet<>();
 
-    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE},
+    @OneToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE},
             mappedBy = "room")
     private Set<Reservation> reservations;
 

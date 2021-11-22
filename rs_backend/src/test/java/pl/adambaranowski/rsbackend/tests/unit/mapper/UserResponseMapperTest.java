@@ -32,7 +32,6 @@ public class UserResponseMapperTest {
         user.setCredentialsNonExpired(null);
         user.setJoinDateTime(null);
         user.setLastLoginDateTime(null);
-        user.setPassword(null);
         user.setProfileImageUrl(null);
     }
 
@@ -48,7 +47,6 @@ public class UserResponseMapperTest {
         user.setCredentialsNonExpired(TEST_CREDENTIALS_NON_EXPIRED);
         user.setJoinDateTime(TEST_JOIN_DATE_TIME);
         user.setLastLoginDateTime(TEST_LAST_LOGIN_DATE_TIME);
-        user.setPassword(TEST_VALID_PASSWORD);
         user.setProfileImageUrl(TEST_PROFILE_IMAGE_URL);
 
         UserResponseDto expectedResponseDto = new UserResponseDto();

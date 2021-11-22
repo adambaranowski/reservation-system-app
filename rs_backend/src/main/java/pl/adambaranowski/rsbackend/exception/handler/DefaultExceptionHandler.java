@@ -14,23 +14,9 @@ import java.util.NoSuchElementException;
 @ControllerAdvice
 public class DefaultExceptionHandler {
 
-    @ExceptionHandler(JwtException.class)
-    public ResponseEntity<String> handleJwtException(JwtException e){
-        return ResponseEntity.status(HttpStatus.FORBIDDEN).body(e.getMessage());
-    }
-
-    @ExceptionHandler(WrongLoginOrPasswordException.class)
-    public ResponseEntity<String> handleWrongLoginOrPasswordException(WrongLoginOrPasswordException e){
-        return ResponseEntity.status(HttpStatus.FORBIDDEN).body(e.getMessage());
-    }
-
     @ExceptionHandler(AuthenticationException.class)
     public ResponseEntity<String> handleAuthenticationException(AuthenticationException e){
-        return ResponseEntity.status(HttpStatus.FORBIDDEN).body(e.getMessage());
-    }
-
-    @ExceptionHandler(ExpiredJwtException.class)
-    public ResponseEntity<String> handleExpiredJwtException(ExpiredJwtException e){
+        System.out.println("XDDDDDDD");
         return ResponseEntity.status(HttpStatus.FORBIDDEN).body(e.getMessage());
     }
 
@@ -41,6 +27,7 @@ public class DefaultExceptionHandler {
 
     @ExceptionHandler(ConflictException.class)
     public ResponseEntity<String> handleConflictException(ConflictException e){
+        System.out.println("^&*&^__+_+_");
         return ResponseEntity.status(HttpStatus.CONFLICT).body(e.getMessage());
     }
 
@@ -51,11 +38,6 @@ public class DefaultExceptionHandler {
 
     @ExceptionHandler(NotAllowedException.class)
     public ResponseEntity<String> handleNotAllowedException(NotAllowedException e){
-        return ResponseEntity.status(HttpStatus.FORBIDDEN).body(e.getMessage());
-    }
-
-    @ExceptionHandler(TooMuchAttemptsException.class)
-    public ResponseEntity<String> handleTooMuchAttemptsException(TooMuchAttemptsException e){
         return ResponseEntity.status(HttpStatus.FORBIDDEN).body(e.getMessage());
     }
 

@@ -83,8 +83,7 @@ public class UserApiTest extends BaseIntegrationTestClass{
 
         UserRequestDto userRequest = UserRequestDto.builder()
                 .userNick(TEST_NICK)
-                //.authorities(TEST_AUTHORITIES)
-                .password(passwordEncoder.encode(TEST_VALID_PASSWORD))
+                //.authorities(TEST_AUTHORITIES))
                 .email(TEST_VALID_EMAIL_ADDRESS)
                 .build();
 
@@ -201,7 +200,6 @@ public class UserApiTest extends BaseIntegrationTestClass{
         User user = User.builder()
                 .userNick(TEST_NICK)
                 .email(TEST_VALID_EMAIL_ADDRESS)
-                .password(passwordEncoder.encode(TEST_VALID_PASSWORD))
                 .accountNonLocked(true)
                 .build();
 
@@ -246,7 +244,6 @@ public class UserApiTest extends BaseIntegrationTestClass{
         User user = User.builder()
                 .userNick(TEST_NICK)
                 .email(TEST_VALID_EMAIL_ADDRESS)
-                .password(passwordEncoder.encode(TEST_VALID_PASSWORD))
                 .accountNonLocked(true)
                 .build();
 
@@ -273,7 +270,6 @@ public class UserApiTest extends BaseIntegrationTestClass{
         User user = User.builder()
                 .userNick(TEST_NICK)
                 .email(TEST_VALID_EMAIL_ADDRESS)
-                .password(passwordEncoder.encode(TEST_VALID_PASSWORD))
                 .accountNonLocked(true)
                 .build();
 
@@ -297,7 +293,6 @@ public class UserApiTest extends BaseIntegrationTestClass{
         User user = User.builder()
                 .userNick(TEST_NICK)
                 .email(TEST_VALID_EMAIL_ADDRESS)
-                .password(passwordEncoder.encode(TEST_VALID_PASSWORD))
                 .accountNonLocked(true)
                 .build();
 
@@ -322,7 +317,6 @@ public class UserApiTest extends BaseIntegrationTestClass{
         User user = User.builder()
                 .userNick(TEST_NICK)
                 .email(TEST_VALID_EMAIL_ADDRESS)
-                .password(passwordEncoder.encode(TEST_VALID_PASSWORD))
                 .accountNonLocked(true)
                 .build();
 
@@ -335,7 +329,6 @@ public class UserApiTest extends BaseIntegrationTestClass{
         UserRequestDto updateUserRequest = UserRequestDto.builder()
                 .userNick(updatedNick)
                 //.authorities(TEST_AUTHORITIES)
-                .password(passwordEncoder.encode(TEST_VALID_PASSWORD))
                 .email(TEST_VALID_EMAIL_ADDRESS)
                 .build();
 
@@ -379,7 +372,6 @@ public class UserApiTest extends BaseIntegrationTestClass{
         User user = User.builder()
                 .userNick(TEST_NICK)
                 .email(TEST_VALID_EMAIL_ADDRESS)
-                .password(passwordEncoder.encode(TEST_VALID_PASSWORD))
                 .accountNonLocked(true)
                 .build();
 
@@ -393,7 +385,6 @@ public class UserApiTest extends BaseIntegrationTestClass{
         UserRequestDto updateUserRequest = UserRequestDto.builder()
                 .userNick(updatedNick)
                 //.authorities(TEST_AUTHORITIES)
-                .password(passwordEncoder.encode(TEST_VALID_PASSWORD))
                 .email(TEST_VALID_EMAIL_ADDRESS)
                 .build();
 
@@ -416,7 +407,6 @@ public class UserApiTest extends BaseIntegrationTestClass{
         User user = User.builder()
                 .userNick(TEST_NICK)
                 .email(TEST_VALID_EMAIL_ADDRESS)
-                .password(passwordEncoder.encode(TEST_VALID_PASSWORD))
                 .accountNonLocked(true)
                 .build();
 
@@ -462,7 +452,6 @@ public class UserApiTest extends BaseIntegrationTestClass{
         User user = User.builder()
                 .userNick(TEST_NICK)
                 .email(TEST_VALID_EMAIL_ADDRESS)
-                .password(passwordEncoder.encode(TEST_VALID_PASSWORD))
                 .accountNonLocked(true)
                 .build();
 
@@ -508,7 +497,6 @@ public class UserApiTest extends BaseIntegrationTestClass{
         User user = User.builder()
                 .userNick(TEST_NICK)
                 .email(TEST_VALID_EMAIL_ADDRESS)
-                .password(passwordEncoder.encode(TEST_VALID_PASSWORD))
                 .accountNonLocked(true)
                 .build();
 
@@ -521,7 +509,6 @@ public class UserApiTest extends BaseIntegrationTestClass{
         UserRequestDto updateUserRequest = UserRequestDto.builder()
                 .userNick(updatedNick)
                 //.authorities(TEST_AUTHORITIES)
-                .password(passwordEncoder.encode(TEST_VALID_PASSWORD))
                 .email(TEST_VALID_EMAIL_ADDRESS)
                 .build();
 
@@ -546,7 +533,6 @@ public class UserApiTest extends BaseIntegrationTestClass{
         User user = User.builder()
                 .userNick(TEST_NICK)
                 .email(TEST_VALID_EMAIL_ADDRESS)
-                .password(passwordEncoder.encode(TEST_VALID_PASSWORD))
                 .accountNonLocked(true)
                 .build();
 
@@ -559,7 +545,6 @@ public class UserApiTest extends BaseIntegrationTestClass{
         UserRequestDto updateUserRequest = UserRequestDto.builder()
                 .userNick(updatedNick)
                 //.authorities(TEST_AUTHORITIES)
-                .password(passwordEncoder.encode(TEST_VALID_PASSWORD))
                 .email(TEST_VALID_EMAIL_ADDRESS)
                 .build();
 
@@ -585,7 +570,6 @@ public class UserApiTest extends BaseIntegrationTestClass{
         User user = User.builder()
                 .userNick(TEST_NICK)
                 .email(TEST_VALID_EMAIL_ADDRESS)
-                .password(passwordEncoder.encode(TEST_VALID_PASSWORD))
                 .accountNonLocked(true)
                 .build();
 
@@ -612,7 +596,6 @@ public class UserApiTest extends BaseIntegrationTestClass{
         User user = User.builder()
                 .userNick(TEST_NICK)
                 .email(TEST_VALID_EMAIL_ADDRESS)
-                .password(passwordEncoder.encode(TEST_VALID_PASSWORD))
                 .accountNonLocked(true)
                 .build();
 
@@ -637,7 +620,6 @@ public class UserApiTest extends BaseIntegrationTestClass{
         User user = User.builder()
                 .userNick(TEST_NICK)
                 .email(TEST_VALID_EMAIL_ADDRESS)
-                .password(passwordEncoder.encode(TEST_VALID_PASSWORD))
                 .accountNonLocked(true)
                 .build();
 
@@ -659,7 +641,6 @@ public class UserApiTest extends BaseIntegrationTestClass{
         User user = User.builder()
                 .userNick(TEST_NICK)
                 .email(TEST_VALID_EMAIL_ADDRESS)
-                .password(passwordEncoder.encode(TEST_VALID_PASSWORD))
                 .accountNonLocked(true)
                 .build();
 
@@ -682,7 +663,6 @@ public class UserApiTest extends BaseIntegrationTestClass{
         User user1 = User.builder()
                 .userNick(TEST_NICK)
                 .email(TEST_VALID_EMAIL_ADDRESS)
-                .password(passwordEncoder.encode(TEST_VALID_PASSWORD))
                 .accountNonLocked(true)
                 .build();
 
@@ -691,7 +671,6 @@ public class UserApiTest extends BaseIntegrationTestClass{
         User user2 = User.builder()
                 .userNick(TEST_NICK + "test")
                 .email(TEST_VALID_EMAIL_ADDRESS + "m")
-                .password(passwordEncoder.encode(TEST_VALID_PASSWORD))
                 .accountNonLocked(true)
                 .build();
 
@@ -724,7 +703,6 @@ public class UserApiTest extends BaseIntegrationTestClass{
         User user1 = User.builder()
                 .userNick(TEST_NICK)
                 .email(TEST_VALID_EMAIL_ADDRESS)
-                .password(passwordEncoder.encode(TEST_VALID_PASSWORD))
                 .accountNonLocked(true)
                 .build();
 
@@ -733,7 +711,6 @@ public class UserApiTest extends BaseIntegrationTestClass{
         User user2 = User.builder()
                 .userNick(TEST_NICK + "test")
                 .email(TEST_VALID_EMAIL_ADDRESS + "m")
-                .password(passwordEncoder.encode(TEST_VALID_PASSWORD))
                 .accountNonLocked(true)
                 .build();
 
@@ -758,7 +735,6 @@ public class UserApiTest extends BaseIntegrationTestClass{
         User user1 = User.builder()
                 .userNick(TEST_NICK)
                 .email(TEST_VALID_EMAIL_ADDRESS)
-                .password(passwordEncoder.encode(TEST_VALID_PASSWORD))
                 .accountNonLocked(true)
                 .build();
 
@@ -767,7 +743,6 @@ public class UserApiTest extends BaseIntegrationTestClass{
         User user2 = User.builder()
                 .userNick(TEST_NICK + "test")
                 .email(TEST_VALID_EMAIL_ADDRESS + "m")
-                .password(passwordEncoder.encode(TEST_VALID_PASSWORD))
                 .accountNonLocked(true)
                 .build();
 
@@ -793,7 +768,6 @@ public class UserApiTest extends BaseIntegrationTestClass{
         User user1 = User.builder()
                 .userNick(TEST_NICK)
                 .email(TEST_VALID_EMAIL_ADDRESS)
-                .password(passwordEncoder.encode(TEST_VALID_PASSWORD))
                 .accountNonLocked(false)
                 .build();
 
@@ -802,7 +776,6 @@ public class UserApiTest extends BaseIntegrationTestClass{
         User user2 = User.builder()
                 .userNick(TEST_NICK + "test")
                 .email(TEST_VALID_EMAIL_ADDRESS + "m")
-                .password(passwordEncoder.encode(TEST_VALID_PASSWORD))
                 .accountNonLocked(false)
                 .build();
 
@@ -835,7 +808,6 @@ public class UserApiTest extends BaseIntegrationTestClass{
         User user1 = User.builder()
                 .userNick(TEST_NICK)
                 .email(TEST_VALID_EMAIL_ADDRESS)
-                .password(passwordEncoder.encode(TEST_VALID_PASSWORD))
                 .accountNonLocked(false)
                 .build();
 
@@ -844,7 +816,6 @@ public class UserApiTest extends BaseIntegrationTestClass{
         User user2 = User.builder()
                 .userNick(TEST_NICK + "test")
                 .email(TEST_VALID_EMAIL_ADDRESS + "m")
-                .password(passwordEncoder.encode(TEST_VALID_PASSWORD))
                 .accountNonLocked(false)
                 .build();
 
@@ -869,7 +840,6 @@ public class UserApiTest extends BaseIntegrationTestClass{
         User user1 = User.builder()
                 .userNick(TEST_NICK)
                 .email(TEST_VALID_EMAIL_ADDRESS)
-                .password(passwordEncoder.encode(TEST_VALID_PASSWORD))
                 .accountNonLocked(false)
                 .build();
 
@@ -878,7 +848,6 @@ public class UserApiTest extends BaseIntegrationTestClass{
         User user2 = User.builder()
                 .userNick(TEST_NICK + "test")
                 .email(TEST_VALID_EMAIL_ADDRESS + "m")
-                .password(passwordEncoder.encode(TEST_VALID_PASSWORD))
                 .accountNonLocked(false)
                 .build();
 

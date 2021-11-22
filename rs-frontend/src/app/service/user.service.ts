@@ -39,6 +39,9 @@ export class UserService {
       (`${this.host}/login`);
   }
 
+  public modifyAuthorities(userId: number, authorities: string[]): Observable<any | HttpErrorResponse> {
+    return this.httpClient.put<void>(`${this.host}/${Urls.USERS}/${userId}/modifyAuthorities`, authorities);
+  }
 
   public disableUsers(usersIds: [number]): Observable<any | HttpErrorResponse>{
     return this.httpClient.post<void>(`${this.host}/${Urls.USERS}/disable`, usersIds);

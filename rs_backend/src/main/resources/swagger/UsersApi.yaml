@@ -110,10 +110,10 @@ paths:
           description: You are not allowed to do this
 
 
-  /users/{userId}/addAuthorities:
+  /users/{userId}/modifyAuthorities:
     put:
-      summary: Modify user, allows admins modify user params
-      operationId: addAuthorities
+      summary: Modify user, allows admins modify user privileges
+      operationId: modifyAuthorities
       parameters:
         - name: userId
           in: path

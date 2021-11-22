@@ -19,9 +19,9 @@ export class RoomEquipmentService {
 
 
   // ROOMS
-  public addRoom(roomRequestDto: RoomRequestDto): Observable<RoomResponseDto | HttpErrorResponse> {
+  public addRoom(roomRequestDto: RoomRequestDto): Observable<RoomResponseDto> {
     return this.httpClient
-      .post<RoomResponseDto | HttpErrorResponse>
+      .post<RoomResponseDto>
       (`${this.host}/${Urls.ROOMS}`, roomRequestDto);
   }
 

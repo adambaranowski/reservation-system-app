@@ -21,9 +21,7 @@ public class DataLoader implements CommandLineRunner {
     private final AuthorityRepository authorityRepository;
     private final UserRepository userRepository;
     private final RoomRepository roomRepository;
-    private final EquipmentRepository equipmentRepository;
     private final ReservationRepository reservationRepository;
-    private final PasswordEncoder passwordEncoder;
 
     @Transactional
     @Override
@@ -41,7 +39,6 @@ public class DataLoader implements CommandLineRunner {
 
         userRepository.save(User.builder()
                 .email("teacher@gmail.com")
-                .password(passwordEncoder.encode("teacher"))
                 .authority(teacher)
                 .userNick("teacher student")
                 .joinDateTime(LocalDateTime.now())
@@ -49,7 +46,6 @@ public class DataLoader implements CommandLineRunner {
 
         userRepository.save(User.builder()
                 .email("student@gmail.com")
-                .password(passwordEncoder.encode("student"))
                 .authority(student)
                 .userNick("student")
                 .joinDateTime(LocalDateTime.now())
@@ -57,7 +53,6 @@ public class DataLoader implements CommandLineRunner {
 
         userRepository.save(User.builder()
                 .email("admin@gmail.com")
-                .password(passwordEncoder.encode("admin"))
                 .authority(admin)
                 .userNick("admin")
                 .joinDateTime(LocalDateTime.now())

@@ -18,7 +18,6 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
-    private String password;
     private String email;
     private String userNick;
     private String profileImageUrl;
@@ -45,5 +44,13 @@ public class User {
         });
 
         this.authorities.addAll(authorities);
+    }
+
+    public void removeAuthorities() {
+        authorities.forEach(authority -> {
+            authority.getUsers().remove(this);
+        });
+
+        this.authorities.clear();
     }
 }

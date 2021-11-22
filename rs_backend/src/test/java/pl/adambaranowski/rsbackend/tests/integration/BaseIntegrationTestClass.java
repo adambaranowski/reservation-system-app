@@ -52,8 +52,6 @@ public abstract class BaseIntegrationTestClass {
     @Autowired
     protected ReservationRepository reservationRepository;
     @Autowired
-    protected PasswordEncoder passwordEncoder;
-    @Autowired
     protected RoomRepository roomRepository;
 
     @Autowired
@@ -91,7 +89,6 @@ public abstract class BaseIntegrationTestClass {
         User user = new User();
         user.setUserNick(ADMIN_NICK);
         user.setEmail(ADMIN_EMAIL);
-        user.setPassword(passwordEncoder.encode(ADMIN_PASSWORD));
         user.setAccountNonLocked(true);
 
         userRepository.save(user);
@@ -104,7 +101,6 @@ public abstract class BaseIntegrationTestClass {
         User student = new User();
         student.setUserNick(STUDENT_NICK);
         student.setEmail(STUDENT_EMAIL);
-        student.setPassword(passwordEncoder.encode(STUDENT_PASSWORD));
         student.setAccountNonLocked(true);
 
         userRepository.save(student);

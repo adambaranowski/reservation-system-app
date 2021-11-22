@@ -18,10 +18,10 @@ export class ReservationService {
   constructor(private httpClient: HttpClient) { }
 
 
-  public getAllReservationsForPeriod(getReservationRequestDto: GetReservationRequestDto): Observable<Array<SingleReservationDto> | HttpErrorResponse> {
+  public getAllReservationsForPeriod(getReservationRequestDto: GetReservationRequestDto): Observable<Array<SingleReservationDto>> {
     return this.httpClient
-      .get<Array<SingleReservationDto> | HttpErrorResponse>
-      (`${this.host}/${Urls.RESERVATIONS}`);
+      .post<Array<SingleReservationDto>>
+      (`${this.host}/${Urls.RESERVATIONS}/forPeriod/getAll`, getReservationRequestDto);
   }
 
   public addNewReservation(createReservationRequestDto: CreateReservationRequestDto): Observable<any | HttpErrorResponse> {

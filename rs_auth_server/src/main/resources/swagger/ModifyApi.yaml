@@ -1,0 +1,32 @@
+openapi: 3.0.3
+info:
+  title: ModifyApi
+  description: ModifyApi
+  version: 1.0.0
+
+paths:
+  /modify/user:
+    delete:
+      summary: Enpoint for deleting users
+      operationId: deleteUser
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/DeleteRequestDto"
+      responses:
+        200:
+          description: Succesful registred user
+        404:
+          description: User Not Found
+
+components:
+  schemas:
+    DeleteRequestDto:
+      type: object
+      description: Contains email of user to be deleted
+      properties:
+        email:
+          type: string
+          description: User's email
+          example: puciak@gmail.com

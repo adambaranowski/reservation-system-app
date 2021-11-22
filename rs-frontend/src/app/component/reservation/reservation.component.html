@@ -1,1 +1,39 @@
-<p>reservation works!</p>
+<div style="alignment: center; text-align: center">
+  <ng-container *ngFor="let room of rooms">
+    <button class="btn btn-info" style="margin: 1%" (click)="updateReservations(room.roomNumber)">{{room.roomNumber}}</button>
+  </ng-container>
+
+  <br>
+
+  <button class="btn btn-outline-danger" (click)="previousWeek()"><= Previous</button>
+  {{firstDayOfWeek.toDateString()}} - {{lastDayOfWeek.toDateString()}}
+  <button class="btn btn-outline-danger" (click)="nextWeek()">Next =></button>
+
+  <br>
+
+  <table class="table" style="margin-top: 1%">
+    <thead>
+    <tr>
+      <th scope="col" style='text-align:center; vertical-align:middle'>Hour/Day</th>
+      <ng-container *ngFor="let day of days">
+      <th scope="col" style='text-align:center; vertical-align:middle'>{{day}}</th>
+      </ng-container>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let hour of hours">
+      <th scope="row" style='text-align:center; vertical-align:middle'>{{hour}}</th>
+      <ng-container *ngFor="let day of days">
+        <td style='text-align:center; vertical-align:middle'>
+          <button class="btn btn-outline-info" style="margin: 2%">reservation 1</button>
+          <br>
+          <button class="btn btn-outline-info" style="margin: 2%">reservation 2</button>
+        </td>
+      </ng-container>
+
+    </tr>
+    </tbody>
+  </table>
+</div>
+
+

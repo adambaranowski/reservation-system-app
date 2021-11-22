@@ -2,7 +2,10 @@ package pl.adambaranowski.rsbackend.security.filter;
 
 import io.jsonwebtoken.security.SecurityException;
 import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.filter.OncePerRequestFilter;
@@ -14,6 +17,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.NoSuchElementException;
 
 
 @RequiredArgsConstructor
@@ -21,6 +25,9 @@ public class JwtFilter extends OncePerRequestFilter {
     private static final String ACCOUNT_LOCKED_MESSAGE = "This account is locked, you can't use any secured endpoint";
     private static final String AUTHENTICATION_HEADER_NAME = "Authentication";
     private static final int TOKEN_PREFIX_LENGTH = "Bearer: ".length();
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(JwtFilter.class);
+
     private final JwtService jwtService;
     private final JpaUserDetailsService userDetailsService;
 
@@ -52,9 +59,14 @@ public class JwtFilter extends OncePerRequestFilter {
 
             filterChain.doFilter(httpServletRequest, httpServletResponse);
 
-        } catch (Exception e) {
+        } catch (SecurityException e) { //For locked account
+            LOGGER.info("Exception during authentication\n" + e.getMessage());
             httpServletResponse.setStatus(403);
             httpServletResponse.getWriter().write(e.getMessage());
+        } catch (AuthenticationException | NoSuchElementException e) {
+            LOGGER.info("Exception during authentication\n" + e.getMessage());
+            httpServletResponse.setStatus(403);
+            httpServletResponse.getWriter().write("Exception during authentication. You're not trusted");
         }
     }
 }

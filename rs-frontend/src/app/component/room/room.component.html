@@ -1,1 +1,40 @@
-<p>room works!</p>
+<div style="alignment: center; text-align: center">
+
+  <button class="btn btn-primary" style="background-color: lightgreen"
+              (click)="updateRoomNumbers(); displayAddForm = !displayAddForm;">
+    Add New Room
+  </button>
+
+  <app-add-form [display]="displayAddForm"></app-add-form>
+
+  <table class="table">
+    <thead>
+    <tr>
+      <th scope="col" style='text-align:center; vertical-align:middle'>Room Number</th>
+      <th scope="col" style='text-align:center; vertical-align:middle'>Description</th>
+      <th scope="col" style='text-align:center; vertical-align:middle'>Status</th>
+      <th scope="col" style='text-align:center; vertical-align:middle'>Equipment</th>
+      <th scope="col" style='text-align:center; vertical-align:middle'>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <ng-container *ngFor="let room of rooms">
+      <tr>
+        <th scope="row" style='text-align:center; vertical-align:middle'>{{room.roomNumber}}</th>
+        <td style='text-align:center; vertical-align:middle'>{{room.description}}</td>
+        <td style='text-align:center; vertical-align:middle'>{{room.roomStatus}}</td>
+        <td style='text-align:center; vertical-align:middle'>
+          <div class="list-group">
+            <ng-container *ngFor="let item of room.equipmentItems">
+              <a class="list-group-item list-group-item-action" (click)="goToEquipment()">{{item.name}}</a>
+            </ng-container>
+          </div>
+        </td>
+        <td style='text-align:center; vertical-align:middle'>
+          <button class="btn btn-danger" (click)="deleteRoom(room.roomNumber)">Delete</button>
+        </td>
+      </tr>
+    </ng-container>
+    </tbody>
+  </table>
+</div>

@@ -14,6 +14,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.PostConstruct;
+import java.nio.charset.StandardCharsets;
 import java.security.KeyFactory;
 import java.security.PublicKey;
 import java.security.spec.X509EncodedKeySpec;
@@ -26,11 +27,6 @@ public class JwtService {
     private final RestTemplate restTemplate = new RestTemplate();
     private JwtParser tokenParser;
 
-////    @Value("${spring.profiles.active}")
-////    private String activeProfile;
-//
-//    @Autowired
-//    private Environment environment;
 
     public JwtService() {
     }
@@ -53,27 +49,6 @@ public class JwtService {
 
     }
 
-//    public String generateTokenForUser(User user) {
-//        return Jwts.builder()
-//                .setSubject(user.getEmail())
-//                //.setClaims(prepareClaims(user))
-//                .setExpiration(calculateExpirationDate())
-//                .signWith(KEYS.getPrivate())
-//                .compact();
-//    }
-//
-//    private Map<String, String> prepareClaims(User user){
-//        Map<String, String> claims = new HashMap<>();
-//
-//        List<String> authorities = user.getAuthorities().stream().map(Authority::getRole).collect(Collectors.toList());
-//
-//        claims.put("subject", user.getEmail());
-//        claims.put("authorities", authorities.toString());
-//        claims.put("nick", user.getUserNick());
-//
-//        return claims;
-//    }
-
     public String extractSubjectIfTokenIsValid(String jwtToken) {
         try {
             //throws exception if token is wrong
@@ -85,10 +60,6 @@ public class JwtService {
             };
         }
     }
-
-//    private Date calculateExpirationDate() {
-//        return new Date(System.currentTimeMillis() + EXPIRATION_TIME_SECONDS * 1000L);
-//    }
 
     @Data
     @NoArgsConstructor

@@ -18,6 +18,7 @@ import { EquipmentComponent } from './component/equipment/equipment.component';
 import { ProfileComponent } from './component/profile/profile.component';
 import {ModifyFormComponent} from "./component/user/modify-form/modify-form.component";
 import { EquipmentFormComponent } from './component/equipment/equipment-form/equipment-form.component';
+import { AddFormComponent } from './component/room/add-form/add-form/add-form.component';
 
 @NgModule({
     declarations: [
@@ -32,7 +33,8 @@ import { EquipmentFormComponent } from './component/equipment/equipment-form/equ
         ProfileComponent,
         ModifyFormComponent,
         ModifyFormComponent,
-        EquipmentFormComponent
+        EquipmentFormComponent,
+        AddFormComponent
     ],
     imports: [
         BrowserModule,

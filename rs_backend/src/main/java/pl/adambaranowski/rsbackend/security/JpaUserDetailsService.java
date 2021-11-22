@@ -20,7 +20,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 
 @Service
-public class JpaUserDetailsService implements UserDetailsService {
+public class JpaUserDetailsService {
     private final UserRepository userRepository;
 
     @Autowired
@@ -28,7 +28,7 @@ public class JpaUserDetailsService implements UserDetailsService {
         this.userRepository = userRepository;
     }
 
-    @Override
+
     @Transactional
     public UserDetails loadUserByUsername(String email) throws UsernameNotFoundException {
         User user = userRepository.findByEmail(email)
@@ -39,7 +39,7 @@ public class JpaUserDetailsService implements UserDetailsService {
 
         return org.springframework.security.core.userdetails.User.builder()
                 .username(user.getEmail())
-                .password(user.getPassword())
+                .password("password doesn't matter here")
                 .accountLocked(!user.getAccountNonLocked())
                 .authorities(covertToSpringAuthorities(user.getAuthorities()))
                 .build();

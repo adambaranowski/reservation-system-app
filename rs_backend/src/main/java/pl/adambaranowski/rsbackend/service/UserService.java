@@ -47,7 +47,6 @@ public class UserService {
     private final AuthorityRepository authorityRepository;
     private final ReservationRepository reservationRepository;
     private final UserResponseMapper mapper;
-    private final PasswordEncoder passwordEncoder;
     private final UserDtoValidator validator;
 
     private final RestTemplate restTemplate = new RestTemplate();
@@ -105,7 +104,6 @@ public class UserService {
 
         user.setUserNick(requestDto.getUserNick());
         user.setEmail(requestDto.getEmail());
-        user.setPassword(passwordEncoder.encode(requestDto.getPassword()));
 
         //prepare lowest authority for registering
         String studentRole = UserRole.STUDENT.name();
@@ -139,23 +137,25 @@ public class UserService {
             user.setUserNick(requestDto.getUserNick());
         }
 
-        if (validator.isPasswordValid(requestDto)) {
-            user.setPassword(passwordEncoder.encode(requestDto.getPassword()));
-        }
-
         return mapper.mapToDto(user);
     }
 
     @Transactional
-    public void addAuthorities(Integer userId, List<String> authorities) {
+    public void modifyAuthorities(Integer userId, List<String> authorities) {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new NoSuchElementException(String.format(NO_SUCH_USER, userId)));
+
+        String currentlyLoggedUserEmail = (String) SecurityContextHolder.getContext().getAuthentication().getPrincipal();
+        if (user.getEmail().equals(currentlyLoggedUserEmail)) {
+            throw new WrongDtoException(List.of("You cannot modify your authorities."));
+        }
 
         Set<Authority> authoritySet = authorities.stream()
                 .map(authority -> authorityRepository.findByRole(authority)
                         .orElseThrow(() -> new NoSuchElementException(String.format(NO_SUCH_AUTHORITY, authority))))
                 .collect(Collectors.toSet());
 
+        user.removeAuthorities();
         user.addAuthorities(authoritySet);
     }
 

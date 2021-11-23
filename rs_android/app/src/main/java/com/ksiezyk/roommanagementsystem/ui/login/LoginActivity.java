@@ -58,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
         final TextView biometricText = binding.biomInfoText;
         BiometricManager biometricManager = androidx.biometric.BiometricManager.from(this);
 
-        credentialsManager = new CredentialsManager(this.getPreferences(Context.MODE_PRIVATE));
+        credentialsManager = new CredentialsManager(this.getSharedPreferences(CredentialsManager.PREF_NAME, Context.MODE_PRIVATE));
 
         int canAuth = biometricManager.canAuthenticate(BiometricManager.Authenticators.BIOMETRIC_WEAK);
         switch (canAuth) {

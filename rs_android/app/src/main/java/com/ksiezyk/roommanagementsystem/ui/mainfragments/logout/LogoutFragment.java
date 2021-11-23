@@ -1,6 +1,8 @@
 package com.ksiezyk.roommanagementsystem.ui.mainfragments.logout;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +15,7 @@ import androidx.navigation.NavController;
 import androidx.navigation.fragment.NavHostFragment;
 
 import com.ksiezyk.roommanagementsystem.R;
+import com.ksiezyk.roommanagementsystem.ui.login.CredentialsManager;
 import com.ksiezyk.roommanagementsystem.ui.login.LoginActivity;
 
 /**
@@ -62,6 +65,9 @@ public class LogoutFragment extends Fragment {
     }
 
     private void handleLogout() {
+        SharedPreferences sharedPrefs = getActivity().getSharedPreferences(CredentialsManager.PREF_NAME, Context.MODE_PRIVATE);
+        CredentialsManager credentialsManager = new CredentialsManager(sharedPrefs);
+        credentialsManager.clearCreds();
         logoutViewModel.logout();
         Intent intent = new Intent(getActivity(), LoginActivity.class);
         startActivity(intent);

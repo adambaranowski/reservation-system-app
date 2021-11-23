@@ -1,10 +1,13 @@
 package com.ksiezyk.roommanagementsystem.ui.login;
 
 import android.content.SharedPreferences;
+import android.util.Log;
 
 public class CredentialsManager {
+    public static final String PREF_NAME = "USER_CREDENTIALS";
     public final String USERNAME_KEY = "USERNAME";
     public final String PASSWORD_KEY = "PASSWORD";
+
     SharedPreferences sharedPreferences;
 
     public CredentialsManager(SharedPreferences sharedPref) {
@@ -38,5 +41,9 @@ public class CredentialsManager {
         String password = getPassword();
 
         return (!username.equals("") && !password.equals(""));
+    }
+
+    public void clearCreds() {
+        sharedPreferences.edit().clear().apply();
     }
 }

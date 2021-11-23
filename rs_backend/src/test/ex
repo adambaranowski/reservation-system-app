@@ -1,0 +1,20 @@
+<Reservation(
+    room=Room{number=2137, description='testRoom', roomStatus=NORMAL, equipmentItems=0},
+    id=null,
+    user=User(
+        id=48,
+        password=$2a$10$yySmz.5cQUqfq9Bje/Yv4eOAFvEGQ/vgZ2F3qP7vWdqm1DgErie7a,
+        email=testadmin@gmail.com,
+        userNick=testAdmin,
+        profileImageUrl=null,
+        lastLoginDateTime=2021-09-30T22:47:20.985586,
+        joinDateTime=null,
+        authorities=[Authority{id=48, role='ADMIN', users=1}],
+        accountNonExpired=true,
+        accountNonLocked=true,
+        credentialsNonExpired=true),
+      beginDate=2001-09-11,
+      endDate=2005-04-02,
+      beginTime=09:37,
+      endTime=21:37,
+      recurrencePattern=RecurrencePattern(weekDays=[WEDNESDAY], weekNum=null))>

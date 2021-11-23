@@ -22,60 +22,12 @@ export class ReservationComponent implements OnInit, OnDestroy {
 
   public user?: User;
   public rooms: RoomResponseDto[] = [];
-  public pickedRoomNumber = null;
 
   public today: Date = new Date();
   public firstDayOfWeek: Date;
   public lastDayOfWeek: Date;
 
   public reservationsGrid: ReservationCell[][] = [];
-
-  fillReservationGridWithReservations(reservations: SingleReservationDto[]): void {
-    this.fillReservationGrid();
-    reservations.forEach(reservation => {
-
-      //dd-mm-yyyy
-      let splitDate = reservation.date.split('-');
-
-      //yyyy-mm-dd
-      let reservationDate = new Date(parseInt(splitDate[2]), parseInt(splitDate[1])-1, parseInt(splitDate[0]));
-
-      let day = reservationDate.getDay()-1; // -1 because Monday is first instead of Sunday
-      let beginHour = parseInt(reservation.beginTime.split('-')[0]);
-
-
-      if (day >= 0 && day <= 4){
-        if (beginHour >= 8 && beginHour <= 20) {
-          this.reservationsGrid[day][beginHour-8].reservations.push(reservation);
-        }
-      }
-
-    })
-  }
-
-  getReservationsForCell(day: number, hour: number): SingleReservationDto[] {
-    return this.reservationsGrid[day][hour].reservations;
-  }
-
-  fillReservationGrid(): void {
-
-    this.reservationsGrid = [];
-
-    for (let day = 0; day <= 4; day++) {
-      const dayGrid = [];
-      for (let hour = 8; hour <= 20; hour++){
-
-          const oneHourCell: ReservationCell = {
-            day: day,
-            beginHour: hour,
-            reservations: []
-          };
-
-          dayGrid.push(oneHourCell);
-      }
-      this.reservationsGrid.push(dayGrid);
-    }
-  }
 
   public  hours = ['8:00', '9:00', '10:00', '11:00', '12:00',
     '13:00', '14:00', '15:00', '16:00', '17:00',
@@ -96,22 +48,57 @@ export class ReservationComponent implements OnInit, OnDestroy {
     this.lastDayOfWeek = this.addDays(new Date(this.today), daysToEndOfWeek);
   }
 
+  fillReservationGridWithReservations(reservations: SingleReservationDto[]): void {
+    this.fillReservationGrid();
+    reservations.forEach(reservation => {
+
+      //dd-mm-yyyy
+      let splitDate = reservation.date.split('-');
+
+      //yyyy-mm-dd
+      let reservationDate = new Date(parseInt(splitDate[2]), parseInt(splitDate[1])-1, parseInt(splitDate[0]));
+
+      let day = reservationDate.getDay()-1; // -1 because Monday is first instead of Sunday
+      let beginHour = parseInt(reservation.beginTime.split('-')[0]);
+
+      if (day >= 0 && day <= 4){
+        if (beginHour >= 8 && beginHour <= 20) {
+          this.reservationsGrid[day][beginHour-8].reservations.push(reservation);
+        }
+      }
+    })
+  }
+
+  getReservationsForCell(day: number, hour: number): SingleReservationDto[] {return this.reservationsGrid[day][hour].reservations;}
+
+  fillReservationGrid(): void {
+
+    this.reservationsGrid = [];
+    for (let day = 0; day <= 4; day++) {
+      const dayGrid = [];
+      for (let hour = 8; hour <= 20; hour++){
+          const oneHourCell: ReservationCell = {
+            day: day,
+            beginHour: hour,
+            reservations: []
+          };
+          dayGrid.push(oneHourCell);
+      }
+      this.reservationsGrid.push(dayGrid);
+    }
+  }
+
   updateReservations(roomNumber: number | undefined): void {
 
     let beginDay = this.firstDayOfWeek.getDate() < 10 ? '0'+this.firstDayOfWeek.getDate() : this.firstDayOfWeek.getDate();
-
     let beginMonth = this.firstDayOfWeek.getMonth() < 9 ?
       '0' + (this.firstDayOfWeek.getMonth()+1) : (this.firstDayOfWeek.getMonth()+1);
-
     let endMonth = this.lastDayOfWeek.getMonth() < 9 ?
       '0' + (this.lastDayOfWeek.getMonth()+1) : this.lastDayOfWeek.getMonth()+1;
-
     let endDay = this.lastDayOfWeek.getDate() < 10 ? '0'+this.lastDayOfWeek.getDate() : this.lastDayOfWeek.getDate();
-
     let beginDateString = beginDay + '-' +
       beginMonth + '-' +
       + this.firstDayOfWeek.getFullYear();
-
 
     let endDateString = endDay + '-' +
       endMonth + '-' +
@@ -125,13 +112,9 @@ export class ReservationComponent implements OnInit, OnDestroy {
 
     this.subscriptions.push(this.reservationService.getAllReservationsForPeriod(reservationRequestDto).subscribe(
       (response: SingleReservationDto[]) => {
-
         this.fillReservationGridWithReservations(response);
-
-        console.log(this.reservationsGrid);
       },
       (httpErrorResponse: HttpErrorResponse) => {
-        console.log(httpErrorResponse);
         this.notifier.showNotification(NotificationType.ERROR, 'Cannot get reservations: ' + httpErrorResponse.error);
       }
     ))
@@ -172,7 +155,6 @@ export class ReservationComponent implements OnInit, OnDestroy {
     this.subscriptions.push(this.roomEquipmentService.getAllRooms().subscribe(
       (response: RoomResponseDto[]) => {
         this.rooms = response;
-
       },
       (httpErrorResponse: HttpErrorResponse) => {
         console.log(httpErrorResponse);

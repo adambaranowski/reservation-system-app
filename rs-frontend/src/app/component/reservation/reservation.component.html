@@ -21,13 +21,20 @@
     </tr>
     </thead>
     <tbody>
-    <tr *ngFor="let hour of hours">
+    <tr *ngFor="let hour of hours; let hIndex=index">
       <th scope="row" style='text-align:center; vertical-align:middle'>{{hour}}</th>
-      <ng-container *ngFor="let day of days">
+      <ng-container *ngFor="let day of days; let dIndex=index">
         <td style='text-align:center; vertical-align:middle'>
-          <button class="btn btn-outline-info" style="margin: 2%">reservation 1</button>
+          <ng-container *ngFor="let reservation of getReservationsForCell(dIndex, hIndex)">
+          <button class="btn btn-outline-info" style="margin: 2%">
+            <h5>{{reservation.beginTime}}-{{reservation.endTime}}</h5>
+            <br>
+            <h6>{{reservation.userNick}}</h6>
+            <br>
+
+          </button>
           <br>
-          <button class="btn btn-outline-info" style="margin: 2%">reservation 2</button>
+          </ng-container>
         </td>
       </ng-container>
 

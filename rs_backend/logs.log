@@ -1,4 +1,31 @@
-2021-11-22 00:03:11.580  INFO 16848 --- [http-nio-8082-exec-3] p.a.rsbackend.loging.ControllersLogger   : 
+2021-11-23 10:10:20.160  WARN 21432 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=14h10m47s462ms437µs700ns).
+2021-11-23 15:38:30.406  INFO 21184 --- [main] p.a.rsbackend.RsbackendApplication       : Starting RsbackendApplication using Java 13.0.1 on DESKTOP-NJEN35A with PID 21184 (C:\Users\Adam Baranowski\Desktop\Praca_Dyplomowa\reservation_system_app\rs_backend\target\classes started by Adam Baranowski in C:\Users\Adam Baranowski\Desktop\Praca_Dyplomowa\reservation_system_app\rs_backend)
+2021-11-23 15:38:30.409  INFO 21184 --- [main] p.a.rsbackend.RsbackendApplication       : No active profile set, falling back to default profiles: default
+2021-11-23 15:38:31.603  INFO 21184 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-11-23 15:38:31.678  INFO 21184 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 69 ms. Found 5 JPA repository interfaces.
+2021-11-23 15:38:32.213  INFO 21184 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2021-11-23 15:38:32.213  INFO 21184 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-11-23 15:38:32.213  INFO 21184 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-11-23 15:38:32.286  INFO 21184 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-11-23 15:38:32.302  INFO 21184 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1858 ms
+2021-11-23 15:38:32.397  INFO 21184 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-11-23 15:38:32.480  INFO 21184 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-11-23 15:38:32.485  INFO 21184 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2021-11-23 15:38:32.629  INFO 21184 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-11-23 15:38:32.661  INFO 21184 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-11-23 15:38:32.729  INFO 21184 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-11-23 15:38:32.821  INFO 21184 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-11-23 15:38:33.318  INFO 21184 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-11-23 15:38:33.325  INFO 21184 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-11-23 15:38:34.054  WARN 21184 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-11-23 15:38:34.459  INFO 21184 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2021-11-23 15:38:34.899  INFO 21184 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@3c84c32f, org.springframework.security.web.context.SecurityContextPersistenceFilter@19070326, org.springframework.security.web.header.HeaderWriterFilter@1dbe592f, org.springframework.web.filter.CorsFilter@57ac220f, org.springframework.security.web.authentication.logout.LogoutFilter@4ca6f587, pl.adambaranowski.rsbackend.security.filter.JwtFilter@7e641005, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4ce4c097, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@a589070, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2ccfd2cb, org.springframework.security.web.session.SessionManagementFilter@78ae34f7, org.springframework.security.web.access.ExceptionTranslationFilter@2ce7d43, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@108a7fff]
+2021-11-23 15:38:35.162  INFO 21184 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2021-11-23 15:38:35.411  INFO 21184 --- [main] p.a.rsbackend.RsbackendApplication       : Started RsbackendApplication in 5.357 seconds (JVM running for 6.142)
+2021-11-23 15:38:35.885  INFO 21184 --- [RMI TCP Connection(2)-192.168.0.115] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-11-23 15:38:35.887  INFO 21184 --- [RMI TCP Connection(2)-192.168.0.115] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-11-23 15:38:35.888  INFO 21184 --- [RMI TCP Connection(2)-192.168.0.115] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2021-11-23 15:41:36.936  INFO 21184 --- [http-nio-8082-exec-2] p.a.rsbackend.loging.ControllersLogger   : 
  Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.getUserInfo() 
  With params: 
   
@@ -9,13 +36,13 @@
     userNick: admin
     email: admin@gmail.com
     authorities: [ADMIN]
-    lastLoginDateTime: 2021-11-22T00:03:11.580667
-    joinDateTime: 2021-11-21T22:11:52.114683
+    lastLoginDateTime: 2021-11-23T15:41:36.907287
+    joinDateTime: 2021-11-23T15:38:35.486024
     accountNonExpired: true
     accountNonLocked: true
     credentialsNonExpired: true
 },[]>
-2021-11-22 00:03:15.966  INFO 16848 --- [http-nio-8082-exec-7] p.a.rsbackend.loging.ControllersLogger   : 
+2021-11-23 15:41:40.980  INFO 21184 --- [http-nio-8082-exec-4] p.a.rsbackend.loging.ControllersLogger   : 
  Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.RoomController.getAllRooms() 
  With params: 
   
@@ -57,98 +84,24 @@
         roomNumber: 25
     }]
 }],[]>
-2021-11-22 00:03:15.972  INFO 16848 --- [http-nio-8082-exec-6] p.a.rsbackend.loging.ControllersLogger   : 
- Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.EquipmentController.getAllEquipmentItems() 
+2021-11-23 16:31:25.071  INFO 21184 --- [http-nio-8082-exec-7] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.getUserInfo() 
  With params: 
   
  By User: 
  admin@gmail.com 
- Returned: <200 OK OK,[class EquipmentResponseDto {
-    id: 1
-    name: Pneumatic Organ
-    description: II+P, 8 stops, pneumatic tracture organ
-    roomNumber: 21
-}, class EquipmentResponseDto {
-    id: 2
-    name: Yamaha Small Grand Piano
-    description: Yamaha Small Grand Piano, well-tuned
-    roomNumber: 22
-}, class EquipmentResponseDto {
-    id: 3
-    name: Mechanic Walcker Organ
-    description: II+P, 7 stops, mechanic tracture organ
-    roomNumber: 25
-}, class EquipmentResponseDto {
-    id: 4
-    name: Calisia Piano
-    description: Small piano
-    roomNumber: 25
-}],[]>
-2021-11-22 00:03:15.985  INFO 16848 --- [http-nio-8082-exec-8] p.a.rsbackend.loging.ControllersLogger   : 
- Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.EquipmentController.getAllEquipmentItems() 
- With params: 
-  
- By User: 
- admin@gmail.com 
- Returned: <200 OK OK,[class EquipmentResponseDto {
-    id: 1
-    name: Pneumatic Organ
-    description: II+P, 8 stops, pneumatic tracture organ
-    roomNumber: 21
-}, class EquipmentResponseDto {
-    id: 2
-    name: Yamaha Small Grand Piano
-    description: Yamaha Small Grand Piano, well-tuned
-    roomNumber: 22
-}, class EquipmentResponseDto {
-    id: 3
-    name: Mechanic Walcker Organ
-    description: II+P, 7 stops, mechanic tracture organ
-    roomNumber: 25
-}, class EquipmentResponseDto {
-    id: 4
-    name: Calisia Piano
-    description: Small piano
-    roomNumber: 25
-}],[]>
-2021-11-22 00:03:20.870  INFO 16848 --- [http-nio-8082-exec-10] p.a.rsbackend.loging.ControllersLogger   : 
- Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.UsersController.getAllUsers() 
- With params: 
-  
- By User: 
- admin@gmail.com 
- Returned: <200 OK OK,[class UserResponseDto {
-    id: 1
-    userNick: teacher student
-    email: teacher@gmail.com
-    authorities: [TEACHER]
-    lastLoginDateTime: null
-    joinDateTime: 2021-11-21T22:11:52.102348
-    accountNonExpired: true
-    accountNonLocked: true
-    credentialsNonExpired: true
-}, class UserResponseDto {
-    id: 2
-    userNick: student
-    email: student@gmail.com
-    authorities: [STUDENT]
-    lastLoginDateTime: null
-    joinDateTime: 2021-11-21T22:11:52.114683
-    accountNonExpired: true
-    accountNonLocked: true
-    credentialsNonExpired: true
-}, class UserResponseDto {
+ Returned: <200 OK OK,class UserResponseDto {
     id: 3
     userNick: admin
     email: admin@gmail.com
     authorities: [ADMIN]
-    lastLoginDateTime: 2021-11-22T00:03:20.858644
-    joinDateTime: 2021-11-21T22:11:52.114683
+    lastLoginDateTime: 2021-11-23T16:31:25.066928
+    joinDateTime: 2021-11-23T15:38:35.486024
     accountNonExpired: true
     accountNonLocked: true
     credentialsNonExpired: true
-}],[]>
-2021-11-22 00:03:22.843  INFO 16848 --- [http-nio-8082-exec-2] p.a.rsbackend.loging.ControllersLogger   : 
+},[]>
+2021-11-23 16:31:28.597  INFO 21184 --- [http-nio-8082-exec-9] p.a.rsbackend.loging.ControllersLogger   : 
  Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.RoomController.getAllRooms() 
  With params: 
   
@@ -190,7 +143,41 @@
         roomNumber: 25
     }]
 }],[]>
-2021-11-22 00:03:26.134  INFO 16848 --- [http-nio-8082-exec-3] p.a.rsbackend.loging.ControllersLogger   : 
+2021-11-23 18:06:59.729  INFO 21184 --- [http-nio-8082-exec-2] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.getUserInfo() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,class UserResponseDto {
+    id: 3
+    userNick: admin
+    email: admin@gmail.com
+    authorities: [ADMIN]
+    lastLoginDateTime: 2021-11-23T18:06:59.725474
+    joinDateTime: 2021-11-23T15:38:35.486024
+    accountNonExpired: true
+    accountNonLocked: true
+    credentialsNonExpired: true
+},[]>
+2021-11-23 18:23:09.514  INFO 21184 --- [http-nio-8082-exec-5] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.getUserInfo() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,class UserResponseDto {
+    id: 3
+    userNick: admin
+    email: admin@gmail.com
+    authorities: [ADMIN]
+    lastLoginDateTime: 2021-11-23T18:23:09.511782
+    joinDateTime: 2021-11-23T15:38:35.486024
+    accountNonExpired: true
+    accountNonLocked: true
+    credentialsNonExpired: true
+},[]>
+2021-11-23 18:24:14.338  INFO 21184 --- [http-nio-8082-exec-8] p.a.rsbackend.loging.ControllersLogger   : 
  Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.RoomController.getAllRooms() 
  With params: 
   
@@ -232,7 +219,66 @@
         roomNumber: 25
     }]
 }],[]>
-2021-11-22 00:03:37.890  INFO 16848 --- [http-nio-8082-exec-5] p.a.rsbackend.loging.ControllersLogger   : 
+2021-11-23 19:36:14.235  INFO 21184 --- [http-nio-8082-exec-3] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.getUserInfo() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,class UserResponseDto {
+    id: 3
+    userNick: admin
+    email: admin@gmail.com
+    authorities: [ADMIN]
+    lastLoginDateTime: 2021-11-23T19:36:14.235475
+    joinDateTime: 2021-11-23T15:38:35.486024
+    accountNonExpired: true
+    accountNonLocked: true
+    credentialsNonExpired: true
+},[]>
+2021-11-23 19:36:18.591  INFO 21184 --- [http-nio-8082-exec-5] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.RoomController.getAllRooms() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class RoomResponseDto {
+    roomNumber: 21
+    description: Small organ room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 1
+        name: Pneumatic Organ
+        description: II+P, 8 stops, pneumatic tracture organ
+        roomNumber: 21
+    }]
+}, class RoomResponseDto {
+    roomNumber: 22
+    description: Grand Piano room on 2nd floor
+    roomStatus: ONLY_TEACHER
+    equipmentItems: [class EquipmentResponseDto {
+        id: 2
+        name: Yamaha Small Grand Piano
+        description: Yamaha Small Grand Piano, well-tuned
+        roomNumber: 22
+    }]
+}, class RoomResponseDto {
+    roomNumber: 25
+    description: Small organ-piano room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 4
+        name: Calisia Piano
+        description: Small piano
+        roomNumber: 25
+    }, class EquipmentResponseDto {
+        id: 3
+        name: Mechanic Walcker Organ
+        description: II+P, 7 stops, mechanic tracture organ
+        roomNumber: 25
+    }]
+}],[]>
+2021-11-23 19:36:23.543  INFO 21184 --- [http-nio-8082-exec-7] p.a.rsbackend.loging.ControllersLogger   : 
  Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
  With params: 
  class GetReservationRequestDto {
@@ -250,7 +296,37 @@
     beginTime: 09:45
     endTime: 11:00
 }],[]>
-2021-11-22 00:03:55.813  INFO 16848 --- [http-nio-8082-exec-6] p.a.rsbackend.loging.ControllersLogger   : 
+2021-11-23 19:36:25.034  INFO 21184 --- [http-nio-8082-exec-8] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 22
+    beginDate: 11-09-2021
+    endDate: 15-09-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class SingleReservationDto {
+    reservationId: 2
+    userNick: admin
+    date: 14-10-2021
+    beginTime: 09:45
+    endTime: 11:00
+}],[]>
+2021-11-23 19:36:30.025  INFO 21184 --- [http-nio-8082-exec-10] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 21
+    beginDate: 11-09-2021
+    endDate: 15-09-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[],[]>
+2021-11-23 19:36:31.005  INFO 21184 --- [http-nio-8082-exec-1] p.a.rsbackend.loging.ControllersLogger   : 
  Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
  With params: 
  class GetReservationRequestDto {
@@ -262,7 +338,7 @@
  By User: 
  admin@gmail.com 
  Returned: <200 OK OK,[],[]>
-2021-11-22 00:03:57.109  INFO 16848 --- [http-nio-8082-exec-8] p.a.rsbackend.loging.ControllersLogger   : 
+2021-11-23 19:36:31.880  INFO 21184 --- [http-nio-8082-exec-2] p.a.rsbackend.loging.ControllersLogger   : 
  Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
  With params: 
  class GetReservationRequestDto {
@@ -280,7 +356,43 @@
     beginTime: 09:45
     endTime: 11:00
 }],[]>
-2021-11-22 00:09:49.253  INFO 16848 --- [http-nio-8082-exec-2] p.a.rsbackend.loging.ControllersLogger   : 
+2021-11-23 19:36:34.147  INFO 21184 --- [http-nio-8082-exec-3] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 22
+    beginDate: 18-09-2021
+    endDate: 22-09-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class SingleReservationDto {
+    reservationId: 2
+    userNick: admin
+    date: 14-10-2021
+    beginTime: 09:45
+    endTime: 11:00
+}],[]>
+2021-11-23 19:36:43.787  INFO 21184 --- [http-nio-8082-exec-5] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 22
+    beginDate: 18-09-2021
+    endDate: 22-09-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class SingleReservationDto {
+    reservationId: 2
+    userNick: admin
+    date: 14-10-2021
+    beginTime: 09:45
+    endTime: 11:00
+}],[]>
+2021-11-23 19:37:34.555  INFO 21184 --- [http-nio-8082-exec-7] p.a.rsbackend.loging.ControllersLogger   : 
  Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.RoomController.getAllRooms() 
  With params: 
   
@@ -322,135 +434,253 @@
         roomNumber: 25
     }]
 }],[]>
-2021-11-22 00:10:01.824  WARN 16848 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=1m40s660ms14µs500ns).
-2021-11-22 11:20:36.089  INFO 2868 --- [main] p.a.rsbackend.RsbackendApplication       : Starting RsbackendApplication using Java 13.0.1 on DESKTOP-NJEN35A with PID 2868 (C:\Users\Adam Baranowski\Desktop\Praca_Dyplomowa\reservation_system_app\rs_backend\target\classes started by Adam Baranowski in C:\Users\Adam Baranowski\Desktop\Praca_Dyplomowa\reservation_system_app\rs_backend)
-2021-11-22 11:20:36.092  INFO 2868 --- [main] p.a.rsbackend.RsbackendApplication       : No active profile set, falling back to default profiles: default
-2021-11-22 11:20:37.344  INFO 2868 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-11-22 11:20:37.431  INFO 2868 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 77 ms. Found 5 JPA repository interfaces.
-2021-11-22 11:20:38.058  INFO 2868 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2021-11-22 11:20:38.066  INFO 2868 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-11-22 11:20:38.067  INFO 2868 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
-2021-11-22 11:20:38.164  INFO 2868 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-11-22 11:20:38.164  INFO 2868 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2022 ms
-2021-11-22 11:20:38.297  INFO 2868 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-11-22 11:20:38.421  INFO 2868 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-11-22 11:20:38.426  INFO 2868 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
-2021-11-22 11:20:38.568  INFO 2868 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-11-22 11:20:38.600  INFO 2868 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
-2021-11-22 11:20:38.686  INFO 2868 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-11-22 11:20:38.767  INFO 2868 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2021-11-22 11:20:39.263  INFO 2868 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-11-22 11:20:39.269  INFO 2868 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-11-22 11:20:40.045  WARN 2868 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-11-22 11:20:40.499  INFO 2868 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-2021-11-22 11:20:40.947  INFO 2868 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@40af3dd8, org.springframework.security.web.context.SecurityContextPersistenceFilter@4d609cc3, org.springframework.security.web.header.HeaderWriterFilter@59eff566, org.springframework.web.filter.CorsFilter@745c25ed, org.springframework.security.web.authentication.logout.LogoutFilter@36ce48bc, pl.adambaranowski.rsbackend.security.filter.JwtFilter@4fb1bffd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5e81b406, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@528070fe, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@427c9a13, org.springframework.security.web.session.SessionManagementFilter@4b548913, org.springframework.security.web.access.ExceptionTranslationFilter@16c3e494, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@f4e235e]
-2021-11-22 11:20:41.238  INFO 2868 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2021-11-22 11:20:41.487  INFO 2868 --- [main] p.a.rsbackend.RsbackendApplication       : Started RsbackendApplication in 5.873 seconds (JVM running for 6.771)
-2021-11-22 11:20:41.910  INFO 2868 --- [RMI TCP Connection(1)-192.168.0.115] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-11-22 11:20:41.912  INFO 2868 --- [RMI TCP Connection(1)-192.168.0.115] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2021-11-22 11:20:41.913  INFO 2868 --- [RMI TCP Connection(1)-192.168.0.115] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2021-11-22 11:22:16.815  INFO 7788 --- [main] p.a.rsbackend.RsbackendApplication       : Starting RsbackendApplication using Java 13.0.1 on DESKTOP-NJEN35A with PID 7788 (C:\Users\Adam Baranowski\Desktop\Praca_Dyplomowa\reservation_system_app\rs_backend\target\classes started by Adam Baranowski in C:\Users\Adam Baranowski\Desktop\Praca_Dyplomowa\reservation_system_app\rs_backend)
-2021-11-22 11:22:16.817  INFO 7788 --- [main] p.a.rsbackend.RsbackendApplication       : No active profile set, falling back to default profiles: default
-2021-11-22 11:22:17.857  INFO 7788 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-11-22 11:22:17.925  INFO 7788 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 61 ms. Found 5 JPA repository interfaces.
-2021-11-22 11:22:18.423  INFO 7788 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2021-11-22 11:22:18.429  INFO 7788 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-11-22 11:22:18.429  INFO 7788 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
-2021-11-22 11:22:18.507  INFO 7788 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-11-22 11:22:18.507  INFO 7788 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1642 ms
-2021-11-22 11:22:18.596  INFO 7788 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-11-22 11:22:18.688  INFO 7788 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-11-22 11:22:18.693  INFO 7788 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
-2021-11-22 11:22:18.840  INFO 7788 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-11-22 11:22:18.875  INFO 7788 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
-2021-11-22 11:22:18.951  INFO 7788 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-11-22 11:22:19.035  INFO 7788 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2021-11-22 11:22:19.518  INFO 7788 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-11-22 11:22:19.524  INFO 7788 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-11-22 11:22:20.112  WARN 7788 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-11-22 11:22:20.533  INFO 7788 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-2021-11-22 11:22:20.984  INFO 7788 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@a589070, org.springframework.security.web.context.SecurityContextPersistenceFilter@c105912, org.springframework.security.web.header.HeaderWriterFilter@5623fd90, org.springframework.web.filter.CorsFilter@747216b6, org.springframework.security.web.authentication.logout.LogoutFilter@65bc50c9, pl.adambaranowski.rsbackend.security.filter.JwtFilter@7ee6d5fd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@7a7d25ca, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3ff83cc8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@358bbbe2, org.springframework.security.web.session.SessionManagementFilter@672e4658, org.springframework.security.web.access.ExceptionTranslationFilter@8850865, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@295e989]
-2021-11-22 11:22:21.296  INFO 7788 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2021-11-22 11:22:21.558  INFO 7788 --- [main] p.a.rsbackend.RsbackendApplication       : Started RsbackendApplication in 5.249 seconds (JVM running for 6.173)
-2021-11-22 11:22:22.382  INFO 7788 --- [RMI TCP Connection(4)-192.168.0.115] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-11-22 11:22:22.384  INFO 7788 --- [RMI TCP Connection(4)-192.168.0.115] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2021-11-22 11:22:22.386  INFO 7788 --- [RMI TCP Connection(4)-192.168.0.115] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2021-11-22 11:26:12.810  INFO 9052 --- [main] p.a.rsbackend.RsbackendApplication       : Starting RsbackendApplication using Java 13.0.1 on DESKTOP-NJEN35A with PID 9052 (C:\Users\Adam Baranowski\Desktop\Praca_Dyplomowa\reservation_system_app\rs_backend\target\classes started by Adam Baranowski in C:\Users\Adam Baranowski\Desktop\Praca_Dyplomowa\reservation_system_app\rs_backend)
-2021-11-22 11:26:12.814  INFO 9052 --- [main] p.a.rsbackend.RsbackendApplication       : No active profile set, falling back to default profiles: default
-2021-11-22 11:26:14.040  INFO 9052 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-11-22 11:26:14.127  INFO 9052 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 79 ms. Found 5 JPA repository interfaces.
-2021-11-22 11:26:14.718  INFO 9052 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2021-11-22 11:26:14.725  INFO 9052 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-11-22 11:26:14.725  INFO 9052 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
-2021-11-22 11:26:14.830  INFO 9052 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-11-22 11:26:14.830  INFO 9052 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1958 ms
-2021-11-22 11:26:14.945  INFO 9052 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-11-22 11:26:15.036  INFO 9052 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-11-22 11:26:15.043  INFO 9052 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
-2021-11-22 11:26:15.201  INFO 9052 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-11-22 11:26:15.238  INFO 9052 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
-2021-11-22 11:26:15.327  INFO 9052 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-11-22 11:26:15.410  INFO 9052 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2021-11-22 11:26:15.999  INFO 9052 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-11-22 11:26:16.006  INFO 9052 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-11-22 11:26:16.875  WARN 9052 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-11-22 11:26:17.374  INFO 9052 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-2021-11-22 11:26:18.030  INFO 9052 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2c3a2935, org.springframework.security.web.context.SecurityContextPersistenceFilter@29e8c09c, org.springframework.security.web.header.HeaderWriterFilter@7789719e, org.springframework.web.filter.CorsFilter@2ca4b010, org.springframework.security.web.authentication.logout.LogoutFilter@181a6784, pl.adambaranowski.rsbackend.security.filter.JwtFilter@83b39c3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@64f34c91, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@76fa3dd8, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@1f7653ae, org.springframework.security.web.session.SessionManagementFilter@3b5f72fa, org.springframework.security.web.access.ExceptionTranslationFilter@347770a9, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7f746160]
-2021-11-22 11:26:18.382  INFO 9052 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2021-11-22 11:26:18.685  INFO 9052 --- [main] p.a.rsbackend.RsbackendApplication       : Started RsbackendApplication in 6.487 seconds (JVM running for 7.658)
-2021-11-22 11:26:19.437  INFO 9052 --- [RMI TCP Connection(3)-192.168.0.115] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-11-22 11:26:19.439  INFO 9052 --- [RMI TCP Connection(3)-192.168.0.115] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2021-11-22 11:26:19.440  INFO 9052 --- [RMI TCP Connection(3)-192.168.0.115] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2021-11-22 12:01:44.601  INFO 4676 --- [main] p.a.rsbackend.RsbackendApplication       : Starting RsbackendApplication using Java 13.0.1 on DESKTOP-NJEN35A with PID 4676 (C:\Users\Adam Baranowski\Desktop\Praca_Dyplomowa\reservation_system_app\rs_backend\target\classes started by Adam Baranowski in C:\Users\Adam Baranowski\Desktop\Praca_Dyplomowa\reservation_system_app\rs_backend)
-2021-11-22 12:01:44.604  INFO 4676 --- [main] p.a.rsbackend.RsbackendApplication       : No active profile set, falling back to default profiles: default
-2021-11-22 12:01:45.895  INFO 4676 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-11-22 12:01:45.993  INFO 4676 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 90 ms. Found 5 JPA repository interfaces.
-2021-11-22 12:01:46.586  INFO 4676 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2021-11-22 12:01:46.592  INFO 4676 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-11-22 12:01:46.592  INFO 4676 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
-2021-11-22 12:01:46.694  INFO 4676 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-11-22 12:01:46.694  INFO 4676 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2051 ms
-2021-11-22 12:01:46.808  INFO 4676 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-11-22 12:01:46.883  INFO 4676 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-11-22 12:01:46.888  INFO 4676 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
-2021-11-22 12:01:47.073  INFO 4676 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-11-22 12:01:47.108  INFO 4676 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
-2021-11-22 12:01:47.190  INFO 4676 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-11-22 12:01:47.268  INFO 4676 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2021-11-22 12:01:47.806  INFO 4676 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-11-22 12:01:47.813  INFO 4676 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-11-22 12:01:48.580  WARN 4676 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-11-22 12:01:49.097  INFO 4676 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-2021-11-22 12:01:49.600  INFO 4676 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@655008a2, org.springframework.security.web.context.SecurityContextPersistenceFilter@2898cd46, org.springframework.security.web.header.HeaderWriterFilter@6e620fa9, org.springframework.web.filter.CorsFilter@424461ad, org.springframework.security.web.authentication.logout.LogoutFilter@63fe055, pl.adambaranowski.rsbackend.security.filter.JwtFilter@7cc5bdbd, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@346d8002, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@7c144349, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@33c5cc0, org.springframework.security.web.session.SessionManagementFilter@51617b93, org.springframework.security.web.access.ExceptionTranslationFilter@40af3dd8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@49aa6081]
-2021-11-22 12:01:49.897  INFO 4676 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2021-11-22 12:01:50.166  INFO 4676 --- [main] p.a.rsbackend.RsbackendApplication       : Started RsbackendApplication in 5.969 seconds (JVM running for 7.374)
-2021-11-22 14:56:14.119  INFO 4664 --- [main] p.a.rsbackend.RsbackendApplication       : Starting RsbackendApplication using Java 13.0.1 on DESKTOP-NJEN35A with PID 4664 (C:\Users\Adam Baranowski\Desktop\Praca_Dyplomowa\reservation_system_app\rs_backend\target\classes started by Adam Baranowski in C:\Users\Adam Baranowski\Desktop\Praca_Dyplomowa\reservation_system_app\rs_backend)
-2021-11-22 14:56:14.122  INFO 4664 --- [main] p.a.rsbackend.RsbackendApplication       : No active profile set, falling back to default profiles: default
-2021-11-22 14:56:15.231  INFO 4664 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-11-22 14:56:15.308  INFO 4664 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 71 ms. Found 5 JPA repository interfaces.
-2021-11-22 14:56:15.887  INFO 4664 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2021-11-22 14:56:15.895  INFO 4664 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-11-22 14:56:15.895  INFO 4664 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
-2021-11-22 14:56:15.996  INFO 4664 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-11-22 14:56:15.997  INFO 4664 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1828 ms
-2021-11-22 14:56:16.096  INFO 4664 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-11-22 14:56:16.178  INFO 4664 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-11-22 14:56:16.184  INFO 4664 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
-2021-11-22 14:56:16.313  INFO 4664 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-11-22 14:56:16.352  INFO 4664 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
-2021-11-22 14:56:16.452  INFO 4664 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-11-22 14:56:16.526  INFO 4664 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2021-11-22 14:56:17.053  INFO 4664 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-11-22 14:56:17.059  INFO 4664 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-11-22 14:56:17.694  WARN 4664 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-11-22 14:56:18.113  INFO 4664 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-2021-11-22 14:56:18.575  INFO 4664 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7315264e, org.springframework.security.web.context.SecurityContextPersistenceFilter@261d7ee2, org.springframework.security.web.header.HeaderWriterFilter@58a06477, org.springframework.web.filter.CorsFilter@11c68269, org.springframework.security.web.authentication.logout.LogoutFilter@64f34c91, pl.adambaranowski.rsbackend.security.filter.JwtFilter@7b237c2c, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@3de507af, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3edb09b9, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6018a6a2, org.springframework.security.web.session.SessionManagementFilter@643947d1, org.springframework.security.web.access.ExceptionTranslationFilter@7f794b0f, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@7410c197]
-2021-11-22 14:56:18.881  INFO 4664 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2021-11-22 14:56:19.117  INFO 4664 --- [main] p.a.rsbackend.RsbackendApplication       : Started RsbackendApplication in 5.393 seconds (JVM running for 6.277)
-2021-11-22 14:56:19.715  INFO 4664 --- [RMI TCP Connection(3)-192.168.0.115] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-11-22 14:56:19.717  INFO 4664 --- [RMI TCP Connection(3)-192.168.0.115] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2021-11-22 14:56:19.718  INFO 4664 --- [RMI TCP Connection(3)-192.168.0.115] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2021-11-22 14:59:06.183  INFO 4664 --- [http-nio-8082-exec-2] p.a.rsbackend.loging.ControllersLogger   : 
+2021-11-23 19:37:38.771  INFO 21184 --- [http-nio-8082-exec-9] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 22
+    beginDate: 15-10-2021
+    endDate: 19-10-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class SingleReservationDto {
+    reservationId: 1
+    userNick: admin
+    date: 18-10-2021
+    beginTime: 12:30
+    endTime: 14:00
+}, class SingleReservationDto {
+    reservationId: 1
+    userNick: admin
+    date: 19-10-2021
+    beginTime: 12:30
+    endTime: 14:00
+}],[]>
+2021-11-23 19:40:59.780  INFO 21184 --- [http-nio-8082-exec-2] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.RoomController.getAllRooms() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class RoomResponseDto {
+    roomNumber: 21
+    description: Small organ room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 1
+        name: Pneumatic Organ
+        description: II+P, 8 stops, pneumatic tracture organ
+        roomNumber: 21
+    }]
+}, class RoomResponseDto {
+    roomNumber: 22
+    description: Grand Piano room on 2nd floor
+    roomStatus: ONLY_TEACHER
+    equipmentItems: [class EquipmentResponseDto {
+        id: 2
+        name: Yamaha Small Grand Piano
+        description: Yamaha Small Grand Piano, well-tuned
+        roomNumber: 22
+    }]
+}, class RoomResponseDto {
+    roomNumber: 25
+    description: Small organ-piano room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 4
+        name: Calisia Piano
+        description: Small piano
+        roomNumber: 25
+    }, class EquipmentResponseDto {
+        id: 3
+        name: Mechanic Walcker Organ
+        description: II+P, 7 stops, mechanic tracture organ
+        roomNumber: 25
+    }]
+}],[]>
+2021-11-23 19:41:54.544  INFO 21184 --- [http-nio-8082-exec-4] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 22
+    beginDate: 11-09-2021
+    endDate: 15-09-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class SingleReservationDto {
+    reservationId: 2
+    userNick: admin
+    date: 14-10-2021
+    beginTime: 09:45
+    endTime: 11:00
+}],[]>
+2021-11-23 19:44:35.992  INFO 21184 --- [http-nio-8082-exec-7] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.RoomController.getAllRooms() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class RoomResponseDto {
+    roomNumber: 21
+    description: Small organ room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 1
+        name: Pneumatic Organ
+        description: II+P, 8 stops, pneumatic tracture organ
+        roomNumber: 21
+    }]
+}, class RoomResponseDto {
+    roomNumber: 22
+    description: Grand Piano room on 2nd floor
+    roomStatus: ONLY_TEACHER
+    equipmentItems: [class EquipmentResponseDto {
+        id: 2
+        name: Yamaha Small Grand Piano
+        description: Yamaha Small Grand Piano, well-tuned
+        roomNumber: 22
+    }]
+}, class RoomResponseDto {
+    roomNumber: 25
+    description: Small organ-piano room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 4
+        name: Calisia Piano
+        description: Small piano
+        roomNumber: 25
+    }, class EquipmentResponseDto {
+        id: 3
+        name: Mechanic Walcker Organ
+        description: II+P, 7 stops, mechanic tracture organ
+        roomNumber: 25
+    }]
+}],[]>
+2021-11-23 19:44:54.206  INFO 21184 --- [http-nio-8082-exec-9] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.RoomController.getAllRooms() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class RoomResponseDto {
+    roomNumber: 21
+    description: Small organ room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 1
+        name: Pneumatic Organ
+        description: II+P, 8 stops, pneumatic tracture organ
+        roomNumber: 21
+    }]
+}, class RoomResponseDto {
+    roomNumber: 22
+    description: Grand Piano room on 2nd floor
+    roomStatus: ONLY_TEACHER
+    equipmentItems: [class EquipmentResponseDto {
+        id: 2
+        name: Yamaha Small Grand Piano
+        description: Yamaha Small Grand Piano, well-tuned
+        roomNumber: 22
+    }]
+}, class RoomResponseDto {
+    roomNumber: 25
+    description: Small organ-piano room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 4
+        name: Calisia Piano
+        description: Small piano
+        roomNumber: 25
+    }, class EquipmentResponseDto {
+        id: 3
+        name: Mechanic Walcker Organ
+        description: II+P, 7 stops, mechanic tracture organ
+        roomNumber: 25
+    }]
+}],[]>
+2021-11-23 19:44:59.541  INFO 21184 --- [http-nio-8082-exec-1] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 22
+    beginDate: 11-09-2021
+    endDate: 15-09-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class SingleReservationDto {
+    reservationId: 2
+    userNick: admin
+    date: 14-10-2021
+    beginTime: 09:45
+    endTime: 11:00
+}],[]>
+2021-11-23 19:45:02.490  INFO 21184 --- [http-nio-8082-exec-2] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 22
+    beginDate: 18-09-2021
+    endDate: 22-09-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class SingleReservationDto {
+    reservationId: 2
+    userNick: admin
+    date: 14-10-2021
+    beginTime: 09:45
+    endTime: 11:00
+}],[]>
+2021-11-23 19:45:07.159  INFO 21184 --- [http-nio-8082-exec-4] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 25
+    beginDate: 18-09-2021
+    endDate: 22-09-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[],[]>
+2021-11-23 19:45:07.986  INFO 21184 --- [http-nio-8082-exec-5] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 21
+    beginDate: 18-09-2021
+    endDate: 22-09-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[],[]>
+2021-11-23 19:45:08.606  INFO 21184 --- [http-nio-8082-exec-6] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 22
+    beginDate: 18-09-2021
+    endDate: 22-09-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class SingleReservationDto {
+    reservationId: 2
+    userNick: admin
+    date: 14-10-2021
+    beginTime: 09:45
+    endTime: 11:00
+}],[]>
+2021-11-23 19:50:06.597  INFO 21184 --- [http-nio-8082-exec-9] p.a.rsbackend.loging.ControllersLogger   : 
  Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.getUserInfo() 
  With params: 
   
@@ -461,13 +691,13 @@
     userNick: admin
     email: admin@gmail.com
     authorities: [ADMIN]
-    lastLoginDateTime: 2021-11-22T14:59:06.158964
-    joinDateTime: 2021-11-22T14:56:19.179785
+    lastLoginDateTime: 2021-11-23T19:50:06.594489
+    joinDateTime: 2021-11-23T15:38:35.486024
     accountNonExpired: true
     accountNonLocked: true
     credentialsNonExpired: true
 },[]>
-2021-11-22 15:00:26.379  INFO 4664 --- [http-nio-8082-exec-5] p.a.rsbackend.loging.ControllersLogger   : 
+2021-11-23 19:50:09.982  INFO 21184 --- [http-nio-8082-exec-1] p.a.rsbackend.loging.ControllersLogger   : 
  Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.RoomController.getAllRooms() 
  With params: 
   
@@ -509,209 +739,1383 @@
         roomNumber: 25
     }]
 }],[]>
-2021-11-22 15:00:40.804  INFO 4664 --- [http-nio-8082-exec-6] p.a.rsbackend.security.filter.JwtFilter  : Exception during authentication
-Authentication denied: JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
-2021-11-22 15:31:42.524  INFO 11392 --- [main] p.a.rsbackend.RsbackendApplication       : Starting RsbackendApplication using Java 13.0.1 on DESKTOP-NJEN35A with PID 11392 (C:\Users\Adam Baranowski\Desktop\Praca_Dyplomowa\reservation_system_app\rs_backend\target\classes started by Adam Baranowski in C:\Users\Adam Baranowski\Desktop\Praca_Dyplomowa\reservation_system_app\rs_backend)
-2021-11-22 15:31:42.528  INFO 11392 --- [main] p.a.rsbackend.RsbackendApplication       : No active profile set, falling back to default profiles: default
-2021-11-22 15:31:43.759  INFO 11392 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-11-22 15:31:43.856  INFO 11392 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 90 ms. Found 5 JPA repository interfaces.
-2021-11-22 15:31:44.504  INFO 11392 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2021-11-22 15:31:44.510  INFO 11392 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-11-22 15:31:44.510  INFO 11392 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
-2021-11-22 15:31:44.619  INFO 11392 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-11-22 15:31:44.619  INFO 11392 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2031 ms
-2021-11-22 15:31:44.748  INFO 11392 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-11-22 15:31:44.851  INFO 11392 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-11-22 15:31:44.855  INFO 11392 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
-2021-11-22 15:31:45.004  INFO 11392 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-11-22 15:31:45.039  INFO 11392 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
-2021-11-22 15:31:45.130  INFO 11392 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-11-22 15:31:45.223  INFO 11392 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2021-11-22 15:31:45.747  INFO 11392 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-11-22 15:31:45.754  INFO 11392 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-11-22 15:31:46.420  WARN 11392 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-11-22 15:31:46.891  INFO 11392 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-2021-11-22 15:31:47.447  INFO 11392 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2f89b44e, org.springframework.security.web.context.SecurityContextPersistenceFilter@7b7268db, org.springframework.security.web.header.HeaderWriterFilter@8d0253b, org.springframework.web.filter.CorsFilter@730a140b, org.springframework.security.web.authentication.logout.LogoutFilter@504216ff, pl.adambaranowski.rsbackend.security.filter.JwtFilter@2f29046b, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5d8de155, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@64f34c91, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@2a1fce44, org.springframework.security.web.session.SessionManagementFilter@2e29a7d, org.springframework.security.web.access.ExceptionTranslationFilter@54aacbc7, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@4973dacf]
-2021-11-22 15:31:47.742  INFO 11392 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2021-11-22 15:31:47.998  INFO 11392 --- [main] p.a.rsbackend.RsbackendApplication       : Started RsbackendApplication in 5.936 seconds (JVM running for 6.897)
-2021-11-22 15:31:48.602  INFO 11392 --- [RMI TCP Connection(4)-192.168.0.115] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-11-22 15:31:48.604  INFO 11392 --- [RMI TCP Connection(4)-192.168.0.115] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2021-11-22 15:31:48.605  INFO 11392 --- [RMI TCP Connection(4)-192.168.0.115] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
-2021-11-22 15:31:53.409  INFO 11392 --- [http-nio-8082-exec-2] p.a.rsbackend.security.filter.JwtFilter  : Exception during authentication
-Authentication denied: JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
-2021-11-22 15:33:19.588  INFO 16892 --- [main] p.a.rsbackend.RsbackendApplication       : Starting RsbackendApplication using Java 13.0.1 on DESKTOP-NJEN35A with PID 16892 (C:\Users\Adam Baranowski\Desktop\Praca_Dyplomowa\reservation_system_app\rs_backend\target\classes started by Adam Baranowski in C:\Users\Adam Baranowski\Desktop\Praca_Dyplomowa\reservation_system_app\rs_backend)
-2021-11-22 15:33:19.591  INFO 16892 --- [main] p.a.rsbackend.RsbackendApplication       : No active profile set, falling back to default profiles: default
-2021-11-22 15:33:20.639  INFO 16892 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-11-22 15:33:20.711  INFO 16892 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 65 ms. Found 5 JPA repository interfaces.
-2021-11-22 15:33:21.243  INFO 16892 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2021-11-22 15:33:21.249  INFO 16892 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-11-22 15:33:21.249  INFO 16892 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
-2021-11-22 15:33:21.324  INFO 16892 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-11-22 15:33:21.324  INFO 16892 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1690 ms
-2021-11-22 15:33:21.422  INFO 16892 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-11-22 15:33:21.509  INFO 16892 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-11-22 15:33:21.513  INFO 16892 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
-2021-11-22 15:33:21.637  INFO 16892 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-11-22 15:33:21.668  INFO 16892 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
-2021-11-22 15:33:21.748  INFO 16892 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-11-22 15:33:21.835  INFO 16892 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2021-11-22 15:33:22.323  INFO 16892 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-11-22 15:33:22.330  INFO 16892 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-11-22 15:33:22.946  WARN 16892 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-11-22 15:33:23.356  INFO 16892 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-2021-11-22 15:33:23.800  INFO 16892 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@2914f916, org.springframework.security.web.context.SecurityContextPersistenceFilter@3647b274, org.springframework.security.web.header.HeaderWriterFilter@745c25ed, org.springframework.web.filter.CorsFilter@2140de63, org.springframework.security.web.authentication.logout.LogoutFilter@532782f5, pl.adambaranowski.rsbackend.security.filter.JwtFilter@2da273b3, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@5c6fae3c, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@bf0025d, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@6b02909d, org.springframework.security.web.session.SessionManagementFilter@4ca6f587, org.springframework.security.web.access.ExceptionTranslationFilter@1fbd0850, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@36c45b54]
-2021-11-22 15:33:24.084  INFO 16892 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2021-11-22 15:33:24.324  INFO 16892 --- [main] p.a.rsbackend.RsbackendApplication       : Started RsbackendApplication in 5.097 seconds (JVM running for 5.932)
-2021-11-22 15:33:24.969  INFO 16892 --- [RMI TCP Connection(2)-192.168.0.115] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-11-22 15:33:24.971  INFO 16892 --- [RMI TCP Connection(2)-192.168.0.115] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2021-11-22 15:33:24.973  INFO 16892 --- [RMI TCP Connection(2)-192.168.0.115] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
-2021-11-22 15:33:46.890 ERROR 16892 --- [http-nio-8082-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+2021-11-23 19:50:13.878  INFO 21184 --- [http-nio-8082-exec-3] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 22
+    beginDate: 18-09-2021
+    endDate: 22-09-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class SingleReservationDto {
+    reservationId: 2
+    userNick: admin
+    date: 14-10-2021
+    beginTime: 09:45
+    endTime: 11:00
+}],[]>
+2021-11-23 19:51:51.996  INFO 21184 --- [http-nio-8082-exec-6] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.RoomController.getAllRooms() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class RoomResponseDto {
+    roomNumber: 21
+    description: Small organ room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 1
+        name: Pneumatic Organ
+        description: II+P, 8 stops, pneumatic tracture organ
+        roomNumber: 21
+    }]
+}, class RoomResponseDto {
+    roomNumber: 22
+    description: Grand Piano room on 2nd floor
+    roomStatus: ONLY_TEACHER
+    equipmentItems: [class EquipmentResponseDto {
+        id: 2
+        name: Yamaha Small Grand Piano
+        description: Yamaha Small Grand Piano, well-tuned
+        roomNumber: 22
+    }]
+}, class RoomResponseDto {
+    roomNumber: 25
+    description: Small organ-piano room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 4
+        name: Calisia Piano
+        description: Small piano
+        roomNumber: 25
+    }, class EquipmentResponseDto {
+        id: 3
+        name: Mechanic Walcker Organ
+        description: II+P, 7 stops, mechanic tracture organ
+        roomNumber: 25
+    }]
+}],[]>
+2021-11-23 19:51:55.551  INFO 21184 --- [http-nio-8082-exec-8] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 21
+    beginDate: 22-10-2021
+    endDate: 26-10-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[],[]>
+2021-11-23 19:51:55.684  INFO 21184 --- [http-nio-8082-exec-9] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 21
+    beginDate: 22-10-2021
+    endDate: 26-10-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[],[]>
+2021-11-23 19:51:55.970  INFO 21184 --- [http-nio-8082-exec-10] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 21
+    beginDate: 22-10-2021
+    endDate: 26-10-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[],[]>
+2021-11-23 19:51:56.124  INFO 21184 --- [http-nio-8082-exec-1] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 21
+    beginDate: 22-10-2021
+    endDate: 26-10-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[],[]>
+2021-11-23 19:51:56.259  INFO 21184 --- [http-nio-8082-exec-2] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 21
+    beginDate: 22-10-2021
+    endDate: 26-10-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[],[]>
+2021-11-23 19:51:56.682  INFO 21184 --- [http-nio-8082-exec-3] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 21
+    beginDate: 22-10-2021
+    endDate: 26-10-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[],[]>
+2021-11-23 19:51:59.423  INFO 21184 --- [http-nio-8082-exec-4] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 22
+    beginDate: 11-09-2021
+    endDate: 15-09-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class SingleReservationDto {
+    reservationId: 2
+    userNick: admin
+    date: 14-10-2021
+    beginTime: 09:45
+    endTime: 11:00
+}],[]>
+2021-11-23 19:54:01.808  INFO 21184 --- [http-nio-8082-exec-7] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.RoomController.getAllRooms() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class RoomResponseDto {
+    roomNumber: 21
+    description: Small organ room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 1
+        name: Pneumatic Organ
+        description: II+P, 8 stops, pneumatic tracture organ
+        roomNumber: 21
+    }]
+}, class RoomResponseDto {
+    roomNumber: 22
+    description: Grand Piano room on 2nd floor
+    roomStatus: ONLY_TEACHER
+    equipmentItems: [class EquipmentResponseDto {
+        id: 2
+        name: Yamaha Small Grand Piano
+        description: Yamaha Small Grand Piano, well-tuned
+        roomNumber: 22
+    }]
+}, class RoomResponseDto {
+    roomNumber: 25
+    description: Small organ-piano room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 4
+        name: Calisia Piano
+        description: Small piano
+        roomNumber: 25
+    }, class EquipmentResponseDto {
+        id: 3
+        name: Mechanic Walcker Organ
+        description: II+P, 7 stops, mechanic tracture organ
+        roomNumber: 25
+    }]
+}],[]>
+2021-11-23 19:54:05.593  INFO 21184 --- [http-nio-8082-exec-9] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 22
+    beginDate: 11-09-2021
+    endDate: 15-09-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class SingleReservationDto {
+    reservationId: 2
+    userNick: admin
+    date: 14-10-2021
+    beginTime: 09:45
+    endTime: 11:00
+}],[]>
+2021-11-23 19:55:13.605  INFO 21184 --- [http-nio-8082-exec-2] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.RoomController.getAllRooms() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class RoomResponseDto {
+    roomNumber: 21
+    description: Small organ room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 1
+        name: Pneumatic Organ
+        description: II+P, 8 stops, pneumatic tracture organ
+        roomNumber: 21
+    }]
+}, class RoomResponseDto {
+    roomNumber: 22
+    description: Grand Piano room on 2nd floor
+    roomStatus: ONLY_TEACHER
+    equipmentItems: [class EquipmentResponseDto {
+        id: 2
+        name: Yamaha Small Grand Piano
+        description: Yamaha Small Grand Piano, well-tuned
+        roomNumber: 22
+    }]
+}, class RoomResponseDto {
+    roomNumber: 25
+    description: Small organ-piano room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 4
+        name: Calisia Piano
+        description: Small piano
+        roomNumber: 25
+    }, class EquipmentResponseDto {
+        id: 3
+        name: Mechanic Walcker Organ
+        description: II+P, 7 stops, mechanic tracture organ
+        roomNumber: 25
+    }]
+}],[]>
+2021-11-23 19:55:17.145  INFO 21184 --- [http-nio-8082-exec-4] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 22
+    beginDate: 11-09-2021
+    endDate: 15-09-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class SingleReservationDto {
+    reservationId: 2
+    userNick: admin
+    date: 14-10-2021
+    beginTime: 09:45
+    endTime: 11:00
+}],[]>
+2021-11-23 20:00:32.518  INFO 21184 --- [http-nio-8082-exec-7] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.RoomController.getAllRooms() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class RoomResponseDto {
+    roomNumber: 21
+    description: Small organ room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 1
+        name: Pneumatic Organ
+        description: II+P, 8 stops, pneumatic tracture organ
+        roomNumber: 21
+    }]
+}, class RoomResponseDto {
+    roomNumber: 22
+    description: Grand Piano room on 2nd floor
+    roomStatus: ONLY_TEACHER
+    equipmentItems: [class EquipmentResponseDto {
+        id: 2
+        name: Yamaha Small Grand Piano
+        description: Yamaha Small Grand Piano, well-tuned
+        roomNumber: 22
+    }]
+}, class RoomResponseDto {
+    roomNumber: 25
+    description: Small organ-piano room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 4
+        name: Calisia Piano
+        description: Small piano
+        roomNumber: 25
+    }, class EquipmentResponseDto {
+        id: 3
+        name: Mechanic Walcker Organ
+        description: II+P, 7 stops, mechanic tracture organ
+        roomNumber: 25
+    }]
+}],[]>
+2021-11-23 20:00:37.065  INFO 21184 --- [http-nio-8082-exec-9] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 22
+    beginDate: 11-09-2021
+    endDate: 15-09-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class SingleReservationDto {
+    reservationId: 2
+    userNick: admin
+    date: 14-10-2021
+    beginTime: 09:45
+    endTime: 11:00
+}],[]>
+2021-11-23 20:05:50.012  INFO 21184 --- [http-nio-8082-exec-2] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.getUserInfo() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,class UserResponseDto {
+    id: 3
+    userNick: admin
+    email: admin@gmail.com
+    authorities: [ADMIN]
+    lastLoginDateTime: 2021-11-23T20:05:50.002626
+    joinDateTime: 2021-11-23T15:38:35.486024
+    accountNonExpired: true
+    accountNonLocked: true
+    credentialsNonExpired: true
+},[]>
+2021-11-23 20:05:53.394  INFO 21184 --- [http-nio-8082-exec-4] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.RoomController.getAllRooms() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class RoomResponseDto {
+    roomNumber: 21
+    description: Small organ room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 1
+        name: Pneumatic Organ
+        description: II+P, 8 stops, pneumatic tracture organ
+        roomNumber: 21
+    }]
+}, class RoomResponseDto {
+    roomNumber: 22
+    description: Grand Piano room on 2nd floor
+    roomStatus: ONLY_TEACHER
+    equipmentItems: [class EquipmentResponseDto {
+        id: 2
+        name: Yamaha Small Grand Piano
+        description: Yamaha Small Grand Piano, well-tuned
+        roomNumber: 22
+    }]
+}, class RoomResponseDto {
+    roomNumber: 25
+    description: Small organ-piano room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 4
+        name: Calisia Piano
+        description: Small piano
+        roomNumber: 25
+    }, class EquipmentResponseDto {
+        id: 3
+        name: Mechanic Walcker Organ
+        description: II+P, 7 stops, mechanic tracture organ
+        roomNumber: 25
+    }]
+}],[]>
+2021-11-23 20:08:40.057  INFO 21184 --- [http-nio-8082-exec-7] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.RoomController.getAllRooms() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class RoomResponseDto {
+    roomNumber: 21
+    description: Small organ room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 1
+        name: Pneumatic Organ
+        description: II+P, 8 stops, pneumatic tracture organ
+        roomNumber: 21
+    }]
+}, class RoomResponseDto {
+    roomNumber: 22
+    description: Grand Piano room on 2nd floor
+    roomStatus: ONLY_TEACHER
+    equipmentItems: [class EquipmentResponseDto {
+        id: 2
+        name: Yamaha Small Grand Piano
+        description: Yamaha Small Grand Piano, well-tuned
+        roomNumber: 22
+    }]
+}, class RoomResponseDto {
+    roomNumber: 25
+    description: Small organ-piano room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 4
+        name: Calisia Piano
+        description: Small piano
+        roomNumber: 25
+    }, class EquipmentResponseDto {
+        id: 3
+        name: Mechanic Walcker Organ
+        description: II+P, 7 stops, mechanic tracture organ
+        roomNumber: 25
+    }]
+}],[]>
+2021-11-23 20:08:45.919  INFO 21184 --- [http-nio-8082-exec-9] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 22
+    beginDate: 11-09-2021
+    endDate: 15-09-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class SingleReservationDto {
+    reservationId: 2
+    userNick: admin
+    date: 14-10-2021
+    beginTime: 09:45
+    endTime: 11:00
+}],[]>
+2021-11-23 20:09:17.413  INFO 21184 --- [http-nio-8082-exec-1] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 22
+    beginDate: 18-09-2021
+    endDate: 22-09-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class SingleReservationDto {
+    reservationId: 2
+    userNick: admin
+    date: 14-10-2021
+    beginTime: 09:45
+    endTime: 11:00
+}],[]>
+2021-11-23 20:09:20.467  INFO 21184 --- [http-nio-8082-exec-2] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 22
+    beginDate: 25-09-2021
+    endDate: 29-09-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class SingleReservationDto {
+    reservationId: 2
+    userNick: admin
+    date: 14-10-2021
+    beginTime: 09:45
+    endTime: 11:00
+}],[]>
+2021-11-23 20:11:25.553  INFO 21184 --- [http-nio-8082-exec-5] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 22
+    beginDate: 11-09-2021
+    endDate: 15-09-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class SingleReservationDto {
+    reservationId: 2
+    userNick: admin
+    date: 14-10-2021
+    beginTime: 09:45
+    endTime: 11:00
+}],[]>
+2021-11-23 20:12:41.463  INFO 21184 --- [http-nio-8082-exec-8] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 22
+    beginDate: 22-10-2021
+    endDate: 26-10-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[],[]>
+2021-11-23 20:17:16.761  INFO 21184 --- [http-nio-8082-exec-1] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.RoomController.getAllRooms() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class RoomResponseDto {
+    roomNumber: 21
+    description: Small organ room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 1
+        name: Pneumatic Organ
+        description: II+P, 8 stops, pneumatic tracture organ
+        roomNumber: 21
+    }]
+}, class RoomResponseDto {
+    roomNumber: 22
+    description: Grand Piano room on 2nd floor
+    roomStatus: ONLY_TEACHER
+    equipmentItems: [class EquipmentResponseDto {
+        id: 2
+        name: Yamaha Small Grand Piano
+        description: Yamaha Small Grand Piano, well-tuned
+        roomNumber: 22
+    }]
+}, class RoomResponseDto {
+    roomNumber: 25
+    description: Small organ-piano room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 4
+        name: Calisia Piano
+        description: Small piano
+        roomNumber: 25
+    }, class EquipmentResponseDto {
+        id: 3
+        name: Mechanic Walcker Organ
+        description: II+P, 7 stops, mechanic tracture organ
+        roomNumber: 25
+    }]
+}],[]>
+2021-11-23 20:17:21.994  INFO 21184 --- [http-nio-8082-exec-3] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 22
+    beginDate: 22-11-2021
+    endDate: 26-11-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[],[]>
+2021-11-23 20:17:33.421  INFO 21184 --- [http-nio-8082-exec-5] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 22
+    beginDate: 11-10-2021
+    endDate: 15-10-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class SingleReservationDto {
+    reservationId: 1
+    userNick: admin
+    date: 11-10-2021
+    beginTime: 12:30
+    endTime: 14:00
+}, class SingleReservationDto {
+    reservationId: 1
+    userNick: admin
+    date: 12-10-2021
+    beginTime: 12:30
+    endTime: 14:00
+}, class SingleReservationDto {
+    reservationId: 2
+    userNick: admin
+    date: 14-10-2021
+    beginTime: 09:45
+    endTime: 11:00
+}],[]>
+2021-11-23 20:23:46.216  INFO 21184 --- [http-nio-8082-exec-8] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.getUserInfo() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,class UserResponseDto {
+    id: 3
+    userNick: admin
+    email: admin@gmail.com
+    authorities: [ADMIN]
+    lastLoginDateTime: 2021-11-23T20:23:46.214978
+    joinDateTime: 2021-11-23T15:38:35.486024
+    accountNonExpired: true
+    accountNonLocked: true
+    credentialsNonExpired: true
+},[]>
+2021-11-23 20:23:50.257  INFO 21184 --- [http-nio-8082-exec-10] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.RoomController.getAllRooms() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class RoomResponseDto {
+    roomNumber: 21
+    description: Small organ room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 1
+        name: Pneumatic Organ
+        description: II+P, 8 stops, pneumatic tracture organ
+        roomNumber: 21
+    }]
+}, class RoomResponseDto {
+    roomNumber: 22
+    description: Grand Piano room on 2nd floor
+    roomStatus: ONLY_TEACHER
+    equipmentItems: [class EquipmentResponseDto {
+        id: 2
+        name: Yamaha Small Grand Piano
+        description: Yamaha Small Grand Piano, well-tuned
+        roomNumber: 22
+    }]
+}, class RoomResponseDto {
+    roomNumber: 25
+    description: Small organ-piano room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 4
+        name: Calisia Piano
+        description: Small piano
+        roomNumber: 25
+    }, class EquipmentResponseDto {
+        id: 3
+        name: Mechanic Walcker Organ
+        description: II+P, 7 stops, mechanic tracture organ
+        roomNumber: 25
+    }]
+}],[]>
+2021-11-23 20:23:54.116  INFO 21184 --- [http-nio-8082-exec-2] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 22
+    beginDate: 11-10-2021
+    endDate: 15-10-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class SingleReservationDto {
+    reservationId: 1
+    userNick: admin
+    date: 11-10-2021
+    beginTime: 12:30
+    endTime: 14:00
+}, class SingleReservationDto {
+    reservationId: 1
+    userNick: admin
+    date: 12-10-2021
+    beginTime: 12:30
+    endTime: 14:00
+}, class SingleReservationDto {
+    reservationId: 2
+    userNick: admin
+    date: 14-10-2021
+    beginTime: 09:45
+    endTime: 11:00
+}],[]>
+2021-11-23 20:24:49.121  INFO 21184 --- [http-nio-8082-exec-4] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.RoomController.getAllRooms() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class RoomResponseDto {
+    roomNumber: 21
+    description: Small organ room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 1
+        name: Pneumatic Organ
+        description: II+P, 8 stops, pneumatic tracture organ
+        roomNumber: 21
+    }]
+}, class RoomResponseDto {
+    roomNumber: 22
+    description: Grand Piano room on 2nd floor
+    roomStatus: ONLY_TEACHER
+    equipmentItems: [class EquipmentResponseDto {
+        id: 2
+        name: Yamaha Small Grand Piano
+        description: Yamaha Small Grand Piano, well-tuned
+        roomNumber: 22
+    }]
+}, class RoomResponseDto {
+    roomNumber: 25
+    description: Small organ-piano room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 4
+        name: Calisia Piano
+        description: Small piano
+        roomNumber: 25
+    }, class EquipmentResponseDto {
+        id: 3
+        name: Mechanic Walcker Organ
+        description: II+P, 7 stops, mechanic tracture organ
+        roomNumber: 25
+    }]
+}],[]>
+2021-11-23 20:24:57.108  INFO 21184 --- [http-nio-8082-exec-6] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 22
+    beginDate: 11-10-2021
+    endDate: 15-10-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class SingleReservationDto {
+    reservationId: 1
+    userNick: admin
+    date: 11-10-2021
+    beginTime: 12:30
+    endTime: 14:00
+}, class SingleReservationDto {
+    reservationId: 1
+    userNick: admin
+    date: 12-10-2021
+    beginTime: 12:30
+    endTime: 14:00
+}, class SingleReservationDto {
+    reservationId: 2
+    userNick: admin
+    date: 14-10-2021
+    beginTime: 09:45
+    endTime: 11:00
+}],[]>
+2021-11-23 20:31:29.331  INFO 21184 --- [http-nio-8082-exec-9] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.RoomController.getAllRooms() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class RoomResponseDto {
+    roomNumber: 21
+    description: Small organ room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 1
+        name: Pneumatic Organ
+        description: II+P, 8 stops, pneumatic tracture organ
+        roomNumber: 21
+    }]
+}, class RoomResponseDto {
+    roomNumber: 22
+    description: Grand Piano room on 2nd floor
+    roomStatus: ONLY_TEACHER
+    equipmentItems: [class EquipmentResponseDto {
+        id: 2
+        name: Yamaha Small Grand Piano
+        description: Yamaha Small Grand Piano, well-tuned
+        roomNumber: 22
+    }]
+}, class RoomResponseDto {
+    roomNumber: 25
+    description: Small organ-piano room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 4
+        name: Calisia Piano
+        description: Small piano
+        roomNumber: 25
+    }, class EquipmentResponseDto {
+        id: 3
+        name: Mechanic Walcker Organ
+        description: II+P, 7 stops, mechanic tracture organ
+        roomNumber: 25
+    }]
+}],[]>
+2021-11-23 20:31:43.554  INFO 21184 --- [http-nio-8082-exec-1] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.RoomController.getAllRooms() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class RoomResponseDto {
+    roomNumber: 21
+    description: Small organ room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 1
+        name: Pneumatic Organ
+        description: II+P, 8 stops, pneumatic tracture organ
+        roomNumber: 21
+    }]
+}, class RoomResponseDto {
+    roomNumber: 22
+    description: Grand Piano room on 2nd floor
+    roomStatus: ONLY_TEACHER
+    equipmentItems: [class EquipmentResponseDto {
+        id: 2
+        name: Yamaha Small Grand Piano
+        description: Yamaha Small Grand Piano, well-tuned
+        roomNumber: 22
+    }]
+}, class RoomResponseDto {
+    roomNumber: 25
+    description: Small organ-piano room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 4
+        name: Calisia Piano
+        description: Small piano
+        roomNumber: 25
+    }, class EquipmentResponseDto {
+        id: 3
+        name: Mechanic Walcker Organ
+        description: II+P, 7 stops, mechanic tracture organ
+        roomNumber: 25
+    }]
+}],[]>
+2021-11-23 20:33:20.840  INFO 21184 --- [http-nio-8082-exec-4] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.RoomController.getAllRooms() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class RoomResponseDto {
+    roomNumber: 21
+    description: Small organ room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 1
+        name: Pneumatic Organ
+        description: II+P, 8 stops, pneumatic tracture organ
+        roomNumber: 21
+    }]
+}, class RoomResponseDto {
+    roomNumber: 22
+    description: Grand Piano room on 2nd floor
+    roomStatus: ONLY_TEACHER
+    equipmentItems: [class EquipmentResponseDto {
+        id: 2
+        name: Yamaha Small Grand Piano
+        description: Yamaha Small Grand Piano, well-tuned
+        roomNumber: 22
+    }]
+}, class RoomResponseDto {
+    roomNumber: 25
+    description: Small organ-piano room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 4
+        name: Calisia Piano
+        description: Small piano
+        roomNumber: 25
+    }, class EquipmentResponseDto {
+        id: 3
+        name: Mechanic Walcker Organ
+        description: II+P, 7 stops, mechanic tracture organ
+        roomNumber: 25
+    }]
+}],[]>
+2021-11-23 20:37:00.150  INFO 21184 --- [http-nio-8082-exec-7] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.RoomController.getAllRooms() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class RoomResponseDto {
+    roomNumber: 21
+    description: Small organ room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 1
+        name: Pneumatic Organ
+        description: II+P, 8 stops, pneumatic tracture organ
+        roomNumber: 21
+    }]
+}, class RoomResponseDto {
+    roomNumber: 22
+    description: Grand Piano room on 2nd floor
+    roomStatus: ONLY_TEACHER
+    equipmentItems: [class EquipmentResponseDto {
+        id: 2
+        name: Yamaha Small Grand Piano
+        description: Yamaha Small Grand Piano, well-tuned
+        roomNumber: 22
+    }]
+}, class RoomResponseDto {
+    roomNumber: 25
+    description: Small organ-piano room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 4
+        name: Calisia Piano
+        description: Small piano
+        roomNumber: 25
+    }, class EquipmentResponseDto {
+        id: 3
+        name: Mechanic Walcker Organ
+        description: II+P, 7 stops, mechanic tracture organ
+        roomNumber: 25
+    }]
+}],[]>
+2021-11-23 20:37:09.267  INFO 21184 --- [http-nio-8082-exec-9] p.a.rsbackend.security.filter.JwtFilter  : Exception during authentication
+Authentication denied: JWT expired at 2021-11-23T19:37:06Z. Current time: 2021-11-23T19:37:09Z, a difference of 3263 milliseconds.  Allowed clock skew: 0 milliseconds.
+2021-11-23 20:37:15.709  INFO 21184 --- [http-nio-8082-exec-1] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.getUserInfo() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,class UserResponseDto {
+    id: 3
+    userNick: admin
+    email: admin@gmail.com
+    authorities: [ADMIN]
+    lastLoginDateTime: 2021-11-23T20:37:15.707998
+    joinDateTime: 2021-11-23T15:38:35.486024
+    accountNonExpired: true
+    accountNonLocked: true
+    credentialsNonExpired: true
+},[]>
+2021-11-23 20:37:20.799  INFO 21184 --- [http-nio-8082-exec-3] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.RoomController.getAllRooms() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class RoomResponseDto {
+    roomNumber: 21
+    description: Small organ room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 1
+        name: Pneumatic Organ
+        description: II+P, 8 stops, pneumatic tracture organ
+        roomNumber: 21
+    }]
+}, class RoomResponseDto {
+    roomNumber: 22
+    description: Grand Piano room on 2nd floor
+    roomStatus: ONLY_TEACHER
+    equipmentItems: [class EquipmentResponseDto {
+        id: 2
+        name: Yamaha Small Grand Piano
+        description: Yamaha Small Grand Piano, well-tuned
+        roomNumber: 22
+    }]
+}, class RoomResponseDto {
+    roomNumber: 25
+    description: Small organ-piano room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 4
+        name: Calisia Piano
+        description: Small piano
+        roomNumber: 25
+    }, class EquipmentResponseDto {
+        id: 3
+        name: Mechanic Walcker Organ
+        description: II+P, 7 stops, mechanic tracture organ
+        roomNumber: 25
+    }]
+}],[]>
+2021-11-23 20:37:27.528  INFO 21184 --- [http-nio-8082-exec-5] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 22
+    beginDate: 11-10-2021
+    endDate: 15-10-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class SingleReservationDto {
+    reservationId: 1
+    userNick: admin
+    date: 11-10-2021
+    beginTime: 12:30
+    endTime: 14:00
+}, class SingleReservationDto {
+    reservationId: 1
+    userNick: admin
+    date: 12-10-2021
+    beginTime: 12:30
+    endTime: 14:00
+}, class SingleReservationDto {
+    reservationId: 2
+    userNick: admin
+    date: 14-10-2021
+    beginTime: 09:45
+    endTime: 11:00
+}],[]>
+2021-11-23 20:47:15.933  INFO 21184 --- [http-nio-8082-exec-8] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.RoomController.getAllRooms() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class RoomResponseDto {
+    roomNumber: 21
+    description: Small organ room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 1
+        name: Pneumatic Organ
+        description: II+P, 8 stops, pneumatic tracture organ
+        roomNumber: 21
+    }]
+}, class RoomResponseDto {
+    roomNumber: 22
+    description: Grand Piano room on 2nd floor
+    roomStatus: ONLY_TEACHER
+    equipmentItems: [class EquipmentResponseDto {
+        id: 2
+        name: Yamaha Small Grand Piano
+        description: Yamaha Small Grand Piano, well-tuned
+        roomNumber: 22
+    }]
+}, class RoomResponseDto {
+    roomNumber: 25
+    description: Small organ-piano room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 4
+        name: Calisia Piano
+        description: Small piano
+        roomNumber: 25
+    }, class EquipmentResponseDto {
+        id: 3
+        name: Mechanic Walcker Organ
+        description: II+P, 7 stops, mechanic tracture organ
+        roomNumber: 25
+    }]
+}],[]>
+2021-11-23 20:49:00.845  INFO 21184 --- [http-nio-8082-exec-1] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.RoomController.getAllRooms() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class RoomResponseDto {
+    roomNumber: 21
+    description: Small organ room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 1
+        name: Pneumatic Organ
+        description: II+P, 8 stops, pneumatic tracture organ
+        roomNumber: 21
+    }]
+}, class RoomResponseDto {
+    roomNumber: 22
+    description: Grand Piano room on 2nd floor
+    roomStatus: ONLY_TEACHER
+    equipmentItems: [class EquipmentResponseDto {
+        id: 2
+        name: Yamaha Small Grand Piano
+        description: Yamaha Small Grand Piano, well-tuned
+        roomNumber: 22
+    }]
+}, class RoomResponseDto {
+    roomNumber: 25
+    description: Small organ-piano room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 4
+        name: Calisia Piano
+        description: Small piano
+        roomNumber: 25
+    }, class EquipmentResponseDto {
+        id: 3
+        name: Mechanic Walcker Organ
+        description: II+P, 7 stops, mechanic tracture organ
+        roomNumber: 25
+    }]
+}],[]>
+2021-11-23 20:49:10.392  INFO 21184 --- [http-nio-8082-exec-2] p.a.rsbackend.loging.ExceptionsLogger    : 
 
-pl.adambaranowski.rsbackend.security.jwt.JwtService$1: Authentication denied: JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
-	at pl.adambaranowski.rsbackend.security.jwt.JwtService.extractSubjectIfTokenIsValid(JwtService.java:59) ~[classes/:na]
-	at pl.adambaranowski.rsbackend.security.filter.JwtFilter.doFilterInternal(JwtFilter.java:45) ~[classes/:na]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.5.2.jar:5.5.2]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103) ~[spring-security-web-5.5.2.jar:5.5.2]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89) ~[spring-security-web-5.5.2.jar:5.5.2]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.5.2.jar:5.5.2]
-	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.5.2.jar:5.5.2]
-	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-5.5.2.jar:5.5.2]
-	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-5.5.2.jar:5.5.2]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.5.2.jar:5.5.2]
-	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110) ~[spring-security-web-5.5.2.jar:5.5.2]
-	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80) ~[spring-security-web-5.5.2.jar:5.5.2]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.5.2.jar:5.5.2]
-	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55) ~[spring-security-web-5.5.2.jar:5.5.2]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.5.2.jar:5.5.2]
-	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211) ~[spring-security-web-5.5.2.jar:5.5.2]
-	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183) ~[spring-security-web-5.5.2.jar:5.5.2]
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96) ~[spring-boot-actuator-2.5.4.jar:2.5.4]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1726) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at java.base/java.lang.Thread.run(Thread.java:830) ~[na:na]
+ Exception occurred: pl.adambaranowski.rsbackend.exception.WrongDtoException
+ 
+ By User: 
+ admin@gmail.com 
 
-2021-11-22 15:35:56.566  INFO 21432 --- [main] p.a.rsbackend.RsbackendApplication       : Starting RsbackendApplication using Java 13.0.1 on DESKTOP-NJEN35A with PID 21432 (C:\Users\Adam Baranowski\Desktop\Praca_Dyplomowa\reservation_system_app\rs_backend\target\classes started by Adam Baranowski in C:\Users\Adam Baranowski\Desktop\Praca_Dyplomowa\reservation_system_app\rs_backend)
-2021-11-22 15:35:56.569  INFO 21432 --- [main] p.a.rsbackend.RsbackendApplication       : No active profile set, falling back to default profiles: default
-2021-11-22 15:35:57.642  INFO 21432 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
-2021-11-22 15:35:57.714  INFO 21432 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 65 ms. Found 5 JPA repository interfaces.
-2021-11-22 15:35:58.207  INFO 21432 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
-2021-11-22 15:35:58.212  INFO 21432 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
-2021-11-22 15:35:58.212  INFO 21432 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
-2021-11-22 15:35:58.289  INFO 21432 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
-2021-11-22 15:35:58.289  INFO 21432 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1673 ms
-2021-11-22 15:35:58.385  INFO 21432 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
-2021-11-22 15:35:58.462  INFO 21432 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
-2021-11-22 15:35:58.468  INFO 21432 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
-2021-11-22 15:35:58.616  INFO 21432 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
-2021-11-22 15:35:58.646  INFO 21432 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
-2021-11-22 15:35:58.724  INFO 21432 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
-2021-11-22 15:35:58.806  INFO 21432 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
-2021-11-22 15:35:59.319  INFO 21432 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
-2021-11-22 15:35:59.326  INFO 21432 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
-2021-11-22 15:35:59.939  WARN 21432 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
-2021-11-22 15:36:00.327  INFO 21432 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
-2021-11-22 15:36:00.787  INFO 21432 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@1737acc0, org.springframework.security.web.context.SecurityContextPersistenceFilter@16576a6, org.springframework.security.web.header.HeaderWriterFilter@1d8230cd, org.springframework.web.filter.CorsFilter@30ffc3c0, org.springframework.security.web.authentication.logout.LogoutFilter@57bc7f67, pl.adambaranowski.rsbackend.security.filter.JwtFilter@76b8b6a6, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@4b2ca159, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@421c4c3e, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@47e02a89, org.springframework.security.web.session.SessionManagementFilter@30fba306, org.springframework.security.web.access.ExceptionTranslationFilter@138d85f8, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@6b5fdbd0]
-2021-11-22 15:36:01.068  INFO 21432 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
-2021-11-22 15:36:01.318  INFO 21432 --- [main] p.a.rsbackend.RsbackendApplication       : Started RsbackendApplication in 5.114 seconds (JVM running for 5.953)
-2021-11-22 15:36:01.865  INFO 21432 --- [RMI TCP Connection(1)-192.168.0.115] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
-2021-11-22 15:36:01.867  INFO 21432 --- [RMI TCP Connection(1)-192.168.0.115] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
-2021-11-22 15:36:01.870  INFO 21432 --- [RMI TCP Connection(1)-192.168.0.115] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
-2021-11-22 15:36:08.857 ERROR 21432 --- [http-nio-8082-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception
+2021-11-23 20:52:15.361  INFO 21184 --- [http-nio-8082-exec-4] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.LoginController.getUserInfo() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,class UserResponseDto {
+    id: 3
+    userNick: admin
+    email: admin@gmail.com
+    authorities: [ADMIN]
+    lastLoginDateTime: 2021-11-23T20:52:15.359334
+    joinDateTime: 2021-11-23T15:38:35.486024
+    accountNonExpired: true
+    accountNonLocked: true
+    credentialsNonExpired: true
+},[]>
+2021-11-23 20:52:19.284  INFO 21184 --- [http-nio-8082-exec-6] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.RoomController.getAllRooms() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class RoomResponseDto {
+    roomNumber: 21
+    description: Small organ room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 1
+        name: Pneumatic Organ
+        description: II+P, 8 stops, pneumatic tracture organ
+        roomNumber: 21
+    }]
+}, class RoomResponseDto {
+    roomNumber: 22
+    description: Grand Piano room on 2nd floor
+    roomStatus: ONLY_TEACHER
+    equipmentItems: [class EquipmentResponseDto {
+        id: 2
+        name: Yamaha Small Grand Piano
+        description: Yamaha Small Grand Piano, well-tuned
+        roomNumber: 22
+    }]
+}, class RoomResponseDto {
+    roomNumber: 25
+    description: Small organ-piano room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 4
+        name: Calisia Piano
+        description: Small piano
+        roomNumber: 25
+    }, class EquipmentResponseDto {
+        id: 3
+        name: Mechanic Walcker Organ
+        description: II+P, 7 stops, mechanic tracture organ
+        roomNumber: 25
+    }]
+}],[]>
+2021-11-23 20:52:25.192  INFO 21184 --- [http-nio-8082-exec-8] p.a.rsbackend.loging.ExceptionsLogger    : 
 
-pl.adambaranowski.rsbackend.security.jwt.JwtService$1: Authentication denied: JWT signature does not match locally computed signature. JWT validity cannot be asserted and should not be trusted.
-	at pl.adambaranowski.rsbackend.security.jwt.JwtService.extractSubjectIfTokenIsValid(JwtService.java:59) ~[classes/:na]
-	at pl.adambaranowski.rsbackend.security.filter.JwtFilter.doFilterInternal(JwtFilter.java:45) ~[classes/:na]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.5.2.jar:5.5.2]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:103) ~[spring-security-web-5.5.2.jar:5.5.2]
-	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:89) ~[spring-security-web-5.5.2.jar:5.5.2]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.5.2.jar:5.5.2]
-	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.5.2.jar:5.5.2]
-	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-5.5.2.jar:5.5.2]
-	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-5.5.2.jar:5.5.2]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.5.2.jar:5.5.2]
-	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:110) ~[spring-security-web-5.5.2.jar:5.5.2]
-	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:80) ~[spring-security-web-5.5.2.jar:5.5.2]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.5.2.jar:5.5.2]
-	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:55) ~[spring-security-web-5.5.2.jar:5.5.2]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:336) ~[spring-security-web-5.5.2.jar:5.5.2]
-	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:211) ~[spring-security-web-5.5.2.jar:5.5.2]
-	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:183) ~[spring-security-web-5.5.2.jar:5.5.2]
-	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.springframework.boot.actuate.metrics.web.servlet.WebMvcMetricsFilter.doFilterInternal(WebMvcMetricsFilter.java:96) ~[spring-boot-actuator-2.5.4.jar:2.5.4]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119) ~[spring-web-5.3.9.jar:5.3.9]
-	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:197) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:135) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:382) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1726) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1191) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61) ~[tomcat-embed-core-9.0.52.jar:9.0.52]
-	at java.base/java.lang.Thread.run(Thread.java:830) ~[na:na]
+ Exception occurred: pl.adambaranowski.rsbackend.exception.WrongDtoException
+ 
+ By User: 
+ admin@gmail.com 
 
+2021-11-23 20:54:00.213  INFO 21184 --- [http-nio-8082-exec-10] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.RoomController.getAllRooms() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class RoomResponseDto {
+    roomNumber: 21
+    description: Small organ room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 1
+        name: Pneumatic Organ
+        description: II+P, 8 stops, pneumatic tracture organ
+        roomNumber: 21
+    }]
+}, class RoomResponseDto {
+    roomNumber: 22
+    description: Grand Piano room on 2nd floor
+    roomStatus: ONLY_TEACHER
+    equipmentItems: [class EquipmentResponseDto {
+        id: 2
+        name: Yamaha Small Grand Piano
+        description: Yamaha Small Grand Piano, well-tuned
+        roomNumber: 22
+    }]
+}, class RoomResponseDto {
+    roomNumber: 25
+    description: Small organ-piano room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 4
+        name: Calisia Piano
+        description: Small piano
+        roomNumber: 25
+    }, class EquipmentResponseDto {
+        id: 3
+        name: Mechanic Walcker Organ
+        description: II+P, 7 stops, mechanic tracture organ
+        roomNumber: 25
+    }]
+}],[]>
+2021-11-23 20:54:05.707  INFO 21184 --- [http-nio-8082-exec-2] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 22
+    beginDate: 08-11-2021
+    endDate: 12-11-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[],[]>
+2021-11-23 20:54:08.145  INFO 21184 --- [http-nio-8082-exec-3] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 22
+    beginDate: 08-11-2021
+    endDate: 12-11-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[],[]>
+2021-11-23 20:54:10.255  INFO 21184 --- [http-nio-8082-exec-4] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 22
+    beginDate: 01-11-2021
+    endDate: 05-11-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[],[]>
+2021-11-23 20:54:11.709  INFO 21184 --- [http-nio-8082-exec-6] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 22
+    beginDate: 25-10-2021
+    endDate: 29-10-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[],[]>
+2021-11-23 20:54:13.406  INFO 21184 --- [http-nio-8082-exec-7] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 22
+    beginDate: 18-10-2021
+    endDate: 22-10-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[],[]>
+2021-11-23 20:54:16.459  INFO 21184 --- [http-nio-8082-exec-8] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 22
+    beginDate: 11-10-2021
+    endDate: 15-10-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class SingleReservationDto {
+    reservationId: 1
+    userNick: admin
+    date: 11-10-2021
+    beginTime: 12:30
+    endTime: 14:00
+}, class SingleReservationDto {
+    reservationId: 1
+    userNick: admin
+    date: 12-10-2021
+    beginTime: 12:30
+    endTime: 14:00
+}, class SingleReservationDto {
+    reservationId: 2
+    userNick: admin
+    date: 14-10-2021
+    beginTime: 09:45
+    endTime: 11:00
+}],[]>
+2021-11-23 21:01:45.241  INFO 21184 --- [http-nio-8082-exec-1] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.RoomController.getAllRooms() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class RoomResponseDto {
+    roomNumber: 21
+    description: Small organ room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 1
+        name: Pneumatic Organ
+        description: II+P, 8 stops, pneumatic tracture organ
+        roomNumber: 21
+    }]
+}, class RoomResponseDto {
+    roomNumber: 22
+    description: Grand Piano room on 2nd floor
+    roomStatus: ONLY_TEACHER
+    equipmentItems: [class EquipmentResponseDto {
+        id: 2
+        name: Yamaha Small Grand Piano
+        description: Yamaha Small Grand Piano, well-tuned
+        roomNumber: 22
+    }]
+}, class RoomResponseDto {
+    roomNumber: 25
+    description: Small organ-piano room on 2nd floor
+    roomStatus: NORMAL
+    equipmentItems: [class EquipmentResponseDto {
+        id: 4
+        name: Calisia Piano
+        description: Small piano
+        roomNumber: 25
+    }, class EquipmentResponseDto {
+        id: 3
+        name: Mechanic Walcker Organ
+        description: II+P, 7 stops, mechanic tracture organ
+        roomNumber: 25
+    }]
+}],[]>
+2021-11-23 21:01:53.103  INFO 21184 --- [http-nio-8082-exec-3] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 22
+    beginDate: 11-10-2021
+    endDate: 15-10-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class SingleReservationDto {
+    reservationId: 1
+    userNick: admin
+    date: 11-10-2021
+    beginTime: 12:30
+    endTime: 14:00
+}, class SingleReservationDto {
+    reservationId: 1
+    userNick: admin
+    date: 12-10-2021
+    beginTime: 12:30
+    endTime: 14:00
+}, class SingleReservationDto {
+    reservationId: 2
+    userNick: admin
+    date: 14-10-2021
+    beginTime: 09:45
+    endTime: 11:00
+}],[]>

@@ -11,6 +11,7 @@ import {NotificationService} from "../../service/notification.service";
 import {ReservationService} from "../../service/reservation.service";
 import {SingleReservationDto} from "../../model/singleReservationDto";
 import {GetReservationRequestDto} from "../../model/getReservationRequestDto";
+import {ReservationCell} from "./ReservationCell";
 
 @Component({
   selector: 'app-reservation',
@@ -26,6 +27,55 @@ export class ReservationComponent implements OnInit, OnDestroy {
   public today: Date = new Date();
   public firstDayOfWeek: Date;
   public lastDayOfWeek: Date;
+
+  public reservationsGrid: ReservationCell[][] = [];
+
+  fillReservationGridWithReservations(reservations: SingleReservationDto[]): void {
+    this.fillReservationGrid();
+    reservations.forEach(reservation => {
+
+      //dd-mm-yyyy
+      let splitDate = reservation.date.split('-');
+
+      //yyyy-mm-dd
+      let reservationDate = new Date(parseInt(splitDate[2]), parseInt(splitDate[1])-1, parseInt(splitDate[0]));
+
+      let day = reservationDate.getDay()-1; // -1 because Monday is first instead of Sunday
+      let beginHour = parseInt(reservation.beginTime.split('-')[0]);
+
+
+      if (day >= 0 && day <= 4){
+        if (beginHour >= 8 && beginHour <= 20) {
+          this.reservationsGrid[day][beginHour-8].reservations.push(reservation);
+        }
+      }
+
+    })
+  }
+
+  getReservationsForCell(day: number, hour: number): SingleReservationDto[] {
+    return this.reservationsGrid[day][hour].reservations;
+  }
+
+  fillReservationGrid(): void {
+
+    this.reservationsGrid = [];
+
+    for (let day = 0; day <= 4; day++) {
+      const dayGrid = [];
+      for (let hour = 8; hour <= 20; hour++){
+
+          const oneHourCell: ReservationCell = {
+            day: day,
+            beginHour: hour,
+            reservations: []
+          };
+
+          dayGrid.push(oneHourCell);
+      }
+      this.reservationsGrid.push(dayGrid);
+    }
+  }
 
   public  hours = ['8:00', '9:00', '10:00', '11:00', '12:00',
     '13:00', '14:00', '15:00', '16:00', '17:00',
@@ -48,17 +98,22 @@ export class ReservationComponent implements OnInit, OnDestroy {
 
   updateReservations(roomNumber: number | undefined): void {
 
-    let beginMonth = this.firstDayOfWeek.getMonth().toString().length < 2 ?
-      '0' + this.firstDayOfWeek.getMonth() : this.firstDayOfWeek.getMonth();
+    let beginDay = this.firstDayOfWeek.getDate() < 10 ? '0'+this.firstDayOfWeek.getDate() : this.firstDayOfWeek.getDate();
 
-    let endMonth = this.lastDayOfWeek.getMonth().toString().length < 2 ?
-      '0' + this.lastDayOfWeek.getMonth() : this.lastDayOfWeek.getMonth();
+    let beginMonth = this.firstDayOfWeek.getMonth() < 9 ?
+      '0' + (this.firstDayOfWeek.getMonth()+1) : (this.firstDayOfWeek.getMonth()+1);
 
-    let beginDateString = this.firstDayOfWeek.getDate() + '-' +
+    let endMonth = this.lastDayOfWeek.getMonth() < 9 ?
+      '0' + (this.lastDayOfWeek.getMonth()+1) : this.lastDayOfWeek.getMonth()+1;
+
+    let endDay = this.lastDayOfWeek.getDate() < 10 ? '0'+this.lastDayOfWeek.getDate() : this.lastDayOfWeek.getDate();
+
+    let beginDateString = beginDay + '-' +
       beginMonth + '-' +
       + this.firstDayOfWeek.getFullYear();
 
-    let endDateString = this.lastDayOfWeek.getDate() + '-' +
+
+    let endDateString = endDay + '-' +
       endMonth + '-' +
       + this.lastDayOfWeek.getFullYear();
 
@@ -70,8 +125,10 @@ export class ReservationComponent implements OnInit, OnDestroy {
 
     this.subscriptions.push(this.reservationService.getAllReservationsForPeriod(reservationRequestDto).subscribe(
       (response: SingleReservationDto[]) => {
-        response.forEach(r => console.log(r))
 
+        this.fillReservationGridWithReservations(response);
+
+        console.log(this.reservationsGrid);
       },
       (httpErrorResponse: HttpErrorResponse) => {
         console.log(httpErrorResponse);
@@ -103,6 +160,8 @@ export class ReservationComponent implements OnInit, OnDestroy {
     }
 
     this.user = this.authenticationService.getUser();
+    this.fillReservationGrid();
+    console.log(this.reservationsGrid);
   }
 
   ngOnDestroy(): void {

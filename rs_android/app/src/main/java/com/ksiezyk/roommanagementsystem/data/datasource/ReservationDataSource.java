@@ -31,6 +31,7 @@ public class ReservationDataSource {
                     .collect(Collectors.toList());
             return new Result.Success<>(reservations);
         } catch (Exception e) {
+            System.out.println(e);
             return new Result.Error(new IOException("Error getting reservations", e));
         }
     }
@@ -44,7 +45,7 @@ public class ReservationDataSource {
                 beginTime,
                 beginTime.plusMinutes(30),
                 "User" + i);
-    }
+    }http://localhost:8081/swagger-ui/
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     public Result<Reservation> createReservation(int roomNumber, LocalDateTime beginDt,

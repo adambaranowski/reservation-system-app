@@ -1,7 +1,9 @@
 package com.ksiezyk.roommanagementsystem.ui.login;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -34,6 +36,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private LoginViewModel loginViewModel;
     private ActivityLoginBinding binding;
+    private CredentialsManager credentialsManager;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -55,10 +58,17 @@ public class LoginActivity extends AppCompatActivity {
         final TextView biometricText = binding.biomInfoText;
         BiometricManager biometricManager = androidx.biometric.BiometricManager.from(this);
 
+        credentialsManager = new CredentialsManager(this.getSharedPreferences(CredentialsManager.PREF_NAME, Context.MODE_PRIVATE));
+
         int canAuth = biometricManager.canAuthenticate(BiometricManager.Authenticators.BIOMETRIC_WEAK);
         switch (canAuth) {
             case BiometricManager.BIOMETRIC_SUCCESS:
-                biometricText.setText("You can authenticate with fingerprint scanner.");
+                if (!credentialsManager.areCredsSet()) {
+                    biometricText.setText("Please log in with the prompt above to use the fingerprint scanner");
+                    biometricButton.setVisibility(View.GONE);
+                } else {
+                    biometricText.setText("You can authenticate with fingerprint scanner.");
+                }
                 break;
             default:
                 biometricText.setText("Fingerprint scanner unavailable, error code: " + canAuth);
@@ -116,7 +126,9 @@ public class LoginActivity extends AppCompatActivity {
                 super.onAuthenticationSucceeded(result);
                 biometricText.setText("Fingerprint authentication successful!");
                 loadingProgressBar.setVisibility(View.VISIBLE);
-                loginViewModel.login("user1@test.com", "password1");
+                String username = credentialsManager.getUsername();
+                String password = credentialsManager.getPassword();
+                loginViewModel.login(credentialsManager, username, password);
             }
 
             @Override
@@ -159,7 +171,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
                 if (actionId == EditorInfo.IME_ACTION_DONE) {
-                    loginViewModel.login(usernameEditText.getText().toString(),
+                    loginViewModel.login(credentialsManager, usernameEditText.getText().toString(),
                             passwordEditText.getText().toString());
                 }
                 return false;
@@ -170,7 +182,7 @@ public class LoginActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 loadingProgressBar.setVisibility(View.VISIBLE);
-                loginViewModel.login(usernameEditText.getText().toString(),
+                loginViewModel.login(credentialsManager, usernameEditText.getText().toString(),
                         passwordEditText.getText().toString());
             }
         });

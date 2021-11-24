@@ -1,13 +1,77 @@
 <div style="alignment: center; text-align: center">
-  <ng-container *ngFor="let room of rooms">
-    <button class="btn btn-info" style="margin: 1%" (click)="updateReservations(room.roomNumber)">{{room.roomNumber}}</button>
-  </ng-container>
 
-  <br>
+  <div class="card text-center">
+    <div class="card-body">
+      <h3 class="card-title">{{pickedRoomNumber}}</h3>
+      <br>
+      <h5>{{pickedRoomStatus}}</h5>
+      <p class="card-text">{{pickedRoomDescription}}</p>
+            <ng-container *ngFor="let room of rooms">
+              <button class="btn btn-info" style="margin: 1%"
+                      [ngClass]="{'btn-outline-info': room.roomNumber===pickedRoomNumber}"
+                      (click)="updateReservations(room.roomNumber)">{{room.roomNumber}}</button>
+            </ng-container>>
+    </div>
+    <div class="card-footer text-muted">
+      <h5>Equipments: </h5>
+      <br>
+      <ul *ngFor="let equipment of pickedRoomEquipment">
+        <li>{{equipment.name}} - {{equipment.description}}</li>
+      </ul>
+    </div>
+  </div>
 
   <button class="btn btn-outline-danger" (click)="previousWeek()"><= Previous</button>
   {{firstDayOfWeek.toDateString()}} - {{lastDayOfWeek.toDateString()}}
   <button class="btn btn-outline-danger" (click)="nextWeek()">Next =></button>
+
+  <br>
+
+  <div *ngIf="displayAddForm" style="text-align: center; margin-left: 32%">
+    <div style="margin: 8px; background-color: lightblue; border-radius: 3px; width: 50%">
+      <form (ngSubmit)="addReservation()">
+        <input [formControl]="beginDate" class="form-control form-control-sm" type="text" placeholder="Begin Date: dd:mm:yyyy">
+        <input [formControl]="beginTime" class="form-control form-control-sm" type="text" placeholder="Begin Time: hh:mm">
+        <input [formControl]="endTime" class="form-control form-control-sm" type="text" placeholder="End Time: hh:mm">
+        <label for="RoomStatus">Room Number</label>
+        <select class="form-control" id="RoomStatus" [formControl]="roomNumber">
+          <option></option>
+          <option *ngFor="let room of rooms">{{room.roomNumber}}</option>
+        </select>
+        <br>
+        For Recurring:
+        <input [formControl]="endDate" class="form-control form-control-sm" type="text" placeholder="End Date: dd:mm:yyyy">
+
+        <input type="checkbox" id="Monday" value="option1" [checked]="daysChecked[0]"
+               (change)="daysChecked[0] = !daysChecked[0]">
+        <label for="Monday">Monday</label>
+        <br>
+        <input type="checkbox" id="Tuesday" value="option2" [checked]="daysChecked[1]"
+               (change)="daysChecked[1] = !daysChecked[1]">
+        <label for="Tuesday">Tuesday</label>
+        <br>
+        <input type="checkbox" id="Wednesday" value="option3" [checked]="daysChecked[2]"
+               (change)="daysChecked[2] = !daysChecked[2]">
+        <label for="Wednesday">Wednesday</label>
+        <input type="checkbox" id="Thursday" value="option2" [checked]="daysChecked[3]"
+               (change)="daysChecked[3] = !daysChecked[3]">
+        <label for="Thursday">Thursday</label>
+        <br>
+        <input type="checkbox" id="Friday" value="option3" [checked]="daysChecked[4]"
+               (change)="daysChecked[4] = !daysChecked[4]">
+        <label for="Friday">Friday</label>
+
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <br>
+    <button class="btn btn-primary" (click)="displayAddForm=!displayAddForm">Add Reservation</button>
+  <br>
+
+
 
   <br>
 
@@ -31,6 +95,8 @@
             <br>
             <h6>{{reservation.userNick}}</h6>
             <br>
+            <button *ngIf="user && user.userNick===reservation.userNick"
+                    (click)="deleteReservation(reservation.reservationId)" class="btn-danger">Delete</button>
 
           </button>
           <br>

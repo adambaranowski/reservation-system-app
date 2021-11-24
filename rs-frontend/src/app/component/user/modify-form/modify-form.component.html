@@ -2,17 +2,17 @@
   <div style="margin: 8px; background-color: lightblue; border-radius: 3px; width: 200px">
     <form (ngSubmit)="addAuthorities()">
 
-      <input type="checkbox" id="isStudentm" value="option1" [checked]="isStudent"
+      <input type="checkbox" id="isStudent" value="option1" [checked]="isStudent"
              (change)="isStudent = !isStudent">
-      <label for="isStudentm">Student</label>
+      <label for="isStudent">Student</label>
       <br>
-      <input type="checkbox" id="isTeacherm" value="option2" [checked]="isTeacher"
+      <input type="checkbox" id="isTeacher" value="option2" [checked]="isTeacher"
              (change)="isTeacher = !isTeacher">
-      <label for="isTeacherm">Teacher</label>
+      <label for="isTeacher">Teacher</label>
       <br>
-      <input type="checkbox" id="isAdminm" value="option3" [checked]="isAdmin"
+      <input type="checkbox" id="isAdmin" value="option3" [checked]="isAdmin"
              (change)="isAdmin = !isAdmin">
-      <label for="isAdminm">Admin</label>
+      <label for="isAdmin">Admin</label>
       <br>
       <br>
       <button type="submit" class="btn btn-primary" style="margin: 5px">Submit</button>

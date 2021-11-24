@@ -12,6 +12,9 @@ import {ReservationService} from "../../service/reservation.service";
 import {SingleReservationDto} from "../../model/singleReservationDto";
 import {GetReservationRequestDto} from "../../model/getReservationRequestDto";
 import {ReservationCell} from "./ReservationCell";
+import {FormControl} from "@angular/forms";
+import {CreateReservationRequestDto} from "../../model/createReservationRequestDto";
+import {EquipmentResponseDto} from "../../model/equipmentResponseDto";
 
 @Component({
   selector: 'app-reservation',
@@ -22,10 +25,16 @@ export class ReservationComponent implements OnInit, OnDestroy {
 
   public user?: User;
   public rooms: RoomResponseDto[] = [];
+  public displayAddForm: boolean = false;
 
   public today: Date = new Date();
   public firstDayOfWeek: Date;
   public lastDayOfWeek: Date;
+
+  public pickedRoomNumber?: number;
+  public pickedRoomDescription?: string;
+  public pickedRoomStatus?: string;
+  public pickedRoomEquipment?: EquipmentResponseDto[];
 
   public reservationsGrid: ReservationCell[][] = [];
 
@@ -36,6 +45,15 @@ export class ReservationComponent implements OnInit, OnDestroy {
   public days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
 
   private subscriptions: Subscription[] = [];
+
+  // ADD FORM
+  roomNumber = new FormControl();
+  beginDate = new FormControl();
+  beginTime = new FormControl();
+  endTime = new FormControl();
+  endDate = new FormControl();
+  public daysChecked: boolean[] = [false, false, false, false, false];
+
 
   constructor(private router: Router,
               private authenticationService: AuthenticationService,
@@ -88,6 +106,18 @@ export class ReservationComponent implements OnInit, OnDestroy {
     }
   }
 
+  pickRoom(roomNumber: number): void {
+    this.pickedRoomNumber = roomNumber;
+    for (let i = 0; i < this.rooms.length; i++) {
+      if (this.rooms[i].roomNumber===this.pickedRoomNumber){
+        this.pickedRoomDescription = this.rooms[i].description;
+        this.pickedRoomEquipment = this.rooms[i].equipmentItems;
+        this.pickedRoomStatus = this.rooms[i].roomStatus;
+      }
+    }
+
+  }
+
   updateReservations(roomNumber: number | undefined): void {
 
     let beginDay = this.firstDayOfWeek.getDate() < 10 ? '0'+this.firstDayOfWeek.getDate() : this.firstDayOfWeek.getDate();
@@ -118,6 +148,57 @@ export class ReservationComponent implements OnInit, OnDestroy {
         this.notifier.showNotification(NotificationType.ERROR, 'Cannot get reservations: ' + httpErrorResponse.error);
       }
     ))
+
+    if (roomNumber)
+      this.pickRoom(roomNumber);
+  }
+
+  addReservation(): void {
+
+    let daysOfWeek = [];
+    for (let i = 0; i < this.daysChecked.length; i++) {
+      if (this.daysChecked[i]){
+        daysOfWeek.push(i+1);//+1 because in backend days are ordered starting from 1
+      }
+    }
+
+    //if reservation not recurring end date in form can be null, but for backend begin date must be sent as end
+    let endDate = this.endDate.value;
+    if(!endDate){
+      let endDate = this.beginDate.value;
+    }
+
+    const request: CreateReservationRequestDto = {
+      beginDate: this.beginDate.value,
+      beginTime: this.beginTime.value,
+      endTime: this.endTime.value,
+      roomNumber: this.roomNumber.value,
+      endDate: endDate,
+      daysOfWeek: daysOfWeek
+    }
+
+    this.subscriptions.push(this.reservationService.addNewReservation(request).subscribe(
+      (response) => {
+        this.notifier.showNotification(NotificationType.INFO, 'Reservation Added!');
+        this.pickedRoomNumber=this.roomNumber.value;
+        this.updateReservations(this.pickedRoomNumber);
+      },
+      (httpErrorResponse: HttpErrorResponse) => {
+        this.notifier.showNotification(NotificationType.ERROR, 'Cannot add Reservation: ' + httpErrorResponse.error);
+      }
+    ))
+  }
+
+  deleteReservation(reservationId: number): void {
+    this.subscriptions.push(this.reservationService.deleteReservation(reservationId).subscribe(
+      (response) => {
+        this.notifier.showNotification(NotificationType.INFO, 'Reservation Deleted!');
+        this.updateReservations(this.pickedRoomNumber);
+      },
+      (httpErrorResponse: HttpErrorResponse) => {
+        this.notifier.showNotification(NotificationType.ERROR, 'Cannot delete Reservation: ' + httpErrorResponse.error);
+      }
+    ))
   }
 
   addDays(date: Date, days: number): Date {
@@ -126,20 +207,22 @@ export class ReservationComponent implements OnInit, OnDestroy {
   }
 
   nextWeek(): void {
-    this.firstDayOfWeek.setDate(this.addDays(this.firstDayOfWeek, 7).getDate())
-    this.lastDayOfWeek.setDate(this.addDays(this.lastDayOfWeek, 7).getDate())
+    this.firstDayOfWeek.setDate(this.addDays(this.firstDayOfWeek, 7).getDate());
+    this.lastDayOfWeek.setDate(this.addDays(this.lastDayOfWeek, 7).getDate());
+    this.updateReservations(this.pickedRoomNumber);
   }
 
   previousWeek(): void {
-    this.firstDayOfWeek.setDate(this.addDays(this.firstDayOfWeek, -7).getDate())
-    this.lastDayOfWeek.setDate(this.addDays(this.lastDayOfWeek, -7).getDate())
+    this.firstDayOfWeek.setDate(this.addDays(this.firstDayOfWeek, -7).getDate());
+    this.lastDayOfWeek.setDate(this.addDays(this.lastDayOfWeek, -7).getDate());
+    this.updateReservations(this.pickedRoomNumber);
   }
 
   ngOnInit(): void {
     if (this.authenticationService.isLoggedIn()) {
       this.reloadRooms();
     } else {
-      this.router.navigateByUrl('/login')
+      this.router.navigateByUrl('/login');
     }
 
     this.user = this.authenticationService.getUser();

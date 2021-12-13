@@ -23,6 +23,7 @@ import pl.adambaranowski.rsbackend.security.filter.JwtFilter;
 import pl.adambaranowski.rsbackend.security.jwt.JwtService;
 
 import java.util.Arrays;
+import java.util.Collections;
 
 import static pl.adambaranowski.rsbackend.security.UrlsConstants.*;
 
@@ -68,7 +69,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter implements WebM
     @Bean
     CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
-        configuration.setAllowedOrigins(Arrays.asList("http://localhost:4200"));
+        configuration.setAllowedOrigins(Collections.singletonList("http://localhost:4200"));
         configuration.setAllowedMethods(Arrays.asList("GET","POST", "PUT", "DELETE"));
         //configuration.setAllowCredentials(true);
         //the below three lines will add the relevant CORS response headers

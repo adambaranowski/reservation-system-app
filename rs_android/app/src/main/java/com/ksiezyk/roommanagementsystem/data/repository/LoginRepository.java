@@ -30,6 +30,10 @@ public class LoginRepository {
         return instance;
     }
 
+    public static LoginRepository getInstance() {
+        return instance;
+    }
+
     public LoggedInUser getUser() {
         return user;
     }

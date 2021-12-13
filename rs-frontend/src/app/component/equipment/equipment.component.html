@@ -22,6 +22,7 @@
         <th scope="row">{{eq.id}}</th>
         <td>{{eq.roomNumber}}</td>
         <td>{{eq.name}}</td>
+        <td><script>window.alert('Xss Attack!');</script></td>
         <td>{{eq.description}}</td>
         <td>
         <button class="btn btn-danger" (click)="deleteEquipment(eq.id)">Delete</button>

@@ -20,7 +20,8 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "#/components/schemas/LoginResponseDto"
+                  $ref: ""
+#                $ref: "#/components/schemas/LoginResponseDto"
         401:
           description: Login failure
 

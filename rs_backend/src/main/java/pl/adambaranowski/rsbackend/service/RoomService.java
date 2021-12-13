@@ -37,6 +37,13 @@ public class RoomService {
                 .collect(Collectors.toList());
     }
 
+    public List<Integer> getRoomsNumbers() {
+        roomRepository.findAll().forEach(System.out::println);
+        return roomRepository.findAll()
+                .stream().map(Room::getNumber)
+                .collect(Collectors.toList());
+    }
+
     public RoomResponseDto getRoomById(Integer roomNumber) {
         Optional<Room> room = roomRepository.findById(roomNumber);
         return responseMapper.mapToDto(room.orElseThrow(() -> new NoSuchElementException(String.format(NO_SUCH_ROOM_MESSAGE, roomNumber))));

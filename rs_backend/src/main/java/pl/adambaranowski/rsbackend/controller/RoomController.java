@@ -3,6 +3,7 @@ package pl.adambaranowski.rsbackend.controller;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pl.adambaranowski.rsbackend.api.RoomsApi;
 import pl.adambaranowski.rsbackend.model.dto.RoomRequestDto;
@@ -25,6 +26,11 @@ public class RoomController implements RoomsApi {
     @Override
     public ResponseEntity<List<RoomResponseDto>> getAllRooms() {
         return ResponseEntity.ok(roomService.getAll());
+    }
+
+    @GetMapping("/numbers")
+    public ResponseEntity<List<Integer>> getRoomsNumbers(){
+        return ResponseEntity.ok(roomService.getRoomsNumbers());
     }
 
     @Override

@@ -35,7 +35,7 @@ public class DataLoader implements CommandLineRunner {
 
         userRepository.save(User.builder()
                 .email("admin@gmail.com")
-                .password(passwordEncoder.encode("admin"))
+                .password(passwordEncoder.encode("adminadmin"))
                 .build());
     }
 

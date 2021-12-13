@@ -149,7 +149,7 @@ export class ReservationComponent implements OnInit, OnDestroy {
       }
     ))
 
-    if (roomNumber)
+    if (roomNumber!=undefined)
       this.pickRoom(roomNumber);
   }
 

@@ -28,7 +28,7 @@ public class RoomController implements RoomsApi {
         return ResponseEntity.ok(roomService.getAll());
     }
 
-    @GetMapping("/numbers")
+    @GetMapping("/rooms/numbers")
     public ResponseEntity<List<Integer>> getRoomsNumbers(){
         return ResponseEntity.ok(roomService.getRoomsNumbers());
     }

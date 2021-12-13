@@ -21,6 +21,7 @@ import java.io.IOException;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -47,7 +48,7 @@ public class RestClient {
 
     private final OkHttpClient client = new OkHttpClient();
     private final ObjectMapper mapper = new ObjectMapper();
-    private final LoginRepository loginRepository = LoginRepository.getInstance();
+    private LoginRepository loginRepository;
 
     private RestClient() {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
@@ -55,8 +56,8 @@ public class RestClient {
         StrictMode.setThreadPolicy(policy);
     }
 
-    public static RestClient getInstance(){
-        if (instance == null){
+    public static RestClient getInstance() {
+        if (instance == null) {
             instance = new RestClient();
         }
         return instance;
@@ -105,9 +106,9 @@ public class RestClient {
 
         LoginResponseDto loginResponseDto = null;
 
-            String s = mapper.writeValueAsString(loginRequestDto);
+        String s = mapper.writeValueAsString(loginRequestDto);
 
-            loginResponseDto = mapper.readValue(post(url, s, null), LoginResponseDto.class);
+        loginResponseDto = mapper.readValue(post(url, s, null), LoginResponseDto.class);
 
 
         return loginResponseDto;
@@ -118,13 +119,14 @@ public class RestClient {
 
         List<Room> rooms = new ArrayList<>();
 
-            String responseJson = get(url, loginRepository.getUser().getToken());
-            Integer[] roomsNumbers = mapper.readValue(responseJson, Integer[].class);
+        String responseJson = get(url, loginRepository.getUser().getToken());
+        Integer[] roomsNumbers = mapper.readValue(responseJson, Integer[].class);
 
-            for (int number: roomsNumbers
-                 ) {
-                rooms.add(new Room(number));
-            }
+
+        for (int number : roomsNumbers
+        ) {
+            rooms.add(new Room(number));
+        }
 
 
         return rooms;
@@ -188,7 +190,7 @@ public class RestClient {
 
         String requestJson = mapper.writeValueAsString(requestDto);
 
-        post(BACKEND_URL+RESERVATIONS_URL, requestJson, loginRepository.getUser().getToken());
+        post(BACKEND_URL + RESERVATIONS_URL, requestJson, loginRepository.getUser().getToken());
 
         return new Reservation(1,
                 LocalDate.of(beginDt.getYear(), beginDt.getMonth(), beginDt.getDayOfMonth()),
@@ -200,7 +202,7 @@ public class RestClient {
 
     @RequiresApi(api = Build.VERSION_CODES.O)
     public List<Reservation> getReservations(int roomNumber, LocalDateTime beginDt,
-                                      LocalDateTime endDt) throws IOException {
+                                             LocalDateTime endDt) throws IOException {
         List<Reservation> result = new ArrayList<>();
 
         ReservationGetRequestDto requestDto = new ReservationGetRequestDto();
@@ -238,16 +240,20 @@ public class RestClient {
 
         ReservationResponseDto[] reservationResponseDtos = mapper.readValue(response, ReservationResponseDto[].class);
 
-        for (ReservationResponseDto dto: reservationResponseDtos
-             ) {
+        for (ReservationResponseDto dto : reservationResponseDtos
+        ) {
 
-            LocalDate date = LocalDate.parse(dto.getDate());
-            LocalTime beginTime = LocalTime.parse(dto.getBeginTime());
-            LocalTime endTime = LocalTime.parse(dto.getEndTime());
+            LocalDate date = LocalDate.parse(dto.getDate(), DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+            LocalTime beginTime = LocalTime.parse(dto.getBeginTime(), DateTimeFormatter.ofPattern("HH:mm"));
+            LocalTime endTime = LocalTime.parse(dto.getEndTime(), DateTimeFormatter.ofPattern("HH:mm"));
             result.add(new Reservation(1, date, beginTime, endTime, dto.getUserNick()));
         }
 
         return result;
 
+    }
+
+    public void setLoginRepository(LoginRepository loginRepository) {
+        this.loginRepository = loginRepository;
     }
 }

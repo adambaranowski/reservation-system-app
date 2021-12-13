@@ -1,5 +1,9 @@
 package com.ksiezyk.roommanagementsystem.data.repository;
 
+import android.os.Build;
+
+import androidx.annotation.RequiresApi;
+
 import com.ksiezyk.roommanagementsystem.data.Result;
 import com.ksiezyk.roommanagementsystem.data.datasource.RoomDataSource;
 import com.ksiezyk.roommanagementsystem.data.model.Room;
@@ -27,6 +31,7 @@ public class RoomRepository {
         return instance;
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.O)
     public Result<List<Room>> getRooms() {
         return dataSource.getRooms();
     }

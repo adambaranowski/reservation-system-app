@@ -5,6 +5,7 @@ import android.os.Build;
 import androidx.annotation.RequiresApi;
 
 import com.ksiezyk.roommanagementsystem.data.Result;
+import com.ksiezyk.roommanagementsystem.data.datasource.client.RestClient;
 import com.ksiezyk.roommanagementsystem.data.model.Reservation;
 
 import java.io.IOException;
@@ -19,14 +20,14 @@ import java.util.stream.IntStream;
  */
 public class ReservationDataSource {
 
+    private final RestClient restClient = RestClient.getInstance();
+
     @RequiresApi(api = Build.VERSION_CODES.O)
     public Result<List<Reservation>> getReservations(int roomNumber, LocalDateTime beginDt,
                                                      LocalDateTime endDt) {
-        int amount = (int) Duration.between(beginDt, endDt).toHours() * 2;
+
         try {
-            List<Reservation> reservations = IntStream.range(0, amount)
-                    .mapToObj(i -> dummyReservation(beginDt, i))
-                    .collect(Collectors.toList());
+            List<Reservation> reservations = restClient.getReservations(roomNumber, beginDt, endDt);
             return new Result.Success<>(reservations);
         } catch (Exception e) {
             return new Result.Error(new IOException("Error getting reservations", e));
@@ -48,13 +49,7 @@ public class ReservationDataSource {
     public Result<Reservation> createReservation(int roomNumber, LocalDateTime beginDt,
                                                  LocalDateTime endDt, String userName) {
         try {
-            return new Result.Success<>(new Reservation(
-                    0,
-                    beginDt.toLocalDate(),
-                    beginDt.toLocalTime(),
-                    endDt.toLocalTime(),
-                    userName
-            ));
+            return new Result.Success(restClient.addReservation(roomNumber, beginDt, endDt));
         } catch (Exception e) {
             return new Result.Error(new IOException("Error creating reservation", e));
         }

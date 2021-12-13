@@ -2,6 +2,7 @@ package com.ksiezyk.roommanagementsystem.data.repository;
 
 import com.ksiezyk.roommanagementsystem.data.Result;
 import com.ksiezyk.roommanagementsystem.data.datasource.LoginDataSource;
+import com.ksiezyk.roommanagementsystem.data.datasource.client.RestClient;
 import com.ksiezyk.roommanagementsystem.data.model.LoggedInUser;
 
 /**
@@ -21,6 +22,8 @@ public class LoginRepository {
     // private constructor : singleton access
     private LoginRepository(LoginDataSource dataSource) {
         this.dataSource = dataSource;
+        RestClient instance = RestClient.getInstance();
+        instance.setLoginRepository(this);
     }
 
     public static LoginRepository getInstance(LoginDataSource dataSource) {

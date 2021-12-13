@@ -25,3 +25,365 @@
 2021-12-13 12:49:24.906  INFO 19204 --- [RMI TCP Connection(4)-192.168.132.1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
 2021-12-13 12:49:24.907  INFO 19204 --- [RMI TCP Connection(4)-192.168.132.1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
 2021-12-13 20:28:08.052  WARN 19204 --- [HikariPool-1 housekeeper] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Thread starvation or clock leap detected (housekeeper delta=5h37m44s865ms69µs200ns).
+2021-12-13 21:38:24.672  WARN 19204 --- [http-nio-8082-exec-9] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "numbers"]
+2021-12-13 21:42:32.658  WARN 19204 --- [http-nio-8082-exec-10] .w.s.m.s.DefaultHandlerExceptionResolver : Resolved [org.springframework.web.method.annotation.MethodArgumentTypeMismatchException: Failed to convert value of type 'java.lang.String' to required type 'java.lang.Integer'; nested exception is java.lang.NumberFormatException: For input string: "numbers"]
+2021-12-13 21:43:53.076  INFO 19204 --- [http-nio-8082-exec-1] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.RoomController.getRoomsNumbers() 
+ With params: 
+  
+ By User: 
+ anonymousUser 
+ Returned: <200 OK OK,[21, 22, 25],[]>
+2021-12-13 21:44:28.812  INFO 17000 --- [main] p.a.rsbackend.RsbackendApplication       : Starting RsbackendApplication using Java 13.0.1 on DESKTOP-NJEN35A with PID 17000 (C:\Users\Adam Baranowski\Desktop\Praca_Dyplomowa\reservation_system_app\rs_backend\target\classes started by Adam Baranowski in C:\Users\Adam Baranowski\Desktop\Praca_Dyplomowa\reservation_system_app\rs_backend)
+2021-12-13 21:44:28.818  INFO 17000 --- [main] p.a.rsbackend.RsbackendApplication       : No active profile set, falling back to default profiles: default
+2021-12-13 21:44:30.880  INFO 17000 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2021-12-13 21:44:31.081  INFO 17000 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 189 ms. Found 5 JPA repository interfaces.
+2021-12-13 21:44:32.397  INFO 17000 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8082 (http)
+2021-12-13 21:44:32.407  INFO 17000 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-12-13 21:44:32.408  INFO 17000 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.52]
+2021-12-13 21:44:32.582  INFO 17000 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-12-13 21:44:32.582  INFO 17000 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3646 ms
+2021-12-13 21:44:32.735  INFO 17000 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2021-12-13 21:44:32.880  INFO 17000 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2021-12-13 21:44:32.889  INFO 17000 --- [main] o.s.b.a.h2.H2ConsoleAutoConfiguration    : H2 console available at '/h2-console'. Database available at 'jdbc:h2:mem:testdb'
+2021-12-13 21:44:33.195  INFO 17000 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2021-12-13 21:44:33.256  INFO 17000 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 5.4.32.Final
+2021-12-13 21:44:33.402  INFO 17000 --- [main] o.hibernate.annotations.common.Version   : HCANN000001: Hibernate Commons Annotations {5.1.2.Final}
+2021-12-13 21:44:33.544  INFO 17000 --- [main] org.hibernate.dialect.Dialect            : HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+2021-12-13 21:44:34.457  INFO 17000 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2021-12-13 21:44:34.470  INFO 17000 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2021-12-13 21:44:35.425  WARN 17000 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2021-12-13 21:44:36.110  INFO 17000 --- [main] o.s.b.a.e.web.EndpointLinksResolver      : Exposing 1 endpoint(s) beneath base path '/actuator'
+2021-12-13 21:44:36.781  INFO 17000 --- [main] o.s.s.web.DefaultSecurityFilterChain     : Will secure any request with [org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter@7cc5bdbd, org.springframework.security.web.context.SecurityContextPersistenceFilter@5d8cbb32, org.springframework.security.web.header.HeaderWriterFilter@ae4a043, org.springframework.web.filter.CorsFilter@33c5cc0, org.springframework.security.web.authentication.logout.LogoutFilter@ab90b8c, pl.adambaranowski.rsbackend.security.filter.JwtFilter@664c411d, org.springframework.security.web.savedrequest.RequestCacheAwareFilter@1400984b, org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter@3ef7064b, org.springframework.security.web.authentication.AnonymousAuthenticationFilter@7641d70, org.springframework.security.web.session.SessionManagementFilter@2898cd46, org.springframework.security.web.access.ExceptionTranslationFilter@4fb1bffd, org.springframework.security.web.access.intercept.FilterSecurityInterceptor@61f62b80]
+2021-12-13 21:44:37.215  INFO 17000 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8082 (http) with context path ''
+2021-12-13 21:44:37.654  INFO 17000 --- [main] p.a.rsbackend.RsbackendApplication       : Started RsbackendApplication in 10.064 seconds (JVM running for 11.759)
+2021-12-13 21:46:04.112  INFO 17000 --- [http-nio-8082-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-12-13 21:46:04.113  INFO 17000 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-12-13 21:46:04.116  INFO 17000 --- [http-nio-8082-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2021-12-13 21:46:04.294  INFO 17000 --- [http-nio-8082-exec-1] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.RoomController.getRoomsNumbers() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[21, 22, 25],[]>
+2021-12-13 21:46:35.898  INFO 17000 --- [http-nio-8082-exec-2] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.RoomController.getRoomsNumbers() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[21, 22, 25],[]>
+2021-12-13 21:46:58.897  INFO 17000 --- [http-nio-8082-exec-3] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.RoomController.getRoomsNumbers() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[21, 22, 25],[]>
+2021-12-13 21:47:52.058  INFO 17000 --- [http-nio-8082-exec-4] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 21
+    beginDate: 13-12-2021
+    endDate: 13-12-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[],[]>
+2021-12-13 21:49:16.360  INFO 17000 --- [http-nio-8082-exec-6] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.addReservation(pl.adambaranowski.rsbackend.model.dto.CreateReservationRequestDto) 
+ With params: 
+ class CreateReservationRequestDto {
+    roomNumber: 21
+    beginDate: 14-12-2021
+    endDate: 14-12-2021
+    beginTime: 10:48
+    endTime: 12:48
+    daysOfWeek: []
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <201 CREATED Created,[]>
+2021-12-13 21:50:11.187  INFO 17000 --- [http-nio-8082-exec-7] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 21
+    beginDate: 12-12-2019
+    endDate: 23-12-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class SingleReservationDto {
+    reservationId: 3
+    userNick: admin
+    date: 14-12-2021
+    beginTime: 10:48
+    endTime: 12:48
+}],[]>
+2021-12-13 21:51:10.330  INFO 17000 --- [http-nio-8082-exec-8] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 21
+    beginDate: 12-12-2019
+    endDate: 23-12-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class SingleReservationDto {
+    reservationId: 3
+    userNick: admin
+    date: 14-12-2021
+    beginTime: 10:48
+    endTime: 12:48
+}],[]>
+2021-12-13 21:51:14.834  INFO 17000 --- [http-nio-8082-exec-9] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 21
+    beginDate: 12-12-2019
+    endDate: 23-12-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class SingleReservationDto {
+    reservationId: 3
+    userNick: admin
+    date: 14-12-2021
+    beginTime: 10:48
+    endTime: 12:48
+}],[]>
+2021-12-13 21:51:31.540  INFO 17000 --- [http-nio-8082-exec-10] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 21
+    beginDate: 12-12-2019
+    endDate: 23-12-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class SingleReservationDto {
+    reservationId: 3
+    userNick: admin
+    date: 14-12-2021
+    beginTime: 10:48
+    endTime: 12:48
+}],[]>
+2021-12-13 21:51:49.127  INFO 17000 --- [http-nio-8082-exec-1] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 21
+    beginDate: 12-12-2019
+    endDate: 23-12-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class SingleReservationDto {
+    reservationId: 3
+    userNick: admin
+    date: 14-12-2021
+    beginTime: 10:48
+    endTime: 12:48
+}],[]>
+2021-12-13 21:51:54.052  INFO 17000 --- [http-nio-8082-exec-2] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 21
+    beginDate: 12-12-2019
+    endDate: 23-12-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class SingleReservationDto {
+    reservationId: 3
+    userNick: admin
+    date: 14-12-2021
+    beginTime: 10:48
+    endTime: 12:48
+}],[]>
+2021-12-13 21:55:13.846  INFO 17000 --- [http-nio-8082-exec-4] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.RoomController.getRoomsNumbers() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[21, 22, 25],[]>
+2021-12-13 21:55:52.524  INFO 17000 --- [http-nio-8082-exec-5] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 21
+    beginDate: 13-12-2021
+    endDate: 25-12-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class SingleReservationDto {
+    reservationId: 3
+    userNick: admin
+    date: 14-12-2021
+    beginTime: 10:48
+    endTime: 12:48
+}],[]>
+2021-12-13 21:56:44.311  INFO 17000 --- [http-nio-8082-exec-6] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 21
+    beginDate: 13-12-2021
+    endDate: 25-12-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class SingleReservationDto {
+    reservationId: 3
+    userNick: admin
+    date: 14-12-2021
+    beginTime: 10:48
+    endTime: 12:48
+}],[]>
+2021-12-13 21:56:56.951  INFO 17000 --- [http-nio-8082-exec-7] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 21
+    beginDate: 13-12-2021
+    endDate: 25-12-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class SingleReservationDto {
+    reservationId: 3
+    userNick: admin
+    date: 14-12-2021
+    beginTime: 10:48
+    endTime: 12:48
+}],[]>
+2021-12-13 21:58:22.730  INFO 17000 --- [http-nio-8082-exec-9] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 21
+    beginDate: 13-12-2021
+    endDate: 25-12-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class SingleReservationDto {
+    reservationId: 3
+    userNick: admin
+    date: 14-12-2021
+    beginTime: 10:48
+    endTime: 12:48
+}],[]>
+2021-12-13 21:59:48.635  INFO 17000 --- [http-nio-8082-exec-1] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 21
+    beginDate: 13-12-2021
+    endDate: 25-12-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class SingleReservationDto {
+    reservationId: 3
+    userNick: admin
+    date: 14-12-2021
+    beginTime: 10:48
+    endTime: 12:48
+}],[]>
+2021-12-13 21:59:58.954  INFO 17000 --- [http-nio-8082-exec-2] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 21
+    beginDate: 13-12-2021
+    endDate: 25-12-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class SingleReservationDto {
+    reservationId: 3
+    userNick: admin
+    date: 14-12-2021
+    beginTime: 10:48
+    endTime: 12:48
+}],[]>
+2021-12-13 22:00:42.938  INFO 17000 --- [http-nio-8082-exec-4] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.RoomController.getRoomsNumbers() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[21, 22, 25],[]>
+2021-12-13 22:01:18.249  INFO 17000 --- [http-nio-8082-exec-5] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 21
+    beginDate: 17-12-2021
+    endDate: 25-12-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[],[]>
+2021-12-13 22:01:45.296  INFO 17000 --- [http-nio-8082-exec-6] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 21
+    beginDate: 17-12-2021
+    endDate: 25-12-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[],[]>
+2021-12-13 22:02:59.443  INFO 17000 --- [http-nio-8082-exec-8] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.RoomController.getRoomsNumbers() 
+ With params: 
+  
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[21, 22, 25],[]>
+2021-12-13 22:03:33.194  INFO 17000 --- [http-nio-8082-exec-9] p.a.rsbackend.loging.ControllersLogger   : 
+ Invoked: public org.springframework.http.ResponseEntity pl.adambaranowski.rsbackend.controller.ReservationController.getReservationsForRoom(pl.adambaranowski.rsbackend.model.dto.GetReservationRequestDto) 
+ With params: 
+ class GetReservationRequestDto {
+    roomNumber: 21
+    beginDate: 12-12-2021
+    endDate: 25-12-2021
+}
+ 
+ By User: 
+ admin@gmail.com 
+ Returned: <200 OK OK,[class SingleReservationDto {
+    reservationId: 3
+    userNick: admin
+    date: 14-12-2021
+    beginTime: 10:48
+    endTime: 12:48
+}],[]>

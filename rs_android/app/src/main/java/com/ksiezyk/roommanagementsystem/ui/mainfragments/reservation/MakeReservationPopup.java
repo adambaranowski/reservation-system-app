@@ -29,11 +29,13 @@ public class MakeReservationPopup {
     private Room chosenRoom;
     private DateTimePickerWidget beginDateTimeWidget;
     private DateTimePickerWidget endDateTimeWidget;
+    private Runnable callback;
 
     @RequiresApi(api = Build.VERSION_CODES.O)
-    public MakeReservationPopup(List<Room> rooms) {
+    public MakeReservationPopup(List<Room> rooms, Runnable callback) {
         makeReservationPopupModel = new MakeReservationPopupModelFactory().create(MakeReservationPopupModel.class);
         this.rooms = rooms;
+        this.callback = callback;
     }
 
     @RequiresApi(api = Build.VERSION_CODES.O)
@@ -74,12 +76,7 @@ public class MakeReservationPopup {
         confirmButton.setOnClickListener(v -> {
             makeReservationPopupModel.createReservation();
             Reservation reservation = makeReservationPopupModel.getCreateReservationResult().getValue().getSuccess();
-            String msg = String.format("Reservation{\n\tid: %d, \n\tbegin: %s, \n\tend: %s, \n\tuser: %s\n}",
-                    reservation.getId(),
-                    reservation.getBeginTime().toString(),
-                    reservation.getEndTime().toString(),
-                    reservation.getUserNick());
-            Toast.makeText(context, msg, Toast.LENGTH_LONG).show();
+            callback.run();
             popupWindow.dismiss();
         });
 

@@ -97,7 +97,10 @@ public class ReservationFragment extends Fragment {
 
         makeReservationButton = rootView.findViewById(R.id.make_reservation_button);
         makeReservationButton.setOnClickListener(v -> {
-            MakeReservationPopup makeReservationPopup = new MakeReservationPopup(rooms);
+            MakeReservationPopup makeReservationPopup = new MakeReservationPopup(rooms, () -> reservationViewModel.getReservations(
+                    chosenRoom.getId(),
+                    beginDateTimeWidget.getDateTime(),
+                    endDateTimeWidget.getDateTime()));
             makeReservationPopup.showPopupWindow(v);
         });
 
